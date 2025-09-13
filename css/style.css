@@ -1,0 +1,74 @@
+body{
+    background-color: rgb(209, 236, 236);
+}
+
+/*Navbar start*/
+.navbar-brand {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  transition: 0.6s;
+  cursor: url('assets/img/favicon.ico'), auto;
+}
+
+.nav-link:hover {
+  color: #198754 !important; 
+  text-decoration-line:underline ;
+}
+/*Navbar end*/
+/*Hero start*/
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  z-index: 2;
+  padding: 20px;
+}
+/*Hero end*/
+
+/*Hakkımızda start*/
+#hakkimizda h2 {
+  color: #198754 ;
+}
+
+#hakkimizda p {
+  color: #f1f1f1;
+  font-size: 1.1rem;
+}
+
+#hakkimizda img {
+  transition: transform 0.3s ease;
+}
+
+#hakkimizda img:hover {
+  transform: scale(1.05);
+}
+
+/*Hakkımızda end*/
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  cursor: url('assets/img/cursor.png'), zoom-in;
+}
+
+
