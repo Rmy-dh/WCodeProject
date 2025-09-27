@@ -2,2046 +2,442 @@
 <html lang="tr">
  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"/>
+    <meta name="description" content="Dünya susuyor, sen dinliyor musun?"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta property="og:title" content="TÖZ"/>
+    <meta property="og:description" content="Description of töz"/>
+    <meta property="og:site_name" content="töz.com"/>
+    <meta property="og:type" content="website"/>
     <title>TÖZ</title>
-    <link rel="shortcut icon" href="img/favi.png" type="image/x-png">
-  
-    <head>
+
+    <!--Favicon-->
+    <link rel="icon" href="assets/img/toz.png" type="image/x-icon">
+    <!--Style css--->
+    <link href="css/style.css" rel="stylesheet">
+    <!--Font Awasome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 
-      <style>
-        /* CSS Reset ve Ana Stiller */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #0e1529;
-            overflow-x: hidden;
-        }
-        
-        /* Header Stilleri */
-        .header {
-            position: relative;
-            background: linear-gradient(
-                354.34deg, rgba(14,34,119,0.43) -82.02%, rgba(14,34,119,0) 42.34%
-            ), linear-gradient(
-                247.08deg, rgba(14,34,119,0.43) 5.94%, rgba(14,34,119,0) 92.57%
-            ), #208fe4;
-            color: #f4f4f4;
-            min-height: 100vh;
-            padding: 3rem 0;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background-image: url('https://assets.wakingup.com/web/images/home/waves-desktop.png');
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            background-size: cover;
-            mix-blend-mode: screen;
-            z-index: 1;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Navigation */
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-        
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #f4f4f4;
-            text-decoration: none;
-        }
-        
-        .nav-menu {
-            display: none;
-        }
-        
-        .menu-button {
-            background: none;
-            border: none;
-            color: #0e2277;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 600;
-            letter-spacing: -0.04em;
-            line-height: 1.12;
-            margin-bottom: 3rem;
-        }
-        
-        .hero-content {
-            display: flex;
-            gap: 4.5rem;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .app-screenshot {
-            width: 300px;
-            height: auto;
-            border-radius: 1.375rem;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            padding: 2rem;
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .pricing-options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-option {
-            background: rgba(255, 255, 255, 0.26);
-            border: 1px solid rgba(255, 255, 255, 0.46);
-            border-radius: 0.78rem;
-            padding: 1.4rem 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .pricing-option.selected {
-            background: #f4f4f4;
-            border: 2px solid #ffc90b;
-            color: #0e1529;
-        }
-        
-        .pricing-option.selected::before {
-            content: 'En İyi Değer';
-            position: absolute;
-            top: -1rem;
-            left: 1.5rem;
-            background: #ffb300;
-            color: #0e1529;
-            padding: 0.375rem 1.6rem;
-            border-radius: 0.4rem;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-        
-        .pricing-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0.5rem 0;
-        }
-        
-        .pricing-price {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-        
-        .pricing-trial {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* CTA Button */
-        .cta-button {
-            background: #ffb300;
-            color: #0e1529;
-            border: none;
-            border-radius: 0.5rem;
-            padding: 1rem 3rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background: #e6a200;
-        }
-        
-        .scholarship-link {
-            color: #f4f4f4;
-            font-size: 0.85rem;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        
-        .scholarship-link a {
-            color: inherit;
-            transition: color 0.2s ease;
-        }
-        
-        .scholarship-link a:hover {
-            color: #ffb300;
-        }
-        
-        /* Features Section */
-        .features {
-            background: #f4f4f4;
-            padding: 4rem 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .feature-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-title {
-            color: #0d34a5;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-description {
-            color: #0e1529;
-            line-height: 1.6;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #0e2277;
-            color: #f4f4f4;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section a {
-            color: #f4f4f4;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-section a:hover {
-            color: #ffb300;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .app-screenshot {
-                width: 250px;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Animasyonlar */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-        
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
-        
-        .mb-4 {
-            margin-bottom: 4rem;
-        }
-    </style>
-        <meta charSet="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/testimonials/peter-attia.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/cloud-4a.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/bird-1.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/bird-5.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/cloud-2a.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/app-screenshot-introcourse-life-v3.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/cloud-3a.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/balloon-1.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/balloon-2.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/balloon-3.png"/>
-        <link rel="stylesheet" href="/_next/static/css/51d7b0b8bf6d8099.css" data-precedence="next"/>
-        <link rel="stylesheet" href="/_next/static/css/9ee16885be10786a.css" data-precedence="next"/>
-        <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-26c7553fa96b2d35.js"/>
-
-        <script src="/_next/static/chunks/ce0217ee-ebd2892f04d603fa.js" async=""></script>
-        <script src="/_next/static/chunks/55e5cfd5-2b23aca476d0c59c.js" async=""></script>
-        <script src="/_next/static/chunks/7329-27b41b296df7b7cd.js" async=""></script>
-        <script src="/_next/static/chunks/main-app-a51542b27cd77aca.js" async=""></script>
-        <script src="/_next/static/chunks/9698-24f21c99608dfd1d.js" async=""></script>
-        <script src="/_next/static/chunks/890-694bbfac8fba86a4.js" async=""></script>
-        <script src="/_next/static/chunks/9245-30d70fbbef57c861.js" async=""></script>
-        <script src="/_next/static/chunks/8286-64dc07c2b7b84e93.js" async=""></script>
-        <script src="/_next/static/chunks/4478-9d81cfae7315a7cd.js" async=""></script>
-        <script src="/_next/static/chunks/2343-133cac874a26a2fd.js" async=""></script>
-        <script src="/_next/static/chunks/2040-66fa414d9be92800.js" async=""></script>
-        <script src="/_next/static/chunks/6832-f3e9f8d7c2d56f70.js" async=""></script>
-        <script src="/_next/static/chunks/4138-1e7097541919c130.js" async=""></script>
-        <script src="/_next/static/chunks/5834-a6311511adbb61e1.js" async=""></script>
-        <script src="/_next/static/chunks/9807-dcccc2265646ed7a.js" async=""></script>
-        <script src="/_next/static/chunks/app/global-error-23a5e2e395502b0b.js" async=""></script>
-        <script src="/_next/static/chunks/6012-9626678d9e1dffc7.js" async=""></script>
-        <script src="/_next/static/chunks/5421-01cd203dfc91300c.js" async=""></script>
-        <script src="/_next/static/chunks/7109-c218a86a6dca6697.js" async=""></script>
-        <script src="/_next/static/chunks/344-75809e6700db0c1d.js" async=""></script>
-        <script src="/_next/static/chunks/570-da6999484f2896f2.js" async=""></script>
-        <script src="/_next/static/chunks/3227-1f623370ae2731bc.js" async=""></script>
-        <script src="/_next/static/chunks/3084-c81833658272297d.js" async=""></script>
-        <script src="/_next/static/chunks/3720-88c3310cd1cff793.js" async=""></script>
-        <script src="/_next/static/chunks/4370-51bd5b735317e831.js" async=""></script>
-        <script src="/_next/static/chunks/1321-ce2624252d1c1485.js" async=""></script>
-        <script src="/_next/static/chunks/8886-b33e43a4cc61a9d9.js" async=""></script>
-        <script src="/_next/static/chunks/7519-849de8d0084312e0.js" async=""></script>
-        <script src="/_next/static/chunks/3298-ca72596ba0d59e94.js" async=""></script>
-        <script src="/_next/static/chunks/7027-4cce5b64744fa34d.js" async=""></script>
-        <script src="/_next/static/chunks/8858-6fabdcfa8d85d403.js" async=""></script>
-        <script src="/_next/static/chunks/app/page-66caf7b27a53b613.js" async=""></script>
-        <script src="/_next/static/chunks/9859-e8b4d863261e1062.js" async=""></script>
-        <script src="/_next/static/chunks/app/layout-d87aeb36d8990317.js" async=""></script>
-        <script src="/_next/static/chunks/app/not-found-1537839dc4dd8bf7.js" async=""></script>
-
-        <link rel="preload" href="https://cdn.cookielaw.org/consent/c8afa025-de60-4850-a9db-4962e99aa987/OtAutoBlock.js" as="script"/>
-        <link rel="preload" href="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" as="script"/>
-        <link rel="preload" href="https://cdn.levelaccess.net/accessjs/YW1wMTMxODk/access.js" as="script"/>
-        <link rel="preload" href="https://assets.wakingup.com/web/scripts/onelink-smart-script-v2.9.2.js" as="script"/>
-
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/bird-3.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/app-screenshot-player-workingwithemotions-life-v3.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/girl-on-dock.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/app-screenshot-pack-thestoicpath-life-v3.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/bird-2.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/bird-4.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/moment-player.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/app-screenshot-player-thekindheart-life-v3.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/cloud-1a.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/app-screenshot-pack-mindandbrain-life-v3.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-top-1.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-middle-1.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-bottom-1.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-mobile-top.png"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-mobile-middle.jpg"/>
-        <link rel="preload" as="image" href="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-mobile-bottom.png"/>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-
-        <title>Waking Up - A New Operating System for Your Mind</title>
-
-        <meta name="description" content="Open the door to a deeper understanding of yourself—with guided meditations and insights for living a more examined life."/>
-        <link rel="manifest" href="/manifest.json"/>
-        <meta name="mobile-web-app-capable" content="yes"/>
-        <meta name="apple-mobile-web-app-title" content="Waking Up"/>
-        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-
-        <meta property="og:title" content="Waking Up - A New Operating System for Your Mind"/>
-        <meta property="og:description" content="Open the door to a deeper understanding of yourself—with guided meditations and insights for living a more examined life."/>
-        <meta property="og:site_name" content="wakingup.com"/>
-        <meta property="og:image:secure_url" content="https://assets.wakingup.com/web/images/metadata/og-default-2.jpg"/>
-        <meta property="og:image" content="https://assets.wakingup.com/web/images/metadata/og-default-2.jpg"/>
-        <meta property="og:type" content="website"/>
-
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:site" content="@wakingup"/>
-        <meta name="twitter:creator" content="@wakingup"/>
-        <meta name="twitter:title" content="Waking Up - A New Operating System for Your Mind"/>
-        <meta name="twitter:description" content="Open the door to a deeper understanding of yourself—with guided meditations and insights for living a more examined life."/>
-        <meta name="twitter:image:secure_url" content="https://assets.wakingup.com/web/images/metadata/og-default-2.jpg"/>
-        <meta name="twitter:image" content="https://assets.wakingup.com/web/images/metadata/og-default-2.jpg"/>
-
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/>
-
-        <link rel="icon" href="/icon1.png?782893592b1f5658" type="image/png" sizes="16x16"/>
-        <link rel="icon" href="/icon2.png?63180dab48abc6e0" type="image/png" sizes="32x32"/>
-        <link rel="icon" href="/icon3.png?2d0ef33fc0870977" type="image/png" sizes="48x48"/>
-        <link rel="icon" href="/icon4.png?fde7c6d30421bfb1" type="image/png" sizes="96x96"/>
-        <link rel="icon" href="/icon5.png?4940afb01cdbea98" type="image/png" sizes="192x192"/>
-
-        <link rel="apple-touch-icon" href="/apple-icon.png?4a7b0b72e1eee4ed" type="image/png" sizes="192x192"/>
-        <script>
-        (self.__next_s=self.__next_s||[])
-        .push(["https://cdn.cookielaw.org/consent/c8afa025-de60-4850-a9db-4962e99aa987/OtAutoBlock.js",{}])
-        </script>
-        <script>
-        (self.__next_s=self.__next_s||[])
-        .push(["https://cdn.cookielaw.org/scripttemplates/otSDKStub.js",{"data-domain-script":"c8afa025-de60-4850-a9db-4962e99aa987"}])
-        </script>
-        <noscript>
-            <img alt="" height="1" width="1" style="display:none" 
-            src="https://www.facebook.com/tr?id=1771586519554127&amp;ev=PageView&amp;noscript=1"/>
-        </noscript>
-        <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule="">
-        </script>
-        <style data-styled="" data-styled-version="6.1.19">
-        .fipqjz{background-color:transparent;border:none;box-sizing:border-box;color:inherit;cursor:pointer;font-family:inherit;font-size:inherit;line-height:1;margin:0;outline:none;padding:0;width:auto;}/*!sc*/
-data-styled.g17[id="sc-20a79dcd-0"]{content:"fipqjz,"}/*!sc*/
-.cEdIis{color:#0e2277;}/*!sc*/
-data-styled.g245[id="sc-7046174e-0"]{content:"cEdIis,"}/*!sc*/
-.dGzHmv{display:block;}/*!sc*/
-.dGzHmv:focus{outline:-webkit-focus-ring-color auto 1px;outline-offset:3px;}/*!sc*/
-data-styled.g246[id="sc-7046174e-1"]{content:"dGzHmv,"}/*!sc*/
-.hqhbrf{display:block;width:2.7rem;}/*!sc*/
-@media (max-width: 575.98px){.hqhbrf{width:1.65rem;}}/*!sc*/
-data-styled.g247[id="sc-7046174e-2"]{content:"hqhbrf,"}/*!sc*/
-.dFUZVs{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:row nowrap;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin:0 auto;max-width:1184px;width:100%;}/*!sc*/
-data-styled.g249[id="sc-a7372d5a-1"]{content:"dFUZVs,"}/*!sc*/
-.jGNbWN{color:inherit;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;min-width:0;}/*!sc*/
-data-styled.g250[id="sc-a7372d5a-2"]{content:"jGNbWN,"}/*!sc*/
-.hDUhbH{display:block;width:13.5rem;}/*!sc*/
-@media (max-width: 575.98px){.hDUhbH{width:10rem;}}/*!sc*/
-data-styled.g251[id="sc-a7372d5a-3"]{content:"hDUhbH,"}/*!sc*/
-.ixbwjC{-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;min-height:1.8rem;min-width:0;text-align:right;}/*!sc*/
-data-styled.g252[id="sc-a7372d5a-4"]{content:"ixbwjC,"}/*!sc*/
-.jiIzHc >div{border-radius:inherit;}/*!sc*/
-data-styled.g268[id="sc-b40bf2fd-0"]{content:"jiIzHc,"}/*!sc*/
-.jbiYww{color:#ffffff;display:block;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
-@media (max-width: 575.98px){.jbiYww{margin-bottom:0;margin-top:0.5rem;}}/*!sc*/
-data-styled.g269[id="sc-ec527885-0"]{content:"jbiYww,"}/*!sc*/
-.dgWNCe{display:block;width:15.475rem;}/*!sc*/
-@media (max-width: 1199.98px){.dgWNCe{width:14rem;}}/*!sc*/
-@media (max-width: 767.98px){.dgWNCe{color:#0e1529;width:10rem;}}/*!sc*/
-data-styled.g270[id="sc-ec527885-1"]{content:"dgWNCe,"}/*!sc*/
-.bjUDyX{font-size:0.75rem;font-weight:500;letter-spacing:0.10935rem;line-height:1.25;margin-left:0.3rem;margin-top:1rem;text-transform:uppercase;}/*!sc*/
-@media (max-width: 767.98px){.bjUDyX{color:#0e152966;letter-spacing:0;font-size:0.7rem;margin-left:0;margin-top:0.6rem;text-transform:none;}}/*!sc*/
-data-styled.g271[id="sc-ec527885-2"]{content:"bjUDyX,"}/*!sc*/
-.gJSZGX{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;background:none;border:none;color:#2565f5;cursor:pointer;display:none;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;height:6.5rem;outline:none;padding:0;width:6.5rem;}/*!sc*/
-@media (max-width: 1199.98px){.gJSZGX{height:5rem;width:5rem;}}/*!sc*/
-@media (max-width: 767.98px){.gJSZGX{height:4rem;width:4rem;}}/*!sc*/
-@media (max-width: 575.98px){.gJSZGX{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}/*!sc*/
-.bkfvub{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;background:none;border:none;color:#2565f5;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;height:6.5rem;outline:none;padding:0;width:6.5rem;}/*!sc*/
-@media (max-width: 1199.98px){.bkfvub{height:5rem;width:5rem;}}/*!sc*/
-@media (max-width: 767.98px){.bkfvub{height:4rem;width:4rem;}}/*!sc*/
-@media (max-width: 575.98px){.bkfvub{display:none;}}/*!sc*/
-data-styled.g272[id="sc-9d8f6351-0"]{content:"gJSZGX,bkfvub,"}/*!sc*/
-.jLURNM{display:block;height:100%;width:100%;}/*!sc*/
-data-styled.g273[id="sc-9d8f6351-1"]{content:"jLURNM,"}/*!sc*/
-.eSqqIJ{width:16.75rem;}/*!sc*/
-.eSqqIJ .sc-b2a4c5a1-4{background-color:#ffffff;color:#2565f5;}/*!sc*/
-@media (max-width: 991.98px){.eSqqIJ{width:15.5rem;}}/*!sc*/
-data-styled.g274[id="sc-809594ee-0"]{content:"eSqqIJ,"}/*!sc*/
-.dggdHD{background-color:#0e2277;margin-top:auto;padding:6.25rem 0 6rem 0;background-image:url('https://assets.wakingup.com/web/images/home/bkg-footer.jpg');-webkit-background-position:center bottom;background-position:center bottom;background-repeat:no-repeat;-webkit-background-size:cover;background-size:cover;}/*!sc*/
-@media (max-width: 1199.98px){.dggdHD{padding:5rem 0;}}/*!sc*/
-@media (max-width: 991.98px){.dggdHD{padding:4rem 0;}}/*!sc*/
-@media (max-width: 767.98px){.dggdHD{background-color:#edeeef;color:#0e152966;padding:3rem 0;}}/*!sc*/
-@media (max-width: 575.98px){.dggdHD{padding:1.5625rem 0 4rem 0;}}/*!sc*/
-data-styled.g275[id="sc-6ea40c1-0"]{content:"dggdHD,"}/*!sc*/
-.gUfDSA{box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:0 auto;max-width:1184px;position:relative;}/*!sc*/
-@media (max-width: 1199.98px){.gUfDSA{padding-left:2rem;padding-right:2rem;width:100%;}}/*!sc*/
-@media (max-width: 767.98px){.gUfDSA{padding-left:1.6rem;padding-right:1.6rem;}}/*!sc*/
-@media (max-width: 575.98px){.gUfDSA{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-left:1.3125rem;}}/*!sc*/
-data-styled.g276[id="sc-6ea40c1-1"]{content:"gUfDSA,"}/*!sc*/
-.hnLWkK{padding-right:7.6rem;}/*!sc*/
-@media (max-width: 1199.98px){.hnLWkK{padding-right:5rem;}}/*!sc*/
-@media (max-width: 991.98px){.hnLWkK{padding-right:4rem;}}/*!sc*/
-@media (max-width: 767.98px){.hnLWkK{padding-right:3rem;}}/*!sc*/
-@media (max-width: 575.98px){.hnLWkK{padding-right:0;}}/*!sc*/
-data-styled.g277[id="sc-6ea40c1-2"]{content:"hnLWkK,"}/*!sc*/
-.hSHPsK{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:row nowrap;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin-bottom:2.4rem;}/*!sc*/
-@media (max-width: 575.98px){.hSHPsK{margin-bottom:1rem;}}/*!sc*/
-data-styled.g278[id="sc-6ea40c1-3"]{content:"hSHPsK,"}/*!sc*/
-.iNTsAW{display:block;}/*!sc*/
-data-styled.g279[id="sc-6ea40c1-4"]{content:"iNTsAW,"}/*!sc*/
-.geVcsD{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:2.5rem;}/*!sc*/
-@media (max-width: 575.98px){.geVcsD{border-top:solid 1px #0e152926;margin-top:1.25rem;padding-top:1.25rem;}}/*!sc*/
-data-styled.g280[id="sc-6ea40c1-5"]{content:"geVcsD,"}/*!sc*/
-.eUiOOe{color:#f4f4f4;display:block;margin-right:2.25rem;}/*!sc*/
-@media (max-width: 767.98px){.eUiOOe{color:#0e1529;}}/*!sc*/
-data-styled.g281[id="sc-6ea40c1-6"]{content:"eUiOOe,"}/*!sc*/
-.hAXSSz{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}/*!sc*/
-@media (max-width: 991.98px){.hAXSSz{display:block;}}/*!sc*/
-@media (max-width: 767.98px){.hAXSSz{margin-left:1.6rem;}}/*!sc*/
-@media (max-width: 575.98px){.hAXSSz{margin-left:0;margin-top:1.8rem;}}/*!sc*/
-data-styled.g282[id="sc-6ea40c1-7"]{content:"hAXSSz,"}/*!sc*/
-.eqfrAP{margin-right:6.8rem;}/*!sc*/
-@media (max-width: 1199.98px){.eqfrAP{margin-right:3rem;}}/*!sc*/
-@media (max-width: 767.98px){.eqfrAP{margin-right:0;}}/*!sc*/
-data-styled.g283[id="sc-6ea40c1-8"]{content:"eqfrAP,"}/*!sc*/
-.dqshsj{list-style-type:none;}/*!sc*/
-data-styled.g284[id="sc-6ea40c1-9"]{content:"dqshsj,"}/*!sc*/
-.jnIXqI{color:#ffffff;display:block;font-size:1.25rem;font-weight:500;line-height:1.2;margin-bottom:1.2rem;position:relative;text-align:start;-webkit-text-decoration:none;text-decoration:none;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
-@media (max-width: 1199.98px){.jnIXqI{font-size:1rem;}}/*!sc*/
-@media (max-width: 767.98px){.jnIXqI{color:inherit;font-weight:normal;}}/*!sc*/
-@media (max-width: 575.98px){.jnIXqI{font-size:0.95rem;font-weight:500;line-height:1.25;}}/*!sc*/
-data-styled.g285[id="sc-6ea40c1-10"]{content:"jnIXqI,"}/*!sc*/
-.FQRid{color:#ffffff;display:block;font-size:1.25rem;font-weight:500;line-height:1.2;margin-bottom:1.2rem;position:relative;text-align:start;-webkit-text-decoration:none;text-decoration:none;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
-@media (max-width: 1199.98px){.FQRid{font-size:1rem;}}/*!sc*/
-@media (max-width: 767.98px){.FQRid{color:inherit;font-weight:normal;}}/*!sc*/
-@media (max-width: 575.98px){.FQRid{font-size:0.95rem;font-weight:500;line-height:1.25;}}/*!sc*/
-data-styled.g286[id="sc-6ea40c1-11"]{content:"FQRid,"}/*!sc*/
-.cZLdWs{position:absolute;right:-2.8125rem;top:50%;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}/*!sc*/
-data-styled.g287[id="sc-6ea40c1-12"]{content:"cZLdWs,"}/*!sc*/
-.fkSMzd{overflow-x:hidden;position:relative;}/*!sc*/
-data-styled.g288[id="sc-7a505137-0"]{content:"fkSMzd,"}/*!sc*/
-.cljckw{margin:0 auto;max-width:79rem;padding:0 2.5rem;}/*!sc*/
-@media (max-width: 991.98px){.cljckw{padding:0 2rem;}}/*!sc*/
-@media (max-width: 767.98px){.cljckw{padding:0 1.5rem;}}/*!sc*/
-data-styled.g289[id="sc-7a505137-1"]{content:"cljckw,"}/*!sc*/
-.gclZjE{padding-top:40rem;}/*!sc*/
-.gclZjE .sc-6ea40c1-1{max-width:79rem;padding:0 2.5rem;}/*!sc*/
-@media (max-width: 1199.98px){.gclZjE{padding-top:20rem;}}/*!sc*/
-@media (max-width: 991.98px){.gclZjE{padding-top:20rem;}.gclZjE .sc-6ea40c1-1{padding:0 2rem;}}/*!sc*/
-@media (max-width: 767.98px){.gclZjE{padding-top:20rem;}.gclZjE .sc-6ea40c1-1{padding:0 1.5rem;}.gclZjE .sc-6ea40c1-2{padding-right:0;}.gclZjE .sc-6ea40c1-8{margin-right:0;}.gclZjE .sc-6ea40c1-10,.gclZjE .sc-6ea40c1-11{color:#ffffff;}.gclZjE .sc-6ea40c1-6{color:#f4f4f4;}.gclZjE .sc-ec527885-1{color:inherit;}.gclZjE .sc-ec527885-2{color:#ffffff66;}}/*!sc*/
-@media (max-width: 575.98px){.gclZjE{padding-top:20rem;}.gclZjE .sc-6ea40c1-5{border-top:solid 1px #ffffff40;}}/*!sc*/
-data-styled.g290[id="sc-7a505137-2"]{content:"gclZjE,"}/*!sc*/
-.gmlqJA{color:#0e1529;font-size:2.4605rem;font-weight:700;letter-spacing:-0.04em;line-height:1.12;}/*!sc*/
-@media (max-width: 1199.98px){.gmlqJA{font-size:2rem;}}/*!sc*/
-@media (max-width: 767.98px){.gmlqJA{font-size:1.625rem;}}/*!sc*/
-data-styled.g291[id="sc-7a505137-3"]{content:"gmlqJA,"}/*!sc*/
-.dnvirP{background-color:#f4f4f4;}/*!sc*/
-data-styled.g292[id="sc-1f57a4d3-0"]{content:"dnvirP,"}/*!sc*/
-.hKAUau{color:#0e1529;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:0 3rem 18.4319rem;}/*!sc*/
-@media (max-width: 767.98px){.hKAUau{padding:0 1.875rem 12.5625rem;}}/*!sc*/
-data-styled.g293[id="sc-1f57a4d3-1"]{content:"hKAUau,"}/*!sc*/
-.izvKjR{left:-27.0625rem;position:absolute;top:6.5856rem;width:26.6788rem;z-index:11;}/*!sc*/
-@media (max-width: 767.98px){.izvKjR{left:-20.1875rem;top:13.375rem;}}/*!sc*/
-data-styled.g294[id="sc-1f57a4d3-2"]{content:"izvKjR,"}/*!sc*/
-.gXykEl{left:-28rem;position:absolute;top:22.8981rem;}/*!sc*/
-@media (max-width: 767.98px){.gXykEl{left:-23rem;top:26.75rem;}}/*!sc*/
-data-styled.g295[id="sc-1f57a4d3-3"]{content:"gXykEl,"}/*!sc*/
-.jUMlLX{left:-30.9375rem;position:absolute;top:26.8981rem;-webkit-transform:matrix(-1,0,0,1,0,0);-moz-transform:matrix(-1,0,0,1,0,0);-ms-transform:matrix(-1,0,0,1,0,0);transform:matrix(-1,0,0,1,0,0);width:30.8125rem;}/*!sc*/
-@media (max-width: 767.98px){.jUMlLX{left:-26rem;top:30.75rem;}}/*!sc*/
-data-styled.g296[id="sc-1f57a4d3-4"]{content:"jUMlLX,"}/*!sc*/
-.euhQRT{left:-28rem;position:absolute;top:34.0231rem;-webkit-transform:matrix(-1,0,0,1,0,0);-moz-transform:matrix(-1,0,0,1,0,0);-ms-transform:matrix(-1,0,0,1,0,0);transform:matrix(-1,0,0,1,0,0);width:17.4375rem;}/*!sc*/
-@media (max-width: 767.98px){.euhQRT{display:none;}}/*!sc*/
-data-styled.g297[id="sc-1f57a4d3-5"]{content:"euhQRT,"}/*!sc*/
-.cXmbga{left:50%;position:absolute;}/*!sc*/
-@media (max-width: 767.98px){.cXmbga{display:none;}}/*!sc*/
-data-styled.g298[id="sc-1f57a4d3-6"]{content:"cXmbga,"}/*!sc*/
-.ecJoBF{display:none;left:50%;position:absolute;}/*!sc*/
-@media (max-width: 767.98px){.ecJoBF{display:block;}}/*!sc*/
-data-styled.g299[id="sc-1f57a4d3-7"]{content:"ecJoBF,"}/*!sc*/
-.cMNXaq{left:50%;position:absolute;-webkit-transform:translate(-24%,215%);-moz-transform:translate(-24%,215%);-ms-transform:translate(-24%,215%);transform:translate(-24%,215%);width:28.5625rem;}/*!sc*/
-@media (max-width: 767.98px){.cMNXaq{display:none;}}/*!sc*/
-data-styled.g300[id="sc-1f57a4d3-8"]{content:"cMNXaq,"}/*!sc*/
-.kMTjMD{height:1.8256rem;left:-8.125rem;position:absolute;top:11.8975rem;-webkit-transform:rotate(135deg);-moz-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg);width:2.2006rem;z-index:10;}/*!sc*/
-@media (max-width: 767.98px){.kMTjMD{left:-0.75rem;top:20rem;}}/*!sc*/
-data-styled.g301[id="sc-1f57a4d3-9"]{content:"kMTjMD,"}/*!sc*/
-.cCdMSR{height:1.375rem;left:35.25rem;position:absolute;top:10.1475rem;width:2rem;z-index:10;}/*!sc*/
-@media (max-width: 1199.98px){.cCdMSR{left:33.25rem;top:9rem;}}/*!sc*/
-@media (max-width: 767.98px){.cCdMSR{left:unset;right:-2.3125rem;top:2.5rem;}}/*!sc*/
-data-styled.g302[id="sc-1f57a4d3-10"]{content:"cCdMSR,"}/*!sc*/
-.hchzfJ{position:absolute;top:-4rem;left:18.5rem;}/*!sc*/
-@media (max-width: 1199.98px){.hchzfJ{left:16.3rem;top:-6.6rem;}}/*!sc*/
-@media (max-width: 767.98px){.hchzfJ{left:unset;right:-20.5rem;top:-211px;}}/*!sc*/
-data-styled.g303[id="sc-1f57a4d3-11"]{content:"hchzfJ,"}/*!sc*/
-.cvOYIR{position:absolute;width:17.4375rem;top:4.5rem;left:23.125rem;}/*!sc*/
-@media (max-width: 1199.98px){.cvOYIR{left:20.5625rem;top:3.6rem;}}/*!sc*/
-@media (max-width: 767.98px){.cvOYIR{left:unset;right:-227px;top:-3.625rem;}}/*!sc*/
-data-styled.g304[id="sc-1f57a4d3-12"]{content:"cvOYIR,"}/*!sc*/
-.hOcnkK{position:absolute;right:17rem;top:2rem;}/*!sc*/
-@media (max-width: 767.98px){.hOcnkK{top:5.4rem;right:-14.125rem;}}/*!sc*/
-data-styled.g305[id="sc-1f57a4d3-13"]{content:"hOcnkK,"}/*!sc*/
-.jsyjBu{left:-21.25rem;position:absolute;top:28.0625rem;-webkit-transform:matrix(-1,0,0,1,0,0);-moz-transform:matrix(-1,0,0,1,0,0);-ms-transform:matrix(-1,0,0,1,0,0);transform:matrix(-1,0,0,1,0,0);width:28.75rem;z-index:10;}/*!sc*/
-@media (max-width: 991.98px){.jsyjBu{left:-23.875rem;top:32.0625rem;}}/*!sc*/
-@media (max-width: 767.98px){.jsyjBu{top:21.875rem;left:-24.2rem;}}/*!sc*/
-data-styled.g306[id="sc-1f57a4d3-14"]{content:"jsyjBu,"}/*!sc*/
-.eezeSp{left:-12rem;position:absolute;top:35rem;z-index:11;}/*!sc*/
-@media (max-width: 991.98px){.eezeSp{left:-15.375rem;top:39.8225rem;}}/*!sc*/
-@media (max-width: 767.98px){.eezeSp{left:-15.5rem;top:30rem;}}/*!sc*/
-data-styled.g307[id="sc-1f57a4d3-15"]{content:"eezeSp,"}/*!sc*/
-.bllMsG{left:52%;position:absolute;bottom:1rem;}/*!sc*/
-@media (max-width: 1199.98px){.bllMsG{display:none;}}/*!sc*/
-data-styled.g308[id="sc-1f57a4d3-16"]{content:"bllMsG,"}/*!sc*/
-.bFhjQG{bottom:-11.1662rem;left:45%;position:absolute;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0);width:19.25rem;z-index:10;}/*!sc*/
-@media (max-width: 767.98px){.bFhjQG{bottom:-12.595rem;left:21.5rem;width:16.8125rem;}}/*!sc*/
-data-styled.g309[id="sc-1f57a4d3-17"]{content:"bFhjQG,"}/*!sc*/
-.eiZakB{bottom:-25.1037rem;left:31%;position:absolute;-webkit-transform:translate(-50%,0);-moz-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0);width:21.5625rem;z-index:10;}/*!sc*/
-@media (max-width: 767.98px){.eiZakB{display:none;}}/*!sc*/
-data-styled.g310[id="sc-1f57a4d3-18"]{content:"eiZakB,"}/*!sc*/
-.dfFWAt{bottom:-15.6037rem;left:54%;position:absolute;}/*!sc*/
-.dfFWAt img{height:23.0557rem;width:41.125rem;}/*!sc*/
-@media (max-width: 767.98px){.dfFWAt{bottom:-14.22rem;left:25.1rem;}.dfFWAt img{height:20.1191rem;width:35.875rem;}}/*!sc*/
-data-styled.g311[id="sc-1f57a4d3-19"]{content:"dfFWAt,"}/*!sc*/
-.ijAMNb{bottom:-16.625rem;left:57%;position:absolute;}/*!sc*/
-.ijAMNb img{height:14.4268rem;width:30.875rem;}/*!sc*/
-@media (max-width: 767.98px){.ijAMNb{bottom:-17.345rem;left:29.5rem;}.ijAMNb img{height:12.5957rem;width:26.9375rem;}}/*!sc*/
-data-styled.g312[id="sc-1f57a4d3-20"]{content:"ijAMNb,"}/*!sc*/
-.eZnrUL{left:14.125rem;position:absolute;top:-2rem;z-index:10;}/*!sc*/
-.eZnrUL img{height:10.6875rem;width:13.8125rem;}/*!sc*/
-@media (max-width: 1199.98px){.eZnrUL{left:14rem;}}/*!sc*/
-@media (max-width: 991.98px){.eZnrUL{left:4rem;}}/*!sc*/
-@media (max-width: 767.98px){.eZnrUL{left:unset;right:-5rem;top:-7.5rem;}.eZnrUL img{height:8.3125rem;width:10.6875rem;}}/*!sc*/
-data-styled.g313[id="sc-1f57a4d3-21"]{content:"eZnrUL,"}/*!sc*/
-.gSpjkt{position:absolute;top:35rem;right:32.875rem;z-index:10;}/*!sc*/
-.gSpjkt img{height:8.4375rem;width:6.6875rem;}/*!sc*/
-@media (max-width: 991.98px){.gSpjkt{right:28rem;}}/*!sc*/
-@media (max-width: 767.98px){.gSpjkt{right:-6rem;}.gSpjkt img{height:7.3125rem;width:5.8125rem;}}/*!sc*/
-data-styled.g314[id="sc-1f57a4d3-22"]{content:"gSpjkt,"}/*!sc*/
-.dEuZou{position:absolute;left:-1rem;top:27.3169rem;}/*!sc*/
-.dEuZou img{height:6.0625rem;width:5.0625rem;}/*!sc*/
-@media (max-width: 1199.98px){.dEuZou{top:28.5rem;}}/*!sc*/
-@media (max-width: 991.98px){.dEuZou{left:-4.875rem;top:30rem;}}/*!sc*/
-@media (max-width: 767.98px){.dEuZou{left:-3rem;top:23.5rem;}.dEuZou img{height:4.875rem;width:4.0625rem;}}/*!sc*/
-data-styled.g315[id="sc-1f57a4d3-23"]{content:"dEuZou,"}/*!sc*/
-.bPlcCY{height:1.9375rem;position:absolute;width:1.3125rem;right:29.4375rem;top:9.2544rem;z-index:10;}/*!sc*/
-@media (max-width: 767.98px){.bPlcCY{top:14.5rem;right:-0.625rem;}}/*!sc*/
-data-styled.g316[id="sc-1f57a4d3-24"]{content:"bPlcCY,"}/*!sc*/
-.fJSViN{bottom:-2.6rem;left:15.5rem;position:absolute;z-index:10;}/*!sc*/
-.fJSViN img{height:19.5469rem;width:38.875rem;}/*!sc*/
-@media (max-width: 1199.98px){.fJSViN{bottom:-4rem;left:13.5rem;}}/*!sc*/
-@media (max-width: 991.98px){.fJSViN{bottom:-7rem;}}/*!sc*/
-@media (max-width: 767.98px){.fJSViN{bottom:-10.5rem;left:unset;right:-18rem;}.fJSViN img{height:17.25rem;width:34.3125rem;}}/*!sc*/
-data-styled.g317[id="sc-1f57a4d3-25"]{content:"fJSViN,"}/*!sc*/
-.kvluBw{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;position:relative;max-width:1082px;}/*!sc*/
-@media (max-width: 767.98px){.kvluBw{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;}}/*!sc*/
-.YEErl{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;position:relative;max-width:1082px;}/*!sc*/
-@media (max-width: 767.98px){.YEErl{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;}}/*!sc*/
-data-styled.g318[id="sc-1f57a4d3-26"]{content:"kvluBw,YEErl,"}/*!sc*/
-.gjouuy{margin-bottom:11.6025rem;}/*!sc*/
-@media (max-width: 767.98px){.gjouuy{margin-bottom:12.5625rem;}}/*!sc*/
-data-styled.g319[id="sc-1f57a4d3-27"]{content:"gjouuy,"}/*!sc*/
-.hRRdGx{margin-bottom:21.8394rem;}/*!sc*/
-@media (max-width: 767.98px){.hRRdGx{margin-bottom:12.5625rem;}}/*!sc*/
-data-styled.g320[id="sc-1f57a4d3-28"]{content:"hRRdGx,"}/*!sc*/
-.fPFSKs{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;}/*!sc*/
-data-styled.g322[id="sc-1f57a4d3-30"]{content:"fPFSKs,"}/*!sc*/
-.hzUYrK{border-radius:1.375rem;height:49.1347rem;width:22.625rem;}/*!sc*/
-@media (max-width: 1199.98px){.hzUYrK{border-radius:1.1875rem;height:41.2627rem;width:19rem;}}/*!sc*/
-@media (max-width: 767.98px){.hzUYrK{border-radius:0.9375rem;height:33.1182rem;width:15.25rem;}}/*!sc*/
-data-styled.g323[id="sc-1f57a4d3-31"]{content:"hzUYrK,"}/*!sc*/
-.jAKtRR{margin-left:3.625rem;}/*!sc*/
-@media (max-width: 991.98px){.jAKtRR{margin-left:3rem;}}/*!sc*/
-@media (max-width: 767.98px){.jAKtRR{margin-left:0;margin-right:0;padding-top:0;margin-bottom:2.7919rem;}}/*!sc*/
-.fagoRB{margin-right:3.625rem;}/*!sc*/
-@media (max-width: 991.98px){.fagoRB{margin-right:3rem;}}/*!sc*/
-@media (max-width: 767.98px){.fagoRB{margin-left:0;margin-right:0;padding-top:0;margin-bottom:2.7919rem;}}/*!sc*/
-data-styled.g324[id="sc-1f57a4d3-32"]{content:"jAKtRR,fagoRB,"}/*!sc*/
-.dOvvST{margin-bottom:1.4375rem;}/*!sc*/
-data-styled.g325[id="sc-1f57a4d3-33"]{content:"dOvvST,"}/*!sc*/
-.jLpACF{color:inherit;font-size:1.8369rem;font-weight:400;letter-spacing:-0.04em;line-height:1.16;max-width:35.625rem;}/*!sc*/
-@media (max-width: 1199.98px){.jLpACF{font-size:1.6rem;}}/*!sc*/
-@media (max-width: 767.98px){.jLpACF{font-size:1.0625rem;line-height:1.21;}}/*!sc*/
-data-styled.g326[id="sc-1f57a4d3-34"]{content:"jLpACF,"}/*!sc*/
-.kNiaxm{color:#ffffff;cursor:pointer;pointer-events:default;}/*!sc*/
-.kNiaxm :active{opacity:0.7!important;}/*!sc*/
-.kNiaxm svg{line-height:0;}/*!sc*/
-data-styled.g327[id="sc-bb4f6a40-0"]{content:"kNiaxm,"}/*!sc*/
-.ehAZyw{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#2565f5;border-radius:50%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:2.875rem;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;pointer-events:none;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;width:2.875rem;}/*!sc*/
-.ehAZyw:hover{background-color:#f4f4f4;border:2.56px solid #2565f5;}/*!sc*/
-.ehAZyw:hover svg{color:#2565f5;}/*!sc*/
-@media (max-width: 767.98px){.ehAZyw{height:1.9187rem;width:1.9187rem;}}/*!sc*/
-data-styled.g328[id="sc-19c53ff7-0"]{content:"ehAZyw,"}/*!sc*/
-.cLSVci{-webkit-transition:color 0.3s ease;transition:color 0.3s ease;}/*!sc*/
-@media (max-width: 767.98px){.cLSVci{height:13.72px;width:13.72px;}}/*!sc*/
-data-styled.g329[id="sc-19c53ff7-1"]{content:"cLSVci,"}/*!sc*/
-.eRgGWC{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:#f4f4f4;border-radius:23.0801px;box-shadow:0px 9.47031px 18.9406px 1.18379px rgba(0,0,0,0.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;max-height:34.38rem;width:23rem;}/*!sc*/
-@media (max-width: 767.98px){.eRgGWC{width:15.375rem;height:22.9819rem;}}/*!sc*/
-data-styled.g331[id="sc-427bea10-0"]{content:"eRgGWC,"}/*!sc*/
-.lOeKa::-webkit-media-controls{display:none!important;}/*!sc*/
-data-styled.g332[id="sc-427bea10-1"]{content:"lOeKa,"}/*!sc*/
-.bSTaoD{border-radius:1.4425rem 1.4425rem 0 0;width:100%;}/*!sc*/
-data-styled.g333[id="sc-427bea10-2"]{content:"bSTaoD,"}/*!sc*/
-.jmEzxf{margin:1rem 0;}/*!sc*/
-@media (max-width: 767.98px){.jmEzxf{margin:0.6563rem 0;}}/*!sc*/
-data-styled.g334[id="sc-427bea10-3"]{content:"jmEzxf,"}/*!sc*/
-.emRVGY{background-color:#f4f4f4;padding-bottom:8.12rem;}/*!sc*/
-data-styled.g335[id="sc-96bd5307-0"]{content:"emRVGY,"}/*!sc*/
-.hYvjpV{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#0e1529;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;padding:0 3.75rem;position:relative;}/*!sc*/
-@media (max-width: 767.98px){.hYvjpV{-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;padding:0 1.875rem;}}/*!sc*/
-data-styled.g336[id="sc-96bd5307-1"]{content:"hYvjpV,"}/*!sc*/
-.dIlJKU{height:2.375rem;left:24%;position:absolute;top:0;width:0.9375rem;}/*!sc*/
-@media (max-width: 767.98px){.dIlJKU{top:-5.625rem;}}/*!sc*/
-data-styled.g337[id="sc-96bd5307-2"]{content:"dIlJKU,"}/*!sc*/
-.iFuQWe{bottom:1rem;height:1.1875rem;left:17%;position:absolute;-webkit-transform:rotate(71.77deg);-moz-transform:rotate(71.77deg);-ms-transform:rotate(71.77deg);transform:rotate(71.77deg);width:1.4375rem;}/*!sc*/
-@media (max-width: 767.98px){.iFuQWe{bottom:16.375rem;left:unset;right:1.0475rem;}}/*!sc*/
-data-styled.g338[id="sc-96bd5307-3"]{content:"iFuQWe,"}/*!sc*/
-.bhwZcG{bottom:38%;height:0.6875rem;left:58%;position:absolute;width:1.75rem;}/*!sc*/
-@media (max-width: 767.98px){.bhwZcG{left:1.25rem;top:28rem;}}/*!sc*/
-data-styled.g339[id="sc-96bd5307-4"]{content:"bhwZcG,"}/*!sc*/
-.jfxWhQ{left:50%;position:absolute;}/*!sc*/
-@media (max-width: 767.98px){.jfxWhQ{left:4.625rem;top:9.8rem;}}/*!sc*/
-@media (max-width: 575.98px){.jfxWhQ{left:-6.375rem;top:14rem;}}/*!sc*/
-data-styled.g340[id="sc-96bd5307-5"]{content:"jfxWhQ,"}/*!sc*/
-.eLCztI{left:50%;position:absolute;}/*!sc*/
-@media (max-width: 767.98px){.eLCztI{left:1.8125rem;top:13.6rem;}}/*!sc*/
-@media (max-width: 575.98px){.eLCztI{left:-7.1875rem;top:28rem;}}/*!sc*/
-data-styled.g341[id="sc-96bd5307-6"]{content:"eLCztI,"}/*!sc*/
-.bvqdNW{z-index:10;}/*!sc*/
-data-styled.g342[id="sc-96bd5307-7"]{content:"bvqdNW,"}/*!sc*/
-.gpzmjz{margin-right:6.6875rem;}/*!sc*/
-@media (max-width: 767.98px){.gpzmjz{margin-bottom:2.5rem;margin-right:0;}}/*!sc*/
-data-styled.g343[id="sc-96bd5307-8"]{content:"gpzmjz,"}/*!sc*/
-.jkZxjh{margin-bottom:1.4375rem;}/*!sc*/
-@media (max-width: 991.98px){.jkZxjh{font-size:2.125rem;}}/*!sc*/
-@media (max-width: 767.98px){.jkZxjh{font-size:1.625rem;}}/*!sc*/
-data-styled.g344[id="sc-96bd5307-9"]{content:"jkZxjh,"}/*!sc*/
-.hqEmME{color:inherit;font-size:1.8369rem;font-weight:400;letter-spacing:-0.04em;line-height:1.16;max-width:35.625rem;}/*!sc*/
-@media (max-width: 991.98px){.hqEmME{font-size:1.625rem;}}/*!sc*/
-@media (max-width: 767.98px){.hqEmME{font-size:1.0625rem;line-height:1.21;}}/*!sc*/
-data-styled.g345[id="sc-96bd5307-10"]{content:"hqEmME,"}/*!sc*/
-.codlop{margin:0 -3.75rem 8rem -3.75rem;}/*!sc*/
-.codlop .rfm-child:nth-child(odd){padding-top:11rem;}/*!sc*/
-@media (max-width: 767.98px){.codlop{margin:0 -1.875rem 4.25rem -1.875rem;}.codlop .rfm-child:nth-child(odd){padding-top:0;}}/*!sc*/
-data-styled.g349[id="sc-e109a494-0"]{content:"codlop,"}/*!sc*/
-.hKDhdX{color:inherit;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:4rem;margin-bottom:1.13rem;max-width:67.625rem;min-height:10rem;width:100%;}/*!sc*/
-@media (max-width: 1199.98px){.hKDhdX{min-height:13rem;}}/*!sc*/
-@media (max-width: 991.98px){.hKDhdX{min-height:12rem;}}/*!sc*/
-@media (max-width: 767.98px){.hKDhdX{max-width:20.25rem;min-height:11rem;}}/*!sc*/
-@media (max-width: 575.98px){.hKDhdX{min-height:13rem;}}/*!sc*/
-data-styled.g356[id="sc-63aa3d40-0"]{content:"hKDhdX,"}/*!sc*/
-.erQPdy{background-color:transparent;border:none;box-sizing:border-box;color:inherit;cursor:pointer;line-height:1;margin:0;padding:0;}/*!sc*/
-data-styled.g357[id="sc-63aa3d40-1"]{content:"erQPdy,"}/*!sc*/
-.cDydQK{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}/*!sc*/
-data-styled.g358[id="sc-63aa3d40-2"]{content:"cDydQK,"}/*!sc*/
-.eknMWz{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:inherit;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-family:Georgia;font-size:2.7221rem;font-weight:400;line-height:1.125;margin:auto 2rem;text-align:center;}/*!sc*/
-@media (max-width: 1199.98px){.eknMWz{font-size:2.6rem;margin:auto 1rem;}}/*!sc*/
-@media (max-width: 991.98px){.eknMWz{font-size:2rem;}}/*!sc*/
-@media (max-width: 767.98px){.eknMWz{font-size:1.8rem;line-height:1.133;margin:auto;}}/*!sc*/
-data-styled.g359[id="sc-63aa3d40-3"]{content:"eknMWz,"}/*!sc*/
-.fUIYJt{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#0e1529;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:row nowrap;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;font-size:1rem;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}/*!sc*/
-data-styled.g363[id="sc-25996879-0"]{content:"fUIYJt,"}/*!sc*/
-.jYyQUc{height:auto;margin-right:-0.6rem;width:19%;}/*!sc*/
-data-styled.g364[id="sc-25996879-1"]{content:"jYyQUc,"}/*!sc*/
-.gsuZYk{height:auto;margin-left:-0.6rem;width:19%;}/*!sc*/
-data-styled.g365[id="sc-25996879-2"]{content:"gsuZYk,"}/*!sc*/
-.kYdRZj{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:column nowrap;-webkit-flex-flow:column nowrap;-ms-flex-flow:column nowrap;flex-flow:column nowrap;gap:0.1rem;margin-top:-0.4rem;text-align:center;}/*!sc*/
-data-styled.g366[id="sc-25996879-3"]{content:"kYdRZj,"}/*!sc*/
-.hwqeb{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:row nowrap;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:62%;}/*!sc*/
-data-styled.g367[id="sc-25996879-4"]{content:"hwqeb,"}/*!sc*/
-.kHAsA-D{color:#ffc90b;height:auto;width:18%;}/*!sc*/
-data-styled.g368[id="sc-25996879-5"]{content:"kHAsA-D,"}/*!sc*/
-.lcwsVs{font-size:2.15em;font-weight:700;letter-spacing:-0.0429rem;line-height:1.22;}/*!sc*/
-data-styled.g369[id="sc-25996879-6"]{content:"lcwsVs,"}/*!sc*/
-.ixUCwY{font-size:0.75em;font-weight:500;letter-spacing:0.0592rem;line-height:1.4;text-transform:uppercase;}/*!sc*/
-data-styled.g370[id="sc-25996879-7"]{content:"ixUCwY,"}/*!sc*/
-.feaKDa{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#0e1529;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;}/*!sc*/
-data-styled.g371[id="sc-15edd07-0"]{content:"feaKDa,"}/*!sc*/
-@media (max-width: 575.98px){.fXsa-da{font-size:0.9rem;}}/*!sc*/
-data-styled.g372[id="sc-15edd07-1"]{content:"fXsa-da,"}/*!sc*/
-.hKEYIi{background-color:#f4f4f4;padding:4.3125rem 3.75rem 18.125rem 3.75rem;}/*!sc*/
-@media (max-width: 767.98px){.hKEYIi{padding:4.3125rem 1.875rem 10.5rem 1.875rem;}}/*!sc*/
-data-styled.g373[id="sc-cf835e37-0"]{content:"hKEYIi,"}/*!sc*/
-.hWoGDn{margin-bottom:5rem;text-align:center;}/*!sc*/
-@media (max-width: 767.98px){.hWoGDn{margin-bottom:2.5rem;}}/*!sc*/
-data-styled.g374[id="sc-cf835e37-1"]{content:"hWoGDn,"}/*!sc*/
-.cKqrBY{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:-3rem;position:relative;}/*!sc*/
-@media (max-width: 991.98px){.cKqrBY{margin-top:6rem;}}/*!sc*/
-@media (max-width: 767.98px){.cKqrBY{margin-top:3rem;}}/*!sc*/
-data-styled.g375[id="sc-177723c2-0"]{content:"cKqrBY,"}/*!sc*/
-.jStGmr img{border-radius:1.1rem;height:43.584rem;width:20rem;}/*!sc*/
-@media (max-width: 1199.98px){.jStGmr img{height:34.8672rem;width:16rem;}}/*!sc*/
-@media (max-width: 767.98px){.jStGmr img{border-radius:0.6rem;height:23.9717rem;width:11rem;}}/*!sc*/
-data-styled.g376[id="sc-177723c2-1"]{content:"jStGmr,"}/*!sc*/
-.cSLfqi{margin-right:-4rem;}/*!sc*/
-@media (max-width: 1199.98px){.cSLfqi{margin-right:-3.2rem;}}/*!sc*/
-@media (max-width: 767.98px){.cSLfqi{margin-right:-2.2rem;}}/*!sc*/
-data-styled.g377[id="sc-177723c2-2"]{content:"cSLfqi,"}/*!sc*/
-.loPrfM{margin-top:12rem;z-index:10;}/*!sc*/
-@media (max-width: 1199.98px){.loPrfM{margin-top:9rem;}}/*!sc*/
-@media (max-width: 767.98px){.loPrfM{margin-top:5.8rem;}}/*!sc*/
-data-styled.g378[id="sc-177723c2-3"]{content:"loPrfM,"}/*!sc*/
-.kzHseh{left:7rem;position:absolute;top:31rem;}/*!sc*/
-.kzHseh img{height:18.8467rem;width:43rem;}/*!sc*/
-@media (max-width: 1199.98px){.kzHseh{left:5.5rem;top:23rem;}.kzHseh img{height:15rem;width:34.4rem;}}/*!sc*/
-@media (max-width: 767.98px){.kzHseh{left:3.6rem;top:13rem;}.kzHseh img{height:12.4375rem;width:28.375rem;}}/*!sc*/
-data-styled.g379[id="sc-177723c2-4"]{content:"kzHseh,"}/*!sc*/
-.hzRifr{bottom:2rem;height:1.875rem;left:-10rem;position:absolute;width:1.25rem;}/*!sc*/
-@media (max-width: 991.98px){.hzRifr{left:-5rem;}}/*!sc*/
-@media (max-width: 575.98px){.hzRifr{bottom:-6rem;left:30%;}}/*!sc*/
-data-styled.g380[id="sc-177723c2-5"]{content:"hzRifr,"}/*!sc*/
-.hYiQTS{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,#000000 75%),linear-gradient( 180deg,rgba(14,94,119,0.43) 30%,rgba(14,34,119,0) 95% ),radial-gradient(50% 50% at 50% 50%,#9cd1f6 0%,#599edf 100%);background-blend-mode:screen,multiply,normal;-webkit-background-position:0 0,0 0,0 0;background-position:0 0,0 0,0 0;background-repeat:no-repeat,no-repeat,no-repeat;-webkit-background-size:100% 23rem,100% 100%,100% 100%;background-size:100% 23rem,100% 100%,100% 100%;height:108rem;position:relative;}/*!sc*/
-@media (max-width: 1199.98px){.hYiQTS{height:98rem;}}/*!sc*/
-@media (max-width: 991.98px){.hYiQTS{height:110rem;}}/*!sc*/
-@media (max-width: 767.98px){.hYiQTS{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,#000000 75%),linear-gradient( 180deg,rgba(14,94,119,0.43) 30%,rgba(14,34,119,0) 95% ),radial-gradient(50% 50% at 50% 50%,#9cd1f6 0%,#599edf 100%);-webkit-background-size:100% 30rem,100% 100%,100% 100%;background-size:100% 30rem,100% 100%,100% 100%;height:90rem;}}/*!sc*/
-@media (max-width: 575.98px){.hYiQTS{height:100rem;}}/*!sc*/
-data-styled.g381[id="sc-6a9b212f-0"]{content:"hYiQTS,"}/*!sc*/
-.cBTCEm{left:0;mix-blend-mode:screen;position:absolute;top:-0.2rem;width:100%;}/*!sc*/
-data-styled.g382[id="sc-6a9b212f-1"]{content:"cBTCEm,"}/*!sc*/
-.dSuikA{display:block;height:23rem;}/*!sc*/
-@media (max-width: 767.98px){.dSuikA{display:none;}}/*!sc*/
-data-styled.g383[id="sc-6a9b212f-2"]{content:"dSuikA,"}/*!sc*/
-.fFHYwP{display:none;}/*!sc*/
-@media (max-width: 767.98px){.fFHYwP{display:block;height:30rem;}}/*!sc*/
-data-styled.g384[id="sc-6a9b212f-3"]{content:"fFHYwP,"}/*!sc*/
-.krZEUd{display:block;height:6.5rem;left:4rem;position:absolute;top:-2.2rem;width:19.875rem;}/*!sc*/
-@media (max-width: 991.98px){.krZEUd{left:50%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);}}/*!sc*/
-@media (max-width: 767.98px){.krZEUd{top:-1.1rem;height:3.2741rem;width:10.0237rem;}}/*!sc*/
-data-styled.g385[id="sc-6a9b212f-4"]{content:"krZEUd,"}/*!sc*/
-.cXRpom{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;color:#f4f4f4;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:4.5rem;padding:0 1.875rem;position:relative;}/*!sc*/
-@media (max-width: 991.98px){.cXRpom{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:1rem;}}/*!sc*/
-data-styled.g386[id="sc-6a9b212f-5"]{content:"cXRpom,"}/*!sc*/
-.bKHMCZ{-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;margin-top:4.5rem;min-width:0;}/*!sc*/
-@media (max-width: 991.98px){.bKHMCZ{-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;}}/*!sc*/
-@media (max-width: 575.98px){.bKHMCZ{margin-top:3rem;}}/*!sc*/
-data-styled.g387[id="sc-6a9b212f-6"]{content:"bKHMCZ,"}/*!sc*/
-.csvDoH{color:#0e1529;}/*!sc*/
-data-styled.g388[id="sc-5d948b49-0"]{content:"csvDoH,"}/*!sc*/
-.fxDyBP{color:inherit;font-size:1.4461rem;font-weight:400;line-height:1.98;margin-bottom:3.5rem;text-align:center;}/*!sc*/
-@media (max-width: 1199.98px){.fxDyBP{font-size:1.25rem;margin-bottom:2rem;}}/*!sc*/
-@media (max-width: 991.98px){.fxDyBP{font-size:1rem;margin-bottom:1.6rem;max-width:31.25rem;margin-left:auto;margin-right:auto;}}/*!sc*/
-@media (max-width: 767.98px){.fxDyBP{font-size:0.875rem;margin-bottom:1rem;}}/*!sc*/
-@media (max-width: 575.98px){.fxDyBP{font-size:1.0625rem;line-height:1.84;margin-bottom:1.8rem;}}/*!sc*/
-data-styled.g389[id="sc-5d948b49-1"]{content:"fxDyBP,"}/*!sc*/
-.iwVkDG{color:inherit;text-transform:none;-webkit-transition:color 0.2s ease-out;transition:color 0.2s ease-out;}/*!sc*/
-.iwVkDG:hover{color:#2565f5;}/*!sc*/
-data-styled.g390[id="sc-5d948b49-2"]{content:"iwVkDG,"}/*!sc*/
-.dayqus{margin-bottom:-36rem;margin-top:-44rem;position:relative;}/*!sc*/
-@media (max-width: 1199.98px){.dayqus{margin-bottom:-18rem;margin-top:-37rem;}}/*!sc*/
-@media (max-width: 991.98px){.dayqus{margin-top:-16rem;}}/*!sc*/
-@media (max-width: 767.98px){.dayqus{margin-bottom:-19rem;margin-top:-14rem;}}/*!sc*/
-@media (max-width: 575.98px){.dayqus{margin-bottom:-21rem;margin-top:-32rem;}}/*!sc*/
-data-styled.g391[id="sc-9d6bab5e-0"]{content:"dayqus,"}/*!sc*/
-.ieqTaf{margin-bottom:-0.5625rem;width:100%;}/*!sc*/
-@media (max-width: 575.98px){.ieqTaf{display:none;}}/*!sc*/
-data-styled.g392[id="sc-9d6bab5e-1"]{content:"ieqTaf,"}/*!sc*/
-.kLkNvY{width:100%;}/*!sc*/
-@media (max-width: 575.98px){.kLkNvY{display:none;}}/*!sc*/
-data-styled.g393[id="sc-9d6bab5e-2"]{content:"kLkNvY,"}/*!sc*/
-.bEpwKd{margin-top:-0.5625rem;width:100%;}/*!sc*/
-@media (max-width: 575.98px){.bEpwKd{display:none;}}/*!sc*/
-data-styled.g394[id="sc-9d6bab5e-3"]{content:"bEpwKd,"}/*!sc*/
-.eovdwk{display:none;width:100%;}/*!sc*/
-@media (max-width: 575.98px){.eovdwk{display:block;}}/*!sc*/
-data-styled.g395[id="sc-9d6bab5e-4"]{content:"eovdwk,"}/*!sc*/
-.gMAGZx{display:none;width:100%;}/*!sc*/
-@media (max-width: 575.98px){.gMAGZx{display:block;}}/*!sc*/
-data-styled.g396[id="sc-9d6bab5e-5"]{content:"gMAGZx,"}/*!sc*/
-.CZPQy{display:none;width:100%;}/*!sc*/
-@media (max-width: 575.98px){.CZPQy{display:block;}}/*!sc*/
-data-styled.g397[id="sc-9d6bab5e-6"]{content:"CZPQy,"}/*!sc*/
-.bINXZv{box-sizing:border-box;left:50%;position:absolute;text-align:center;top:40%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:51.3681rem;}/*!sc*/
-@media (max-width: 1199.98px){.bINXZv{padding:0 2rem;width:46rem;}}/*!sc*/
-@media (max-width: 991.98px){.bINXZv{top:35%;width:40rem;}}/*!sc*/
-@media (max-width: 767.98px){.bINXZv{padding:0 1.6rem;width:27rem;}}/*!sc*/
-@media (max-width: 575.98px){.bINXZv{top:35%;width:98%;}}/*!sc*/
-data-styled.g398[id="sc-9d6bab5e-7"]{content:"bINXZv,"}/*!sc*/
-.hfUrJd{background-color:#f4f4f4;padding-bottom:12.9769rem;}/*!sc*/
-@media (max-width: 1199.98px){.hfUrJd{padding-bottom:10rem;}}/*!sc*/
-@media (max-width: 767.98px){.hfUrJd{padding-bottom:6.25rem;}}/*!sc*/
-data-styled.g407[id="sc-eba4375f-0"]{content:"hfUrJd,"}/*!sc*/
-.cDixrw{-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:row nowrap;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;gap:2.5625rem;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;position:relative;}/*!sc*/
-@media (max-width: 991.98px){.cDixrw{gap:1.2rem;padding:0 2rem;}}/*!sc*/
-@media (max-width: 767.98px){.cDixrw{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:0 1.5rem;}}/*!sc*/
-data-styled.g408[id="sc-eba4375f-1"]{content:"cDixrw,"}/*!sc*/
-.gHWWyF{background:#ffffff;box-shadow:10.6112px 22.6363px 22px rgba(0,0,0,0.04),7.35053px 15.6804px 13.9697px rgba(0,0,0,0.0314869),4.79517px 10.2292px 8.40233px rgba(0,0,0,0.0257726),2.87091px 6.12434px 4.79767px rgba(0,0,0,0.0217376),1.50352px 3.20736px 2.65539px rgba(0,0,0,0.0182624),0.618731px 1.3199px 1.47522px rgba(0,0,0,0.0142274),0.142308px 0.303577px 0.756851px rgba(0,0,0,0.00851312);border-radius:0.4375rem;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;margin-top:-6rem;padding:38px 3.5rem 2.375rem 2.5rem;}/*!sc*/
-@media (max-width: 1199.98px){.gHWWyF{padding:2.25rem 2.5rem 2.25rem 2rem;}}/*!sc*/
-@media (max-width: 991.98px){.gHWWyF{padding:1.65rem 1.8rem 1.65rem 1.6rem;}}/*!sc*/
-@media (max-width: 767.98px){.gHWWyF{margin-top:0;padding:1.65rem 1.8rem 1.65rem 1.6rem;}.gHWWyF:first-child{margin-top:-4rem;}}/*!sc*/
-@media (max-width: 575.98px){.gHWWyF:first-child{margin-top:-5.5rem;}}/*!sc*/
-data-styled.g409[id="sc-eba4375f-2"]{content:"gHWWyF,"}/*!sc*/
-.gHFZin{color:#0d34a5;font-size:1.2177rem;font-weight:700;line-height:1.23;margin-bottom:0.5rem;margin-right:2rem;}/*!sc*/
-.gHFZin em,.gHFZin i{font-style:italic;}/*!sc*/
-@media (max-width: 991.98px){.gHFZin{font-size:1.1rem;margin-right:0;}}/*!sc*/
-data-styled.g410[id="sc-eba4375f-3"]{content:"gHFZin,"}/*!sc*/
-.dfsPly{color:#0e1529;font-size:1rem;font-weight:400;line-height:1.1875;}/*!sc*/
-@media (max-width: 991.98px){.dfsPly{font-size:0.95rem;}}/*!sc*/
-data-styled.g411[id="sc-eba4375f-4"]{content:"dfsPly,"}/*!sc*/
-.kEOVZY{height:auto;position:absolute;}/*!sc*/
-data-styled.g480[id="sc-f18cd1c0-0"]{content:"kEOVZY,"}/*!sc*/
-.cOfnoG{-webkit-animation:dhlgKM 1.5s ease-out forwards;animation:dhlgKM 1.5s ease-out forwards;aspect-ratio:135/111;opacity:0.6;right:8rem;top:-1rem;width:1.25rem;}/*!sc*/
-@media (max-width: 767.98px){.cOfnoG{right:2rem;width:0.95rem;}}/*!sc*/
-data-styled.g481[id="sc-f18cd1c0-1"]{content:"cOfnoG,"}/*!sc*/
-.hncWeI{-webkit-animation:fFwbBa 1.5s ease-out forwards;animation:fFwbBa 1.5s ease-out forwards;aspect-ratio:286/190;opacity:0.6;right:11rem;top:0;width:0.85rem;}/*!sc*/
-@media (max-width: 767.98px){.hncWeI{right:5rem;width:0.75rem;}}/*!sc*/
-data-styled.g482[id="sc-f18cd1c0-2"]{content:"hncWeI,"}/*!sc*/
-.eeviRS{-webkit-animation:jaRyIm 1.2s ease-out forwards;animation:jaRyIm 1.2s ease-out forwards;aspect-ratio:1204/560;left:-30rem;top:-2rem;width:46rem;}/*!sc*/
-@media (max-width: 991.98px){.eeviRS{left:-31rem;}}/*!sc*/
-@media (max-width: 767.98px){.eeviRS{left:-32rem;top:3rem;}}/*!sc*/
-data-styled.g483[id="sc-f18cd1c0-3"]{content:"eeviRS,"}/*!sc*/
-.bSUzRg{-webkit-animation:jaRyIm 1.2s ease-out forwards;animation:jaRyIm 1.2s ease-out forwards;aspect-ratio:800/350;left:-18rem;top:9rem;width:27rem;}/*!sc*/
-@media (max-width: 767.98px){.bSUzRg{left:-20rem;top:12rem;}}/*!sc*/
-data-styled.g484[id="sc-f18cd1c0-4"]{content:"bSUzRg,"}/*!sc*/
-.bBXevb{aspect-ratio:800/350;left:-2rem;top:15rem;-webkit-transform:matrix(-1,0,0,1,0,0);-moz-transform:matrix(-1,0,0,1,0,0);-ms-transform:matrix(-1,0,0,1,0,0);transform:matrix(-1,0,0,1,0,0);width:19rem;}/*!sc*/
-@media (max-width: 767.98px){.bBXevb{left:-6rem;top:19rem;}}/*!sc*/
-data-styled.g485[id="sc-f18cd1c0-5"]{content:"bBXevb,"}/*!sc*/
-.EdKu{-webkit-animation:dJfEPY 0.8s ease-out forwards;animation:dJfEPY 0.8s ease-out forwards;aspect-ratio:144/358;left:2.5rem;top:21rem;width:1rem;}/*!sc*/
-@media (max-width: 767.98px){.EdKu{display:none;}}/*!sc*/
-data-styled.g486[id="sc-f18cd1c0-6"]{content:"EdKu,"}/*!sc*/
-.hQKRHA{-webkit-animation:bHoftU 1.5s ease-out forwards;animation:bHoftU 1.5s ease-out forwards;aspect-ratio:338/134;bottom:4rem;right:0;width:2rem;}/*!sc*/
-@media (max-width: 1199.98px){.hQKRHA{bottom:8.5rem;right:3rem;}}/*!sc*/
-@media (max-width: 991.98px){.hQKRHA{bottom:2.5rem;right:4rem;}}/*!sc*/
-@media (max-width: 767.98px){.hQKRHA{bottom:-4rem;right:3rem;}}/*!sc*/
-data-styled.g487[id="sc-f18cd1c0-7"]{content:"hQKRHA,"}/*!sc*/
-.eiOhei{-webkit-animation:isVaKT 1.5s ease-out forwards;animation:isVaKT 1.5s ease-out forwards;aspect-ratio:132/204;bottom:1rem;opacity:0.75;right:17rem;width:0.75rem;}/*!sc*/
-@media (max-width: 1199.98px){.eiOhei{right:8rem;}}/*!sc*/
-@media (max-width: 991.98px){.eiOhei{bottom:-2rem;right:10rem;}}/*!sc*/
-@media (max-width: 767.98px){.eiOhei{bottom:-5rem;left:4rem;}}/*!sc*/
-data-styled.g488[id="sc-f18cd1c0-8"]{content:"eiOhei,"}/*!sc*/
-.leLMiB{-webkit-animation:dMvtuC 1.5s ease-out forwards;animation:dMvtuC 1.5s ease-out forwards;aspect-ratio:800/350;right:-3rem;top:32.5rem;-webkit-transform:translate(50%,0);-moz-transform:translate(50%,0);-ms-transform:translate(50%,0);transform:translate(50%,0);width:27rem;}/*!sc*/
-@media (max-width: 1199.98px){.leLMiB{right:-2rem;top:48rem;}}/*!sc*/
-@media (max-width: 991.98px){.leLMiB{right:-4.5rem;top:36rem;}}/*!sc*/
-@media (max-width: 767.98px){.leLMiB{right:-6rem;top:52rem;}}/*!sc*/
-data-styled.g489[id="sc-f18cd1c0-9"]{content:"leLMiB,"}/*!sc*/
-.fdHNuO{aspect-ratio:800/350;right:-10rem;top:32.5rem;-webkit-transform:translate(50%,2.75rem) matrix(-1,0,0,1,0,0);-moz-transform:translate(50%,2.75rem) matrix(-1,0,0,1,0,0);-ms-transform:translate(50%,2.75rem) matrix(-1,0,0,1,0,0);transform:translate(50%,2.75rem) matrix(-1,0,0,1,0,0);width:27rem;}/*!sc*/
-@media (max-width: 1199.98px){.fdHNuO{right:-8rem;top:48rem;}}/*!sc*/
-@media (max-width: 991.98px){.fdHNuO{top:36rem;}}/*!sc*/
-@media (max-width: 767.98px){.fdHNuO{right:-9rem;top:52rem;}}/*!sc*/
-data-styled.g490[id="sc-f18cd1c0-10"]{content:"fdHNuO,"}/*!sc*/
-.koFjlx{aspect-ratio:800/350;bottom:-8rem;left:-30rem;width:27rem;}/*!sc*/
-@media (max-width: 1199.98px){.koFjlx{bottom:-12rem;left:-15rem;}}/*!sc*/
-@media (max-width: 767.98px){.koFjlx{bottom:-10rem;left:-19rem;}}/*!sc*/
-data-styled.g491[id="sc-f18cd1c0-11"]{content:"koFjlx,"}/*!sc*/
-.iSOICW{background:rgba(255,255,255,0.6);border-radius:2rem;height:0.45rem;overflow:hidden;width:0.45rem;-webkit-transition:width 300ms ease;transition:width 300ms ease;width:2.6rem;}/*!sc*/
-.iSOICW::after{-webkit-animation:jPNuhD 8000ms linear;animation:jPNuhD 8000ms linear;background:#ffffff;content:'';display:block;height:100%;transform-origin:0;width:100%;}/*!sc*/
-.jXWRPf{background:rgba(255,255,255,0.6);border-radius:2rem;height:0.45rem;overflow:hidden;width:0.45rem;-webkit-transition:width 300ms ease;transition:width 300ms ease;}/*!sc*/
-data-styled.g499[id="sc-44f55523-0"]{content:"iSOICW,jXWRPf,"}/*!sc*/
-.jRkMZR{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:0.5rem;}/*!sc*/
-data-styled.g500[id="sc-4d5597e0-0"]{content:"jRkMZR,"}/*!sc*/
-.hpwSYi{color:rgba(255,255,255,0.6);}/*!sc*/
-.hpwSYi path{stroke-width:3;}/*!sc*/
-.hpwSYi:first-child{margin-right:0.8rem;}/*!sc*/
-.hpwSYi:last-child{margin-left:0.8rem;}/*!sc*/
-data-styled.g501[id="sc-4d5597e0-1"]{content:"hpwSYi,"}/*!sc*/
-.iTDUKs{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;-webkit-box-flex-flow:column nowrap;-webkit-flex-flow:column nowrap;-ms-flex-flow:column nowrap;flex-flow:column nowrap;width:24rem;}/*!sc*/
-@media (max-width: 991.98px){.iTDUKs{width:16rem;}}/*!sc*/
-@media (max-width: 767.98px){.iTDUKs{max-width:100%;width:18rem;}}/*!sc*/
-data-styled.g506[id="sc-2e01b3bf-0"]{content:"iTDUKs,"}/*!sc*/
-.lmjEYe{-webkit-align-items:stretch;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;position:relative;}/*!sc*/
-data-styled.g507[id="sc-2e01b3bf-1"]{content:"lmjEYe,"}/*!sc*/
-.hUncHL{aspect-ratio:900/1675;border-radius:0;display:block;height:auto;object-fit:cover;object-position:center 0;width:100%;}/*!sc*/
-@media (max-width: 767.98px){.hUncHL{aspect-ratio:19/21;border-bottom-left-radius:0;border-bottom-right-radius:0;}}/*!sc*/
-data-styled.g508[id="sc-2e01b3bf-2"]{content:"hUncHL,"}/*!sc*/
-.cQrpsW{display:none;}/*!sc*/
-@media (max-width: 767.98px){.cQrpsW{aspect-ratio:1175/515;bottom:0;display:block;height:auto;left:50%;max-width:90vw;position:absolute;-webkit-transform:translate(-50%,65%);-moz-transform:translate(-50%,65%);-ms-transform:translate(-50%,65%);transform:translate(-50%,65%);width:120%;}}/*!sc*/
-data-styled.g510[id="sc-2e01b3bf-4"]{content:"cQrpsW,"}/*!sc*/
-@-webkit-keyframes dhlgKM{from{-webkit-transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);-moz-transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);-ms-transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);}to{-webkit-transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);-moz-transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);-ms-transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);}}/*!sc*/
-@keyframes dhlgKM{from{-webkit-transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);-moz-transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);-ms-transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);transform:translate(100%,-20%) matrix(0.93,0.37,0.37,-0.93,0,0);}to{-webkit-transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);-moz-transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);-ms-transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);transform:translate(0%,0%) matrix(0.93,0.37,0.37,-0.93,0,0);}}/*!sc*/
-data-styled.g522[id="sc-keyframes-dhlgKM"]{content:"dhlgKM,"}/*!sc*/
-@-webkit-keyframes fFwbBa{from{-webkit-transform:translate(10%,-80%);-moz-transform:translate(10%,-80%);-ms-transform:translate(10%,-80%);transform:translate(10%,-80%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-@keyframes fFwbBa{from{-webkit-transform:translate(10%,-80%);-moz-transform:translate(10%,-80%);-ms-transform:translate(10%,-80%);transform:translate(10%,-80%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-data-styled.g523[id="sc-keyframes-fFwbBa"]{content:"fFwbBa,"}/*!sc*/
-@-webkit-keyframes jaRyIm{from{-webkit-transform:translate(0%,-10%);-moz-transform:translate(0%,-10%);-ms-transform:translate(0%,-10%);transform:translate(0%,-10%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-@keyframes jaRyIm{from{-webkit-transform:translate(0%,-10%);-moz-transform:translate(0%,-10%);-ms-transform:translate(0%,-10%);transform:translate(0%,-10%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-data-styled.g524[id="sc-keyframes-jaRyIm"]{content:"jaRyIm,"}/*!sc*/
-@-webkit-keyframes dJfEPY{from{-webkit-transform:translate(-120%,0%);-moz-transform:translate(-120%,0%);-ms-transform:translate(-120%,0%);transform:translate(-120%,0%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-@keyframes dJfEPY{from{-webkit-transform:translate(-120%,0%);-moz-transform:translate(-120%,0%);-ms-transform:translate(-120%,0%);transform:translate(-120%,0%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-data-styled.g525[id="sc-keyframes-dJfEPY"]{content:"dJfEPY,"}/*!sc*/
-@-webkit-keyframes bHoftU{from{-webkit-transform:translate(-50%,-250%);-moz-transform:translate(-50%,-250%);-ms-transform:translate(-50%,-250%);transform:translate(-50%,-250%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-@keyframes bHoftU{from{-webkit-transform:translate(-50%,-250%);-moz-transform:translate(-50%,-250%);-ms-transform:translate(-50%,-250%);transform:translate(-50%,-250%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-data-styled.g526[id="sc-keyframes-bHoftU"]{content:"bHoftU,"}/*!sc*/
-@-webkit-keyframes isVaKT{from{-webkit-transform:translate(-80%,0%);-moz-transform:translate(-80%,0%);-ms-transform:translate(-80%,0%);transform:translate(-80%,0%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-@keyframes isVaKT{from{-webkit-transform:translate(-80%,0%);-moz-transform:translate(-80%,0%);-ms-transform:translate(-80%,0%);transform:translate(-80%,0%);}to{-webkit-transform:translate(0%,0%);-moz-transform:translate(0%,0%);-ms-transform:translate(0%,0%);transform:translate(0%,0%);}}/*!sc*/
-data-styled.g527[id="sc-keyframes-isVaKT"]{content:"isVaKT,"}/*!sc*/
-@-webkit-keyframes dMvtuC{from{-webkit-transform:translate(50%,15%);-moz-transform:translate(50%,15%);-ms-transform:translate(50%,15%);transform:translate(50%,15%);}to{-webkit-transform:translate(50%,0%);-moz-transform:translate(50%,0%);-ms-transform:translate(50%,0%);transform:translate(50%,0%);}}/*!sc*/
-@keyframes dMvtuC{from{-webkit-transform:translate(50%,15%);-moz-transform:translate(50%,15%);-ms-transform:translate(50%,15%);transform:translate(50%,15%);}to{-webkit-transform:translate(50%,0%);-moz-transform:translate(50%,0%);-ms-transform:translate(50%,0%);transform:translate(50%,0%);}}/*!sc*/
-data-styled.g528[id="sc-keyframes-dMvtuC"]{content:"dMvtuC,"}/*!sc*/
-@-webkit-keyframes jPNuhD{from{-webkit-transform:scaleX(0%);-moz-transform:scaleX(0%);-ms-transform:scaleX(0%);transform:scaleX(0%);}to{-webkit-transform:scaleX(100%);-moz-transform:scaleX(100%);-ms-transform:scaleX(100%);transform:scaleX(100%);}}/*!sc*/
-@keyframes jPNuhD{from{-webkit-transform:scaleX(0%);-moz-transform:scaleX(0%);-ms-transform:scaleX(0%);transform:scaleX(0%);}to{-webkit-transform:scaleX(100%);-moz-transform:scaleX(100%);-ms-transform:scaleX(100%);transform:scaleX(100%);}}/*!sc*/
-data-styled.g529[id="sc-keyframes-jPNuhD"]{content:"jPNuhD,"}/*!sc*/
-.dQZgWs{-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;-webkit-box-flex-flow:row nowrap;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;flex-flow:row nowrap;width:100%;}/*!sc*/
-@media (max-width: 767.98px){.dQZgWs{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;}}/*!sc*/
-data-styled.g680[id="sc-59ac1fb3-0"]{content:"dQZgWs,"}/*!sc*/
-.iOSrPJ{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:1.5rem;font-weight:500;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;letter-spacing:0.03rem;line-height:1.4;min-width:0;position:relative;}/*!sc*/
-@media (max-width: 1199.98px){.iOSrPJ{font-size:1.3rem;}}/*!sc*/
-@media (max-width: 991.98px){.iOSrPJ{font-size:1.1rem;}}/*!sc*/
-@media (max-width: 767.98px){.iOSrPJ{display:block;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;font-size:1.4rem;letter-spacing:0.02rem;max-width:34rem;text-align:center;}}/*!sc*/
-@media (max-width: 575.98px){.iOSrPJ{font-size:1.1rem;}}/*!sc*/
-data-styled.g681[id="sc-59ac1fb3-1"]{content:"iOSrPJ,"}/*!sc*/
-.fjxOmh{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:0 1 40%;-ms-flex:0 1 40%;flex:0 1 40%;min-height:0;margin-left:3rem;margin-top:0.5rem;}/*!sc*/
-@media (max-width: 991.98px){.fjxOmh{margin-left:3rem;}}/*!sc*/
-@media (max-width: 767.98px){.fjxOmh{-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-left:0;margin-top:1.2rem;}}/*!sc*/
-data-styled.g682[id="sc-59ac1fb3-2"]{content:"fjxOmh,"}/*!sc*/
-.boKmxF{border:1px solid #ffffff;border-radius:50%;display:block;-webkit-flex:0 1 0;-ms-flex:0 1 0;flex:0 1 0;height:auto;margin-right:1.375rem;width:6rem;}/*!sc*/
-@media (max-width: 991.98px){.boKmxF{width:4rem;}}/*!sc*/
-@media (max-width: 767.98px){.boKmxF{margin-bottom:1rem;margin-right:0;width:6rem;}}/*!sc*/
-data-styled.g683[id="sc-59ac1fb3-3"]{content:"boKmxF,"}/*!sc*/
-.cjNpnT{font-size:1.4rem;font-weight:700;line-height:1.5;}/*!sc*/
-@media (max-width: 1199.98px){.cjNpnT{font-size:1.25rem;}}/*!sc*/
-@media (max-width: 991.98px){.cjNpnT{font-size:0.95rem;}}/*!sc*/
-@media (max-width: 767.98px){.cjNpnT{font-size:1.2rem;text-align:center;}}/*!sc*/
-data-styled.g685[id="sc-59ac1fb3-5"]{content:"cjNpnT,"}/*!sc*/
-.cziKjl{font-size:1rem;line-height:1.35;}/*!sc*/
-@media (max-width: 1199.98px){.cziKjl{font-size:0.85rem;}}/*!sc*/
-@media (max-width: 991.98px){.cziKjl{font-size:0.75rem;}}/*!sc*/
-@media (max-width: 767.98px){.cziKjl{font-size:0.85rem;max-width:25rem;text-align:center;}}/*!sc*/
-data-styled.g686[id="sc-59ac1fb3-6"]{content:"cziKjl,"}/*!sc*/
-.bPEtkn{color:#ffffff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-flow:column nowrap;-webkit-flex-flow:column nowrap;-ms-flex-flow:column nowrap;flex-flow:column nowrap;height:17rem;margin:0 auto;max-width:65.25rem;padding:2rem 2.5rem 3rem 2.5rem;position:relative;}/*!sc*/
-.bPEtkn::before{background:rgba(255,255,255,0.26);border:1px solid #ffffff;border-radius:0.75rem 0.75rem 0 0;content:'';-webkit-mask-image:linear-gradient(180deg,black 0%,transparent 98%);mask-image:linear-gradient(180deg,black 0%,transparent 98%);opacity:0.2;position:absolute;inset:0 0 0 0;}/*!sc*/
-@media (max-width: 991.98px){.bPEtkn{height:15rem;padding:1.8rem 1.8rem 3rem 1.8rem;}}/*!sc*/
-@media (max-width: 767.98px){.bPEtkn{height:28rem;padding:2rem 1.8rem 3rem 1.8rem;}}/*!sc*/
-@media (max-width: 575.98px){.bPEtkn{height:30rem;padding:2rem 1.5rem 3rem 1.5rem;}}/*!sc*/
-data-styled.g687[id="sc-a9534c40-0"]{content:"bPEtkn,"}/*!sc*/
-.cUTdbf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;min-height:0;position:relative;}/*!sc*/
-data-styled.g688[id="sc-a9534c40-1"]{content:"cUTdbf,"}/*!sc*/
-.ewsIbk{-webkit-align-self:center;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;margin-top:1.75rem;position:relative;}/*!sc*/
-@media (max-width: 767.98px){.ewsIbk{margin-top:1.4rem;}}/*!sc*/
-data-styled.g689[id="sc-a9534c40-2"]{content:"ewsIbk,"}/*!sc*/
-.bVarxW{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#f4f4f4;border:2px solid #ffc90b;border-radius:0.78rem;box-shadow:0.51623px 1.23777px 4.67872px 0px rgba(0,0,0,0.04),2.24447px 5.38162px 9.11953px 0px rgba(0,0,0,0.06),5.45406px 13.07733px 16.41516px 0px rgba(0,0,0,0.08),10.41434px 24.9707px 29.65831px 0px rgba(0,0,0,0.1),17.39463px 41.70753px 51.94169px 0px rgba(0,0,0,0.12);box-sizing:border-box;color:#0e1529;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-family:Inter;font-style:normal;font-weight:400;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;line-height:normal;padding:1.4rem 1.5rem;position:relative;-webkit-transition:background-color 0.3s ease-in-out;transition:background-color 0.3s ease-in-out;background-color:#f4f4f4;}/*!sc*/
-.bVarxW:hover{background-color:#f4f4f4;}/*!sc*/
-@media (max-width: 991.98px){.bVarxW{padding:1rem 1.2rem;}}/*!sc*/
-@media (max-width: 767.98px){.bVarxW{padding:1.2rem;}}/*!sc*/
-.hOhlrz{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:rgba(255, 255, 255, 0.26);border:1px solid rgba(255, 255, 255, 0.46);border-radius:0.78rem;box-shadow:0.51623px 1.23777px 4.67872px 0px rgba(0,0,0,0.04),2.24447px 5.38162px 9.11953px 0px rgba(0,0,0,0.06),5.45406px 13.07733px 16.41516px 0px rgba(0,0,0,0.08),10.41434px 24.9707px 29.65831px 0px rgba(0,0,0,0.1),17.39463px 41.70753px 51.94169px 0px rgba(0,0,0,0.12);box-sizing:border-box;color:#0e1529;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-family:Inter;font-style:normal;font-weight:400;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;line-height:normal;padding:1.4rem 1.5rem;position:relative;-webkit-transition:background-color 0.3s ease-in-out;transition:background-color 0.3s ease-in-out;}/*!sc*/
-.hOhlrz:hover{background-color:#f4f4f4;}/*!sc*/
-@media (max-width: 991.98px){.hOhlrz{padding:1rem 1.2rem;}}/*!sc*/
-@media (max-width: 767.98px){.hOhlrz{padding:1.2rem;}}/*!sc*/
-data-styled.g1023[id="sc-18e17495-0"]{content:"bVarxW,hOhlrz,"}/*!sc*/
-.keYuwA{border-radius:0.4016rem;background-color:#ffb300;box-shadow:0.09846px 0.18051px 3.11311px 0px rgba(0,0,0,0),0.43322px 0.79423px 6.44596px 0px rgba(0,0,0,0.01),1.06335px 1.94947px 12.8553px 0px rgba(0,0,0,0.01),2.04793px 3.75454px 25.19785px 0px rgba(0,0,0,0.01),3.44603px 6.31773px 46.33034px 0px rgba(0,0,0,0.02),5.31674px 9.74735px 79.10951px 0px rgba(0,0,0,0.02);color:#0e1529;display:inline-block;font-size:0.95rem;font-style:normal;font-weight:700;left:1.5rem;line-height:1.1;padding:0.375rem 1.6rem;position:absolute;top:-1rem;}/*!sc*/
-@media (max-width: 991.98px){.keYuwA{font-size:0.85rem;left:1.1rem;padding:0.3rem 1rem;top:-0.9rem;}}/*!sc*/
-data-styled.g1024[id="sc-18e17495-1"]{content:"keYuwA,"}/*!sc*/
-.cGosuZ{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}/*!sc*/
-data-styled.g1025[id="sc-18e17495-2"]{content:"cGosuZ,"}/*!sc*/
-.kICAFq{font-size:1.1rem;font-style:normal;font-weight:600;line-height:normal;}/*!sc*/
-@media (max-width: 991.98px){.kICAFq{font-size:0.9rem;}}/*!sc*/
-@media (max-width: 767.98px){.kICAFq{font-size:0.875rem;}}/*!sc*/
-data-styled.g1026[id="sc-18e17495-3"]{content:"kICAFq,"}/*!sc*/
-.eFqPEy{font-size:2rem;font-weight:800;line-height:1.3;}/*!sc*/
-@media (max-width: 991.98px){.eFqPEy{font-size:1.7rem;}}/*!sc*/
-data-styled.g1027[id="sc-18e17495-4"]{content:"eFqPEy,"}/*!sc*/
-.bCkwvG{font-size:1.1rem;}/*!sc*/
-@media (max-width: 991.98px){.bCkwvG{font-size:0.9rem;}}/*!sc*/
-data-styled.g1028[id="sc-18e17495-5"]{content:"bCkwvG,"}/*!sc*/
-.ifkduD.MuiCheckbox-root{padding:0;}/*!sc*/
-.ifkduD.MuiCheckbox-root.MuiSvgIcon-root{width:2rem;height:2rem;}/*!sc*/
-data-styled.g1029[id="sc-18e17495-6"]{content:"ifkduD,"}/*!sc*/
-.cLmGrC{background:#d9d9d9;border-radius:0.3rem;box-shadow:0px 0px 4px 0px rgba(0,0,0,0.25) inset;color:#a8a8a8;height:2rem;width:2rem;padding:0.375rem;color:#00a93c;}/*!sc*/
-@media (max-width: 767.98px){.cLmGrC{width:1.65rem;height:1.65rem;}}/*!sc*/
-data-styled.g1030[id="sc-18e17495-7"]{content:"cLmGrC,"}/*!sc*/
-.fpqGkO{height:2rem;overflow:hidden;width:2rem;}/*!sc*/
-@media (max-width: 767.98px){.fpqGkO{height:1.65rem;width:1.65rem;}}/*!sc*/
-data-styled.g1031[id="sc-18e17495-8"]{content:"fpqGkO,"}/*!sc*/
-.cHogbl{min-height:3.4375rem;position:relative;z-index:101;}/*!sc*/
-data-styled.g1032[id="sc-c54e4a80-0"]{content:"cHogbl,"}/*!sc*/
-.bPEvBg{background-color:#ffb300;border-radius:0.5rem;border:none;bottom:0;color:#0e1529;cursor:pointer;font-size:1.1rem;font-family:inherit;font-weight:700;height:100%;left:0;line-height:1.2;opacity:1;padding:0 3rem;pointer-events:auto;position:absolute;-webkit-transition:background-color 0.3s ease-in-out;transition:background-color 0.3s ease-in-out;}/*!sc*/
-.bPEvBg:hover{background-color:#ffb300D9;}/*!sc*/
-@media (max-width: 1199.98px){.bPEvBg{font-size:1.2rem;}}/*!sc*/
-@media (max-width: 767.98px){.bPEvBg{font-size:1.25rem;left:50%;line-height:1.2;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);min-width:15rem;}}/*!sc*/
-data-styled.g1033[id="sc-c54e4a80-1"]{content:"bPEvBg,"}/*!sc*/
-.ihMKzi{border-top:1px solid rgba(255,255,255,0.28);font-size:0.85rem;margin-top:1.78rem;padding-top:1.5rem;position:relative;z-index:101;}/*!sc*/
-@media (max-width: 991.98px){.ihMKzi{margin-top:1.375rem;padding-top:1.375rem;}}/*!sc*/
-@media (max-width: 767.98px){.ihMKzi{text-align:center;}}/*!sc*/
-data-styled.g1035[id="sc-d63dd9b3-0"]{content:"ihMKzi,"}/*!sc*/
-.fQQQlL{color:inherit;-webkit-transition:color 0.2s ease-out;transition:color 0.2s ease-out;}/*!sc*/
-.fQQQlL:hover{color:#ffb300;}/*!sc*/
-data-styled.g1036[id="sc-d63dd9b3-1"]{content:"fQQQlL,"}/*!sc*/
-.gFkBRs{color:#f4f4f4;max-width:33rem;}/*!sc*/
-@media (max-width: 991.98px){.gFkBRs{max-width:33rem;}}/*!sc*/
-.gFkBQL{color:#f4f4f4;max-width:33rem;}/*!sc*/
-@media (max-width: 991.98px){.gFkBQL{max-width:30rem;}}/*!sc*/
-data-styled.g1037[id="sc-29e7dd64-0"]{content:"gFkBRs,gFkBQL,"}/*!sc*/
-.hQmGNC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:1.375rem;margin-bottom:1.25rem;}/*!sc*/
-data-styled.g1038[id="sc-29e7dd64-1"]{content:"hQmGNC,"}/*!sc*/
-.dxUwIo{font-size:0.9rem;font-style:normal;font-weight:400;line-height:normal;margin-bottom:1.75rem;max-width:30rem;}/*!sc*/
-@media (max-width: 991.98px){.dxUwIo{font-size:0.85rem;}}/*!sc*/
-@media (max-width: 767.98px){.dxUwIo{font-size:0.75rem;margin-bottom:1.1875rem;text-align:center;}}/*!sc*/
-data-styled.g1039[id="sc-29e7dd64-2"]{content:"dxUwIo,"}/*!sc*/
-.idJfJN{background:linear-gradient( 354.34deg,rgba(14,34,119,0.43) -82.02%,rgba(14,34,119,0) 42.34% ),linear-gradient( 247.08deg,rgba(14,34,119,0.43) 5.94%,rgba(14,34,119,0) 92.57% ),linear-gradient( 180deg,rgba(73,171,182,0) 0%,rgba(248,235,228,0.324) 113.02% ),linear-gradient( 180deg,rgba(63,136,193,0.2) 0%,rgba(207,218,225,0.2) 100% ),#208fe4;background-blend-mode:multiply,multiply,normal,normal,normal;color:#f4f4f4;padding:3rem 0 12rem 0;position:relative;}/*!sc*/
-@media (max-width: 767.98px){.idJfJN{padding-top:2rem;}}/*!sc*/
-data-styled.g1042[id="sc-bb8f313f-0"]{content:"idJfJN,"}/*!sc*/
-.iMzZdq{position:relative;}/*!sc*/
-@media (max-width: 767.98px){.iMzZdq .sc-f18cd1c0-3{left:-35rem;top:8rem;}.iMzZdq .sc-f18cd1c0-4{left:-21rem;top:17rem;}.iMzZdq .sc-f18cd1c0-5{left:-14rem;top:24rem;}}/*!sc*/
-data-styled.g1043[id="sc-bb8f313f-1"]{content:"iMzZdq,"}/*!sc*/
-.fKQmhp{margin-bottom:3.6rem;position:relative;}/*!sc*/
-@media (max-width: 767.98px){.fKQmhp{margin-bottom:2.6rem;}}/*!sc*/
-data-styled.g1044[id="sc-bb8f313f-2"]{content:"fKQmhp,"}/*!sc*/
-.dPrUWE{font-size:3rem;font-weight:600;letter-spacing:-0.1252rem;line-height:1.12;margin:0 auto;text-align:center;}/*!sc*/
-@media (max-width: 1199.98px){.dPrUWE{font-size:2.6rem;}}/*!sc*/
-@media (max-width: 991.98px){.dPrUWE{font-size:2.2rem;}}/*!sc*/
-@media (max-width: 575.98px){.dPrUWE{font-size:2rem;max-width:20rem;}}/*!sc*/
-.lmQeTU{font-size:3rem;font-weight:600;letter-spacing:-0.1252rem;line-height:1.12;margin:0 auto;text-align:center;margin:0 0 3rem 0;max-width:30rem;text-align:left;}/*!sc*/
-@media (max-width: 1199.98px){.lmQeTU{font-size:2.6rem;}}/*!sc*/
-@media (max-width: 991.98px){.lmQeTU{font-size:2.2rem;}}/*!sc*/
-@media (max-width: 575.98px){.lmQeTU{font-size:2rem;max-width:20rem;}}/*!sc*/
-@media (max-width: 991.98px){.lmQeTU{font-size:2.6rem;margin:0 auto 3rem auto;max-width:25rem;text-align:center;}}/*!sc*/
-@media (max-width: 575.98px){.lmQeTU{font-size:2rem;max-width:20rem;}}/*!sc*/
-data-styled.g1045[id="sc-bb8f313f-3"]{content:"dPrUWE,lmQeTU,"}/*!sc*/
-.dJxcMb{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:4.5rem;margin:3rem auto 4rem auto;max-width:55rem;}/*!sc*/
-@media (max-width: 991.98px){.dJxcMb{gap:2.5rem;margin:2rem auto 3rem auto;}}/*!sc*/
-@media (max-width: 767.98px){.dJxcMb{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;margin:3rem auto 4rem auto;}}/*!sc*/
-data-styled.g1046[id="sc-bb8f313f-4"]{content:"dJxcMb,"}/*!sc*/
-.QSHKD{width:20rem;}/*!sc*/
-@media (max-width: 991.98px){.QSHKD{width:18rem;}}/*!sc*/
-data-styled.g1047[id="sc-bb8f313f-5"]{content:"QSHKD,"}/*!sc*/
-.gZOzkU{-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;margin-top:4rem;min-width:0;}/*!sc*/
-@media (max-width: 991.98px){.gZOzkU{margin-top:3rem;}}/*!sc*/
-@media (max-width: 767.98px){.gZOzkU{-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;margin-top:0;min-height:16rem;}}/*!sc*/
-data-styled.g1048[id="sc-bb8f313f-6"]{content:"gZOzkU,"}/*!sc*/
-.jUeioG{margin-top:3rem;}/*!sc*/
-@media (max-width: 767.98px){.jUeioG{margin-top:8rem;}}/*!sc*/
-data-styled.g1049[id="sc-bb8f313f-7"]{content:"jUeioG,"}/*!sc*/
-</style>
 </head>
+
 <body>
-    <div hidden=""><!--$--><!--/$-->
+<div class=" fkSMzd">
+    
+    <header class="navbar">
+        <div class="navbar-logo"> TÖZ</div>
+        <nav class="navbar-links">
+            <a href="#"></i>Anasayfa</a>
+            <a href="#">Hakkımızda</a>
+            <a href="#footer">İletişim</a>
+        </nav>
+        <button class="navbar-toggle" aria-label="Menüyü Aç/Kapat">
+        <i class="fa fa-bars"></i>
+        </button>
+    </header>
 
-    </div>
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCMK7D8" height="0" width="0" 
-        style="display:none;visibility:hidden" 
-        title="google-tag-manager-noscript">
-    </iframe>
-</noscript>
-<!--$!-->
-<template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">
+<!---First Page Start--->
+    <section class="sc-bb8f313f-0 idJfJN"><div class="sc-7a505137-1 sc-bb8f313f-1 cljckw iMzZdq ">
+        <img src="assets/img/bird-1.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-1 kEOVZY cOfnoG "/>
+        <img src="assets/img/bird-5.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-2 kEOVZY hncWeI"/>
+        <img src="assets/img/cloud-2a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-3 kEOVZY eeviRS"/>
+        <img src="assets/img/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-4 kEOVZY bSUzRg"/>
+        <img src="assets/img/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-5 kEOVZY bBXevb"/>
+        <img src="assets/img/bird-2.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-6 kEOVZY EdKu"/>
+        <img src="assets/img/bird-4.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-7 kEOVZY hQKRHA"/>
+        <img src="assets/img/bird-3.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-8 kEOVZY eiOhei"/>
+        <img src="assets/img/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-9 kEOVZY leLMiB"/>
+        <img src="assets/img/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-10 kEOVZY fdHNuO"/>
+        <img src="assets/img/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-11 kEOVZY koFjlx"/>
+       
+        <h1 class="sc-bb8f313f-3 dPrUWE blinking-text" style="font-family: cursive;">Dünya susuyor, sen dinliyor musun?</h1>
+     
+    <!-- Butonlar  -->
+        <div class="button-group" style="margin: 9rem 0 1.5rem 0; display: flex; gap: 1rem; justify-content: center;">
 
-</template><!--/$--><div class="sc-7a505137-0 fkSMzd">
-    <section class="sc-bb8f313f-0 idJfJN"><div class="sc-7a505137-1 sc-bb8f313f-1 cljckw iMzZdq">
-        <img src="https://assets.wakingup.com/web/images/home/bird-1.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-1 kEOVZY cOfnoG"/>
-        <img src="https://assets.wakingup.com/web/images/home/bird-5.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-2 kEOVZY hncWeI"/>
-        <img src="https://assets.wakingup.com/web/images/home/cloud-2a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-3 kEOVZY eeviRS"/>
-        <img src="https://assets.wakingup.com/web/images/home/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-4 kEOVZY bSUzRg"/>
-        <img src="https://assets.wakingup.com/web/images/home/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-5 kEOVZY bBXevb"/>
-        <img src="https://assets.wakingup.com/web/images/home/bird-2.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-6 kEOVZY EdKu"/>
-        <img src="https://assets.wakingup.com/web/images/home/bird-4.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-7 kEOVZY hQKRHA"/>
-        <img src="https://assets.wakingup.com/web/images/home/bird-3.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-8 kEOVZY eiOhei"/>
-        <img src="https://assets.wakingup.com/web/images/home/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-9 kEOVZY leLMiB"/>
-        <img src="https://assets.wakingup.com/web/images/home/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-10 kEOVZY fdHNuO"/>
-        <img src="https://assets.wakingup.com/web/images/home/cloud-4a.png" alt="" loading="lazy" class="sc-f18cd1c0-0 sc-f18cd1c0-11 kEOVZY koFjlx"/>
-        <header class="sc-a7372d5a-0 iDxxcI sc-bb8f313f-2 fKQmhp">
-            <div class="sc-a7372d5a-1 dFUZVs">
-                <div class="sc-7046174e-0 cEdIis sc-a7372d5a-2 jGNbWN">
-                    <button type="button" aria-expanded="false" aria-label="Menu" class="sc-20a79dcd-0 fipqjz sc-7046174e-1 dGzHmv">
-                        <svg fill="none" viewBox="0 0 44 25" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="sc-7046174e-2 hqhbrf">
-                            <rect x="0.418" y="0.496" width="43.522" height="2.913" rx="1.457" fill="currentColor">
-                            </rect>
-                            <rect x="0.418" y="11.194" width="43.522" height="2.913" rx="1.457" fill="currentColor">
-                            </rect>
-                            <rect x="0.418" y="21.892" width="43.522" height="2.913" rx="1.457" fill="currentColor">
-                            </rect>
-                        </svg>
-                    </button>
-                    <!--$!-->
-                    <template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">
-                    </template>
-                    <!--/$-->
-                </div>
-                <svg fill="none" role="img" viewBox="0 0 438 56" xmlns="http://www.w3.org/2000/svg" class="sc-a7372d5a-3 hDUhbH">
-                    <title>Waking Up</title>
-                    <path d="M95.23 1.11l25.47 52.7h-9.17l-5.43-11.6H84.3l-5.43 11.6h-9.1l25.46-52.7zm-7.26 33.32h14.46l-7.19-15.41-7.27 15.41zM131.1 1.69h8.51v26.2l22.94-26.2h10.13l-23.24 26.5L174.9 53.8h-10.71l-24.58-24.59V53.8h-8.51V1.69zm55.45 0h8.51V53.8h-8.51V1.69zm160.27 31.85V1.69h8.51v32.07c0 8.07 5.06 12.55 12.48 12.55 7.41 0 12.4-4.48 12.4-12.55V1.69h8.51v31.85c0 12.84-8.66 20.84-20.92 20.84-12.25.01-20.98-7.99-20.98-20.84zm57.24-31.85h15.56c10.79 0 18.2 6.75 18.2 16.59 0 9.69-7.41 16.59-18.2 16.59h-7.05V53.8h-8.51V1.69zm15.19 25.25c6.24 0 9.91-3.45 9.91-8.66s-3.67-8.66-9.91-8.66h-6.68v17.32h6.68zM.05 1.56h8.73l13.5 31.97L36.04.98l13.7 32.35L62.96 1.56h8.81l-21.7 52.7L36.05 20.5 22.03 54.26.05 1.56zm222.92 19.29V53.8h-8.51V1.1l33.67 33.83V1.68h8.51v52.7l-33.67-33.53zm68.41 10.64h16.52v12.04c-2.94 1.84-6.83 2.79-10.64 2.79-10.28 0-17.98-8.15-17.98-18.57s7.71-18.57 17.98-18.57c4.44 0 8.86 1.56 12.06 4.21l5.82-5.82c-4.69-4.27-11.03-6.47-17.88-6.47-14.75 0-26.64 11.6-26.64 26.64 0 15.04 11.89 26.64 26.64 26.64 7.34 0 14.31-2.5 19.15-6.68V23.26h-21.64l-3.39 8.23z" fill="currentColor">
+            <button class="btn experience-btn">Bugün Ne Kadar Su Tüketiyorsun?</button>
+            <button class="btn what-happened-btn" onclick="document.getElementById('world-project').scrollIntoView({behavior: 'smooth'});">
+            İlham Veren Su Projeleri </button>
 
-                    </path>
-                </svg>
-                <div class="sc-a7372d5a-4 ixbwjC">
-                    <!--$!-->
-                    <template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">
+        </div>
 
-                    </template>
-                    <!--/$-->
-                </div>
-            </div>
-        </header>
-        <h1 class="sc-bb8f313f-3 dPrUWE">A new operating system for your mind.</h1>
         <div class="sc-bb8f313f-4 dJxcMb">
             <div class="sc-2e01b3bf-0 iTDUKs sc-bb8f313f-5 QSHKD">
                 <div class="sc-2e01b3bf-1 lmjEYe">
-                    <img alt="" loading="lazy" src="https://assets.wakingup.com/web/images/screenshots/screenshot-home-ic-highlighted.png" class="sc-2e01b3bf-2 hUncHL"/>
-                    <img alt="" loading="lazy" src="https://assets.wakingup.com/web/images/home/cloud-1a.png" class="sc-2e01b3bf-4 cQrpsW"/>
+                    
+                    <img alt="" loading="lazy" src="assets/img/cloud-1a.png" class="sc-2e01b3bf-2 " style="  transform: translateX(420px);"/>
+                    <img alt="cloud" loading="lazy" src="assets/img/cloud-1a.png" class="sc-2e01b3bf-4 cQrpsW"/>   
+                </div>
+            </div>       
+        </div>
+        <div class="sc-a9534c40-0 bPEtkn sc-bb8f313f-7 jUeioG">
+        <!--Comment Start--->
+        <div class="testimonial-slider shadow">
+            <button class="slider-arrow prev" aria-label="Previous">&#10094;</button>
+            <div class="testimonial-slide active">
+                <div class="testimonial-text">“Suyu boşa harcamak, yaşamı boşa harcamaktır.”</div>
+                <div class="testimonial-author">
+                    <img src="assets/img/Leonardo da Vinci.jpg" alt="Leanardo da Vinci" />
+                    <div class="author-info">
+                        <p class="author-name">Leonardo da Vinci</p>
+                        <!--<p class="author-title">Physician, #1 New York Times best-selling author</p>-->
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-text">“Su, her şeyin başlangıcıdır.”</div>
+                <div class="testimonial-author">
+                    <img src="assets/img/thales.jpg" alt="Thales" />
+                    <div class="author-info">
+                        <p class="author-name">Miletli Thales</p>
+                        <!--<p class="author-title">Meditation Enthusiast</p>--->
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-text">“Nehirler denize kavuşmak için değil, yollarında hayat vermek için akar.”</div>
+                <div class="testimonial-author">
+                    <img src="assets/img/halil cibran.jpg" alt="Halil Cibran" />
+                    <div class="author-info">
+                        <p class="author-name">Halil Cibran</p>
+                        <!--<p class="author-title">Yoga Instructor</p>--->
+                    </div>
                 </div>
             </div>
-            <div class="sc-bb8f313f-6 gZOzkU"><section class="sc-29e7dd64-0 gFkBRs">
-                <div class="sc-29e7dd64-1 hQmGNC">
-                    <button data-cy="subscriptionplancard-year-top" type="button" class="sc-18e17495-0 bVarxW">
-                        <div class="sc-18e17495-1 keYuwA">Best value
-
-                        </div>
-                        <div class="sc-18e17495-2 cGosuZ">
-                            <p class="sc-18e17495-3 kICAFq">14 Days Free</p>
-                            <h2 class="sc-18e17495-4 eFqPEy">Annual</h2>
-                            <p class="sc-18e17495-5 bCkwvG">$129.99/year</p>
-                        </div>
-                        <style data-emotion="css 16pzss6">.css-16pzss6{color:rgba(0, 0, 0, 0.6);}.css-16pzss6.Mui-checked,.css-16pzss6.MuiCheckbox-indeterminate{color:#2f73d8;}.css-16pzss6.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                        <style data-emotion="css 1ia3vd3">.css-1ia3vd3{padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-1ia3vd3.Mui-checked,.css-1ia3vd3.MuiCheckbox-indeterminate{color:#2f73d8;}.css-1ia3vd3.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                        <style data-emotion="css 11kt1od">.css-11kt1od{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;
-                            background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-11kt1od::-moz-focus-inner{border-style:none;}.css-11kt1od.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-11kt1od{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-11kt1od.Mui-checked,.css-11kt1od.MuiCheckbox-indeterminate{color:#2f73d8;}.css-11kt1od.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                        <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium sc-18e17495-6 ifkduD css-11kt1od" 
-                        data-cy="subscriptionplancard-year-checkbox-top">
-                        <style data-emotion="css j8yymo">.css-j8yymo{cursor:inherit;position:absolute;opacity:0;width:100%;height:100%;top:0;left:0;margin:0;padding:0;z-index:1;}</style>
-                        <input tabindex="-1" type="checkbox" data-indeterminate="false" aria-label="Annual subscription plan" class="PrivateSwitchBase-input css-j8yymo" checked=""/>
-                        <svg fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" height="38" width="38" font-size="medium" class="sc-18e17495-7 cLmGrC">
-                            <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
-
-                            </path>
-                        </svg>
-                    </span>
-                </button>
-                <button data-cy="subscriptionplancard-month-top" type="button" class="sc-18e17495-0 hOhlrz">
-                    <div class="sc-18e17495-2 cGosuZ">
-                        <p class="sc-18e17495-3 kICAFq">7 Days Free</p>
-                        <h2 class="sc-18e17495-4 eFqPEy">Monthly</h2>
-                        <p class="sc-18e17495-5 bCkwvG">$19.99/month</p>
-                    </div>
-                    <style data-emotion="css 16pzss6">.css-16pzss6{color:rgba(0, 0, 0, 0.6);}.css-16pzss6.Mui-checked,.css-16pzss6.MuiCheckbox-indeterminate{color:#2f73d8;}.css-16pzss6.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                    <style data-emotion="css 1ia3vd3">.css-1ia3vd3{padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-1ia3vd3.Mui-checked,.css-1ia3vd3.MuiCheckbox-indeterminate{color:#2f73d8;}.css-1ia3vd3.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                    <style data-emotion="css 11kt1od">.css-11kt1od{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-11kt1od::-moz-focus-inner{border-style:none;}.css-11kt1od.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-11kt1od{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-11kt1od.Mui-checked,.css-11kt1od.MuiCheckbox-indeterminate{color:#2f73d8;}.css-11kt1od.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                    <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium sc-18e17495-6 ifkduD css-11kt1od" data-cy="subscriptionplancard-month-checkbox-top">
-                        <style data-emotion="css j8yymo">.css-j8yymo{cursor:inherit;position:absolute;opacity:0;width:100%;height:100%;top:0;left:0;margin:0;padding:0;z-index:1;}</style>
-                        <input tabindex="-1" type="checkbox" data-indeterminate="false" aria-label="Monthly subscription plan" class="PrivateSwitchBase-input css-j8yymo"/>
-                        <svg fill="none" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" height="38" width="38" font-size="medium" class="sc-18e17495-8 fpqGkO"><g filter="url(#a)">
-                            <rect fill="#D9D9D9" rx="6" height="38" width="38"></rect>
-                        </g>
-                        <defs>
-                            <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" id="a" x="0" y="0" height="38" width="38"><feFlood flood-opacity="0" result="BackgroundImageFix">
-
-                            </feFlood>
-                            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-                            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
-                            <feOffset></feOffset>
-                            <feGaussianBlur stdDeviation="2"></feGaussianBlur>
-                            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic">
-
-                            </feComposite><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
-                            <feBlend in2="shape" result="effect1_innerShadow_828_24555"></feBlend>
-                        </filter>
-                    </defs>
-                </svg>
-            </span>
-        </button>
-    </div>
-    <p class="sc-29e7dd64-2 dxUwIo">After your free trial ends, you will be charged
-        <!-- --> 
-        <!-- -->$129.99<!-- --> and your subscription will automatically renew each 
-         <!-- -->year<!-- -->. Cancel anytime.</p>
-          <!--$!--><template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template>
-          <div class="sc-c54e4a80-0 cHogbl">
-            <button class="sc-c54e4a80-1 bPEvBg">Try for free</button>
-        </div><!--/$--><p class="sc-d63dd9b3-0 ihMKzi">Waking Up is free for anyone who can&#x27;t afford it.
-            <!-- --> <a class="sc-e6c713f2-1 sc-d63dd9b3-1 fQQQlL" href="https://app.wakingup.com/scholarship" aria-label="Purchase scholarship membership (opens in a new tab)" data-cy="scholarship-link-top" target="_blank">Request a scholarship.</a>
-            </p>
-        </section>
-    </div>
-</div>
-<div class="sc-a9534c40-0 bPEtkn sc-bb8f313f-7 jUeioG">
-    <div class="sc-a9534c40-1 cUTdbf">
-        <div id="Peter Attia" class="sc-59ac1fb3-0 dQZgWs" style="opacity:1">
-            <div class="sc-59ac1fb3-1 iOSrPJ">
-                <span>“
-                </span>Waking Up is, hands down, the most important meditation guide I&#x27;ve ever used.
-                <!-- -->”
-                </div>
-                <div class="sc-59ac1fb3-2 fjxOmh">
-                    <img alt="" src="https://assets.wakingup.com/web/images/home/testimonials/peter-attia.jpg" class="sc-59ac1fb3-3 boKmxF"/>
-                    <div class="sc-59ac1fb3-4 emrPAo">
-                        <p class="sc-59ac1fb3-5 cjNpnT">Peter Attia</p>
-                        <p class="sc-59ac1fb3-6 cziKjl">Physician, #1 New York Times best-selling author of Outlive, host of The Drive podcast</p>
-                    </div>
-                </div>
+            <button class="slider-arrow next" aria-label="Next">&#10095;</button>
+            <div class="slider-nav mt-4">
+                <button class="nav-dot active" aria-label="Slide 1"></button>
+                <button class="nav-dot" aria-label="Slide 2"></button>
+                <button class="nav-dot" aria-label="Slide 3"></button>
             </div>
         </div>
-        <div class="sc-4d5597e0-0 jRkMZR sc-a9534c40-2 ewsIbk">
-            <button type="button" class="sc-20a79dcd-0 fipqjz sc-4d5597e0-1 hpwSYi">
-                        <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="20" width="20" aria-hidden="true" class="sc-4d5597e0-2 dHZDOZ">
-                            <path d="M15 19.5 7.5 12 15 4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+        <!--Comment End--->
+    </div>
+    </section>
+<!---First Page End--->
+<!--Information Cards Start-->
+    <section class="sc-eba4375f-0 hfUrJd">
+        <div class="sc-7a505137-1 sc-eba4375f-1 cljckw cDixrw">
+            <div class="sc-eba4375f-2 gHWWyF">
+                <h3 class="sc-eba4375f-3 gHFZin stat-number" data-target="2200000000">0</h3>
 
-                            </path>
-                        </svg>
-                    </button>
-                    <button type="button" class="sc-20a79dcd-0 fipqjz sc-44f55523-0 iSOICW">
-
-                    </button>
-                    <button type="button" class="sc-20a79dcd-0 fipqjz sc-44f55523-0 jXWRPf">
-
-                    </button>
-                    <button type="button" class="sc-20a79dcd-0 fipqjz sc-44f55523-0 jXWRPf">
-
-                    </button>
-                    <button type="button" class="sc-20a79dcd-0 fipqjz sc-44f55523-0 jXWRPf">
-
-                    </button><button type="button" class="sc-20a79dcd-0 fipqjz sc-44f55523-0 jXWRPf">
-
-                    </button><button type="button" class="sc-20a79dcd-0 fipqjz sc-44f55523-0 jXWRPf">
-
-                    </button><button type="button" class="sc-20a79dcd-0 fipqjz sc-4d5597e0-1 hpwSYi">
-                        <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="20" width="20" aria-hidden="true" class="sc-4d5597e0-2 dHZDOZ">
-                            <path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-
-                            </path>
-                        </svg>
-                    </button>
-                </div>
+                <p class="sc-eba4375f-4 dfsPly">Temiz suya erişemeyen insan sayısı</p>
             </div>
+            <div class="sc-eba4375f-2 gHWWyF">
+                <h3 class="sc-eba4375f-3 gHFZin stat-number" data-target="55" >0</h3>
+           
+                <p class="sc-eba4375f-4 dfsPly">2050’ye kadar suya talepte beklenen artış (%)</p>
+            </div>
+            <div class="sc-eba4375f-2 gHWWyF">
+                <h3 class="sc-eba4375f-3 gHFZin stat-number" data-target="60">0</h3>
+                <p class="sc-eba4375f-4 dfsPly">Tarımda kullanılan suyun boşa gitme oranı (%)</p>
+            </div>
+  
+            <div class="sc-eba4375f-2 gHWWyF">
+                <h3 class="sc-eba4375f-3 gHFZin stat-number" data-target="1">0</h3>
+                <p class="sc-eba4375f-4 dfsPly">10 yapay zeka sorgusunda harcanan yaklaşık su miktarı (litre)</p>
+            </div>
+
         </div>
     </section>
-    <section class="sc-eba4375f-0 hfUrJd"><div class="sc-7a505137-1 sc-eba4375f-1 cljckw cDixrw">
-        <div class="sc-eba4375f-2 gHWWyF">
-            <h3 class="sc-eba4375f-3 gHFZin">Discover the true purpose of meditation.</h3>
-            <p class="sc-eba4375f-4 dfsPly">Go beyond simple relaxation techniques and experience the freedom of real mindfulness—without any New Age fluff.</p>
-        </div>
-        <div class="sc-eba4375f-2 gHWWyF"><h3 class="sc-eba4375f-3 gHFZin">Understand <em>why</em> you’re practicing.</h3>
-            <p class="sc-eba4375f-4 dfsPly">Don’t just meditate. Understand the theory of mindfulness, with the best of ancient wisdom pressure-tested by modern science.</p>
-        </div>
-        <div class="sc-eba4375f-2 gHWWyF"><h3 class="sc-eba4375f-3 gHFZin">Live an examined, fulfilling life.</h3>
-            <p class="sc-eba4375f-4 dfsPly">Listen to lessons and conversations on Stoicism, effective altruism, sleep, psychedelics research, and more.</p>
-        </div>
-    </div>
-</section>
+<!--Information Cards End-->
+<!--Second Page Start-->
 <section class="sc-1f57a4d3-0 dnvirP">
     <div class="sc-7a505137-1 sc-1f57a4d3-1 cljckw hKAUau">
         <div class="sc-1f57a4d3-26 sc-1f57a4d3-27 kvluBw gjouuy">
-            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" class="sc-1f57a4d3-2 izvKjR"/>
-            <img alt="" src="https://assets.wakingup.com/web/images/home/bird-1.png" class="sc-1f57a4d3-9 kMTjMD"/>
-            <img alt="" src="https://assets.wakingup.com/web/images/home/bird-5.png" class="sc-1f57a4d3-10 cCdMSR"/>
-            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" class="sc-1f57a4d3-12 cvOYIR"/>
-            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-2a.png" class="sc-1f57a4d3-4 jUMlLX"/>
-            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" class="sc-1f57a4d3-5 euhQRT"/>
+            <img alt="" src="assets/img/cloud-4a.png" class="sc-1f57a4d3-2 izvKjR"/>
+            <img alt="" src="assets/img/bird-1.png" class="sc-1f57a4d3-9 kMTjMD"/>
+            <img alt="" src="assets/img/bird-5.png" class="sc-1f57a4d3-10 cCdMSR"/>
+            <img alt="" src="assets/img/cloud-4a.png" class="sc-1f57a4d3-12 cvOYIR"/>
+            <img alt="" src="assets/img/cloud-2a.png" class="sc-1f57a4d3-4 jUMlLX"/>
+            <img alt="" src="assets/img/cloud-4a.png" class="sc-1f57a4d3-5 euhQRT"/>
             <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-6 cXmbga" style="transform:translateY(10px) translateX(-44%) translateY(74%)">
-                <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-2a.png" height="341.73" width="734.2992"/></div>
+                <img alt="" src="assets/img/cloud-2a.png" height="341.73" width="734.2992"/></div>
                 <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-7 ecJoBF" style="transform:translateY(50px) translateY(55%)">
-                    <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-2a.png" height="341.73" width="734.2992"/></div>
-                    <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" class="sc-1f57a4d3-8 cMNXaq"/>
+                    <img alt="" src="assets/img/cloud-2a.png" height="341.73" width="734.2992"/></div>
+                    <img alt="" src="assets/img/cloud-4a.png" class="sc-1f57a4d3-8 cMNXaq"/>
+                    <!--First Part Start-->
                     <div class="sc-1f57a4d3-30 fPFSKs">
-                        <img alt="" src="https://assets.wakingup.com/web/images/home/app-screenshot-introcourse-life-v3.jpg" class="sc-1f57a4d3-31 hzUYrK"/></div>
-                        <div class="sc-1f57a4d3-32 jAKtRR"><h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST">Understand Your Mind, Step-by-Step</h3>
-                            <p class="sc-1f57a4d3-34 jLpACF">Learn the fundamentals of mindfulness from Sam Harris—neuroscientist, author, and creator of Waking Up—as he also guides you into the deep end of meditation.</p>
+                        <img alt="" src="assets/img/water deneme.jpg" class="sc-1f57a4d3-31 hzUYrK"/></div>
+                        <div class="sc-1f57a4d3-32 jAKtRR"><h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST">Yaşamın Temeli: <em>Su</em></h3>
+                            <p class="sc-1f57a4d3-34 jLpACF">Dünya, yaklaşık %70'i suyla kaplı olsa da, bu suyun sadece %1’i içilebilir nitelikte. 
+                                İnsanlık tarihi boyunca su,
+                                 medeniyetlerin doğuşu ve gelişiminde temel unsur oldu. Ancak sınırsız değil.
+                                 <br><em>İklim değişikliği</em>, nüfus artışı ve aşırı tüketim nedeniyle temiz su kaynakları hızla azalmaya başladı.
+                                  Dünya nüfusunun üçte biri, su kıtlığı riski altında.</p>
                         </div>
-                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-11 hchzfJ" style="transform:translateY(40px)"><img alt="" src="https://assets.wakingup.com/web/images/home/cloud-3a.png" height="256" width="460"/>
+                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-11 hchzfJ" style="transform:translateY(40px)"><img alt="" src="assets/img/cloud-3a.png" height="256" width="460"/>
                         </div>
-                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-3 gXykEl" style="transform:translateY(25px)"><img alt="" src="https://assets.wakingup.com/web/images/home/cloud-2a.png" height="229.297" width="493"/>
+                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-3 gXykEl" style="transform:translateY(25px)"><img alt="" src="assets/img/cloud-2a.png" height="229.297" width="493"/>
                         </div>
+                        
                     </div>
-                    <div class="sc-1f57a4d3-26 sc-1f57a4d3-28 YEErl hRRdGx"><img alt="" src="https://assets.wakingup.com/web/images/home/cloud-3a.png" class="sc-1f57a4d3-14 jsyjBu"/>
-                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-15 eezeSp" style="transform:translateY(20px)"><img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" height="123.188" width="279"/>
+                    
+                    <!---First Part End-->
+                    <!--Second Part Start-->
+                    <div class="sc-1f57a4d3-26 sc-1f57a4d3-28 YEErl hRRdGx"><img alt="" src="assets/img/cloud-3a.png" class="sc-1f57a4d3-14 jsyjBu"/>
+                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-15 eezeSp" style="transform:translateY(20px)"><img alt="" src="assets/img/cloud-4a.png" height="123.188" width="279"/>
                         </div>
-                        <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" class="sc-1f57a4d3-17 bFhjQG"/>
-                        <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" class="sc-1f57a4d3-18 eiZakB"/>
+                        <img alt="" src="assets/img/cloud-4a.png" class="sc-1f57a4d3-17 bFhjQG"/>
+                        <img alt="" src="assets/img/cloud-4a.png" class="sc-1f57a4d3-18 eiZakB"/>
                         <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-19 dfFWAt" style="transform:translateY(10px) translateX(-50%)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-3a.png"/>
+                            <img alt="" src="assets/img/cloud-3a.png"/>
                         </div>
                         <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-20 ijAMNb" style="transform:translateY(15px) translateX(-50%)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-2a.png"/>
+                            <img alt="" src="assets/img/cloud-2a.png"/>
                         </div>
                         <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-21 eZnrUL" style="transform:translateY(25px)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/balloon-1.png"/>
+                            <img alt="" src="assets/img/balloon-1.png"/>
                         </div><div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-22 gSpjkt" style="transform:translateY(15px)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/balloon-2.png"/>
+                            <img alt="" src="assets/img/balloon-2.png"/>
                         </div>
-                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-23 dEuZou" style="transform:translateY(5px)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/balloon-3.png"/>
+                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-23 dEuZou" style="transform:translateY(300px)">
+                            <img alt="" src="assets/img/balloon-3.png"/>
                         </div>
-                        <img alt="" src="https://assets.wakingup.com/web/images/home/bird-3.png" class="sc-1f57a4d3-24 bPlcCY"/>
+                        <img alt="" src="assets/img/bird-3.png" class="sc-1f57a4d3-24 bPlcCY"/>
                         <div class="sc-1f57a4d3-30 fPFSKs">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/app-screenshot-player-workingwithemotions-life-v3.jpg" class="sc-1f57a4d3-31 hzUYrK"/>
+                            <img alt="" src="assets/img/water deneme.jpg" class="sc-1f57a4d3-31 hzUYrK"/>
                         </div>
                         <div class="sc-1f57a4d3-32 fagoRB">
-                            <h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST">Practice with Top Teachers</h3><p class="sc-1f57a4d3-34 jLpACF">Our highly curated library of guided meditations means you’ll only ever hear from practitioners we trust.
-
+                            <h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST ">Su Kıtlığının ve Bilinçsiz Kullanımın Etkileri</h3>
+                            <p class="sc-1f57a4d3-34 jLpACF">
+                                Su azaldıkça tarım ve gıda üretimi zorlaşıyor, sağlık sorunları artıyor, 
+                                milyonlarca insan temel ihtiyaçlarını karşılamakta zorlanıyor. Gereksiz su tüketimi, 
+                                sızıntılar ve atık su yönetimindeki eksiklikler ise durumu daha da kötüleştiriyor. 
+                                <em>Su, tasarruf edilmediğinde hızla tükenen sınırlı bir kaynak.</em>
                             </p>
                         </div>
                         <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-13 hOcnkK" style="transform:translateY(20px)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" height="186.75" width="426.8608"/>
+                            <img alt="" src="assets/img/cloud-4a.png" height="186.75" width="426.8608"/>
                         </div>
-                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-16 bllMsG" style="transform:translateY(40px) translateX(-50%)"><img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" height="186.812" width="427"/>
+                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-16 bllMsG" style="transform:translateY(40px) translateX(-50%)"><img alt="" src="assets/img/cloud-4a.png" height="186.812" width="427"/>
                         </div>
                     </div>
+                    <!---Second Part End-->
+                    <!--Third Part Start-->
                     <div class="sc-1f57a4d3-26 kvluBw">
-                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-25 fJSViN" style="transform:translateY(25px)">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/girl-on-dock.png"/>
+                        <div class="sc-b40bf2fd-0 jiIzHc sc-1f57a4d3-25 fJSViN " style="transform:translateY(25px)">
+                            <img alt="" src="assets/img/girl-on-dock.png"/>
                         </div>
+                        
                         <div class="sc-1f57a4d3-30 fPFSKs">
-                            <img alt="" src="https://assets.wakingup.com/web/images/home/app-screenshot-pack-thestoicpath-life-v3.jpg" class="sc-1f57a4d3-31 hzUYrK"/>
+                            <img alt="" src="assets/img/water deneme.jpg" class="sc-1f57a4d3-31 hzUYrK"/>
                         </div>
-                        <div class="sc-1f57a4d3-32 jAKtRR"><h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST">A Place for Serious Seekers</h3>
-                            <p class="sc-1f57a4d3-34 jLpACF">Explore thought-provoking conversations and lessons on life’s most important questions—free from religious dogma.</p>
+                        <div class="sc-1f57a4d3-32 jAKtRR"><h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST">Bilinçli Su Kullanımıyla Geleceği Korumak</h3>
+                            <p class="sc-1f57a4d3-34 jLpACF">Her damla suyu dikkatli kullanmak, evde, işte ve doğada küçük ama etkili değişikliklerle büyük 
+                                fark yaratabilir. Su, paylaşılan bir hazine.</p>
                         </div>
                     </div>
+                    <!--Third Part End-->
                 </div>
             </section>
-            <section class="sc-96bd5307-0 emRVGY"><div class="sc-7a505137-1 sc-96bd5307-1 cljckw hYvjpV">
-                <img alt="" src="https://assets.wakingup.com/web/images/home/bird-2.png" class="sc-96bd5307-2 dIlJKU"/>
-                <img alt="" src="https://assets.wakingup.com/web/images/home/bird-1.png" class="sc-96bd5307-3 iFuQWe"/>
-                <img alt="" src="https://assets.wakingup.com/web/images/home/bird-4.png" class="sc-96bd5307-4 bhwZcG"/>
-                <div class="sc-b40bf2fd-0 jiIzHc sc-96bd5307-5 jfxWhQ" style="transform:translateY(25px) translateX(-36%) translateY(70%)">
-                    <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-3a.png" height="316.547" width="566"/>
+            <!--Third Page Start--->
+            <section class="sc-96bd5307-0 emRVGY">
+                <div class="sc-7a505137-1 sc-96bd5307-1 cljckw hYvjpV">
+                    <img alt="" src="assets/img/bird-2.png" class="sc-96bd5307-2 dIlJKU"/>
+                    <img alt="" src="assets/img/bird-1.png" class="sc-96bd5307-3 iFuQWe"/>
+                    <img alt="" src="assets/img/bird-4.png" class="sc-96bd5307-4 bhwZcG"/>
+                    <div class="sc-b40bf2fd-0 jiIzHc sc-96bd5307-5 jfxWhQ" style="transform:translateY(25px) translateX(-36%) translateY(70%)">
+                        <img alt="" src="assets/img/cloud-3a.png" height="316.547" width="566"/>
+                    </div>
+                    <div class="sc-b40bf2fd-0 jiIzHc sc-96bd5307-6 eLCztI" style="transform:translateY(20px) translateX(-30%) translateY(80%)">
+                        <img alt="" src="assets/img/cloud-4a.png" height="188.562" width="431"/>
+                    </div>
+                    <div class="sc-427bea10-0 eRgGWC sc-96bd5307-7 bvqdNW">
+                
+                        <img alt="" src="assets/img/water deneme.jpg"  style="width:400px; height: 600px;" class="sc-427bea10-2 bSTaoD"/>
+                    </div>
+                       
+                        <div class="sc-1f57a4d3-32 fagoRB">
+                            <h3 class="sc-7a505137-3 sc-1f57a4d3-33 gmlqJA dOvvST">Adım Adım Su Bilincine Yolculuk</h3>
+                            <p class="sc-1f57a4d3-34 jLpACF">Bugün atacağımız her adım, yarının temiz su kaynaklarını koruyacak. Tasarruf etmek, suyun değerini anlamakla başlar.</p>
                 </div>
-                <div class="sc-b40bf2fd-0 jiIzHc sc-96bd5307-6 eLCztI" style="transform:translateY(20px) translateX(-30%) translateY(80%)">
-                    <img alt="" src="https://assets.wakingup.com/web/images/home/cloud-4a.png" height="188.562" width="431"/>
-                </div>
-                <div class="sc-427bea10-0 eRgGWC sc-96bd5307-7 bvqdNW"><audio playsInline="" preload="auto" src="https://assets.wakingup.com/moments/audios/38e76dbf-be62-47ef-a6da-c1be60cd5e92/course-1a176f2ec6f39fed463e.mp3" class="sc-427bea10-1 lOeKa">
+                <div class="sc-96bd5307-8 gpzmjz">
 
-                </audio>
-                <img alt="" src="https://assets.wakingup.com/web/images/home/moment-player.jpg" 
-                class="sc-427bea10-2 bSTaoD"/>
-                <div class="sc-427bea10-3 jmEzxf">
-                    <div aria-label="Play audio" data-cy="basicplayer-play-button" 
-                    class="sc-bb4f6a40-0 kNiaxm sc-19c53ff7-0 ehAZyw">
-                    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="20.55" width="20.55" aria-hidden="true" class="sc-19c53ff7-1 cLSVci">
-                        <path d="M21.389 11.36L7.89 3.11a.75.75 0 00-1.141.64v16.5a.75.75 0 001.141.64l13.498-8.25a.75.75 0 000-1.28z" fill="currentColor">
-
-                        </path>
-                    </svg>
                 </div>
-            </div>
-        </div>
-        <div class="sc-96bd5307-8 gpzmjz">
-            <h3 class="sc-7a505137-3 sc-96bd5307-9 gmlqJA jkZxjh">Daily Mindfulness Reminder</h3>
-            <p class="sc-96bd5307-10 hqEmME">Every day, receive a short audio message designed to help bring your meditation practice into your life.</p>
-        </div>
-    </div>
-</section>
-<section class="sc-cf835e37-0 hKEYIi">
-    <h2 class="sc-7a505137-3 sc-cf835e37-1 gmlqJA hWoGDn">World-Renowned Teachers and Scholars</h2>
-    <div class="sc-e109a494-0 codlop"></div><div class="sc-7a505137-1 cljckw">
-        <div class="sc-15edd07-0 feaKDa">
-            <div class="sc-63aa3d40-0 hKDhdX">
-                <button aria-label="Previous element" type="button" class="sc-63aa3d40-1 erQPdy">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" height="42" width="22" aria-hidden="true">
-                        <path d="M20.293 41.707a1 1 0 0 0 1.414-1.414l-1.414 1.414ZM1 21l-.707-.707a1 1 0 0 0 0 1.414L1 21ZM21.707 1.707A1 1 0 0 0 20.293.293l1.414 1.414Zm0 38.586-20-20-1.414 1.414 20 20 1.414-1.414Zm-20-18.586 20-20L20.293.293l-20 20 1.414 1.414Z" 
-                        fill="currentColor" opacity=".8">
-                    </path>
-                </svg>
-            </button>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="sc-63aa3d40-2 cDydQK">
-                            <h3 class="sc-63aa3d40-3 eknMWz">“The single most important app I have ever downloaded.”</h3>
+            </section>
+            <!--Third Page End--->
+            <!--Cards Start-->
+            <section class="hKEYIi">
+                <div class=" cljckw" id="world-project">
+                    <!--Kart bölümü-->
+                    <div class="marquee-wrapper">
+                        <div class="marquee" id="marquee-track">
+                            <!-- Kartlar sadece 1 kez tanımlanıyor -->
+                             <div class="carousel-card">
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-jack-kornfield.jpg alt="Jack Kornfield">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Water Project</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-joseph-goldstein.jpg alt="Joseph Goldstein">
+                                <div class="card-body">
+                                    <h5 class="card-title">LifeStraw</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <a href =https://picsum.photos/ target="_blank"> 
+                                    <img src=https://assets.wakingup.com/web/images/home/teacher-henry-shukman.jpg alt="Henry Shukman">
+                                    <div class="card-body">
+                                        <h5 class="card-title">FogCatchers – Şili</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-card"> 
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-laurie-santos.jpg alt="Laurie Santos">
+                                <div class="card-body">
+                                    <h5 class="card-title">Drinkable Book</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://images.pexels.com/photos/8015014/pexels-photo-8015014.jpeg alt="Diana Winston">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sarayaku</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://images.pexels.com/photos/5931830/pexels-photo-5931830.jpeg alt="David Whyte">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aguadapt – Uganda</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-mingyur-rinpoche.jpg alt="Mingyur Rinpoche">
+                                <div class="card-body">
+                                    <h5 class="card-title">SU-ÇEK Projesi</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-gangajj.jpg alt="Gangaji">
+                                <div class="card-body">
+                                    <h5 class="card-title">Su Kaşifi Projesi</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-nikki-mirghafori.jpg alt="Nikki Mirghafori">
+                                <div class="card-body">
+                                    <h5 class="card-title">Yağmur Bahçeleri</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <img src=https://assets.wakingup.com/web/images/home/teacher-adyashanti.jpg alt="Adyashanti">
+                                <div class="card-body">
+                                    <h5 class="card-title">Water.org</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-slide"><div class="sc-63aa3d40-2 cDydQK"><h3 
-                        class="sc-63aa3d40-3 eknMWz">“I’ve been using Waking up since 2018, and it’s the most important thing I’ve done in my life.”</h3>
-                    </div>
                 </div>
-                <div class="swiper-slide"><div class="sc-63aa3d40-2 cDydQK"><h3 
-                    class="sc-63aa3d40-3 eknMWz">“I’m a beginner and this app has changed my entire perception of meditation.”</h3>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="sc-63aa3d40-2 cDydQK">
-                    <h3 class="sc-63aa3d40-3 eknMWz">“I’ve tried them all. I’ve had more insight just doing the intro course.” </h3>
-                </div>
-            </div>
-            <div class="swiper-slide"><div class="sc-63aa3d40-2 cDydQK">
-                <h3 class="sc-63aa3d40-3 eknMWz">“Utterly life changing. Continues to be one of the best investments of my life and has probably saved my life.”</h3>
             </div>
         </div>
     </div>
 </div>
-<button aria-label="Next element" type="button" class="sc-63aa3d40-1 erQPdy"><svg fill="none" xmlns="http://www.w3.org/2000/svg" height="42" width="22" aria-hidden="true">
-    <path d="M1.707.293A1 1 0 0 0 .293 1.707L1.707.293ZM21 21l.707.707a1 1 0 0 0 0-1.414L21 21ZM.293 40.293a1 1 0 1 0 1.414 1.414L.293 40.293Zm0-38.586 20 20 1.414-1.414-20-20L.293 1.707Zm20 18.586-20 20 1.414 1.414 20-20-1.414-1.414Z" fill="currentColor" opacity=".8">
-    </path>
-</svg>
-</button>
-</div>
-<div class="sc-25996879-0 fUIYJt sc-15edd07-1 fXsa-da"><svg fill="none" viewBox="0 0 41 106" xmlns="http://www.w3.org/2000/svg" height="103.41" width="40" aria-hidden="true" class="sc-25996879-1 jYyQUc">
-    <path clip-rule="evenodd" d="M16.961 11.744c.032-.567.062-1.109.181-1.615C18.51 4.239 23.846-.438 28.601.033c1.483.147 1.727.743.933 2.28-2.933 5.692-7.063 9.09-12.629 10.258.026-.28.041-.556.056-.827ZM6.032 50.57c-.99-9.515 1.699-15.258 8.295-17.47-.346 1.064-.662 2.132-.977 3.191-.713 2.405-1.412 4.76-2.402 6.892-.852 1.835-2.028 3.423-3.25 5.073a71.926 71.926 0 0 0-1.666 2.314Zm5.807-18.19c2.8-2.385 5.565-4.742 6.15-9.847-6.299.43-10.985 6.334-10.63 14.56 1.228-1.94 2.86-3.33 4.48-4.712ZM7.996 63.999C5.626 58.78 6.33 51.1 9.332 47.638c.357-.414.84-.646 1.324-.878.225-.108.45-.216.661-.342.084.278.184.553.284.828.214.59.429 1.18.478 1.79.346 4.391-1.159 7.938-2.726 11.63a83.202 83.202 0 0 0-1.357 3.332Zm-6.67-2.524c-.369 7.792 4.604 15.788 9.305 15.723a59.447 59.447 0 0 0-.583-1.71c-.45-1.279-.904-2.568-1.162-3.922-.753-3.92-2.942-5.864-5.235-7.9-.78-.693-1.572-1.396-2.324-2.191Zm14.235 8.923c4.176 4.385 4.113 10.193 4.05 16.071l-.01 1.079c-3.29-1.805-7.642-11.301-4.04-17.15ZM16.657 3.46c.01 7.594-2.826 13.263-6.435 18.336-1.997-4.238 1.059-14.75 6.435-18.336Zm11.62 94.268c-4.252 2.423-13.47-2.304-14.51-7.442 3.867-.67 11.343 3.167 14.51 7.442ZM12.5 76.255c-3.839-2.7-4.026-13.623-.298-17.496 2.538 4.565 2.628 9.874.298 17.496Zm-.863-53.315c1.48-7.271 8.237-11.228 12.378-9.173-1.793 5.254-5.38 6.535-9.024 7.837-1.13.404-2.265.81-3.354 1.336ZM4.433 49.9C.676 44.245-.175 35.275 2.702 30.409c3.5 6.057 3.002 12.792 1.73 19.49Zm1.46-14.418c-2.822-5.116-1.658-14.99 2.759-20.294.025 1.222.09 2.4.153 3.542.137 2.467.264 4.763-.046 6.96-.322 2.293-1.078 4.486-1.853 6.735a88.272 88.272 0 0 0-1.012 3.057Zm-4.878 9.986c-2.402 6.43 1.153 16.933 5.577 18.867-.11-.55-.252-1.093-.392-1.63-.305-1.168-.602-2.306-.553-3.42.133-3.144-.689-5.627-2.18-7.977-.68-1.075-1.224-2.3-1.763-3.514l-.25-.563c-.162-.36-.242-.781-.323-1.202a13.22 13.22 0 0 0-.116-.561Zm6.51 31.908.003.002c2.034 1.216 3.936 2.353 5.828 3.516.298.185.553.573.75.938a865.139 865.139 0 0 1 3.097 5.848l.548 1.044c-5.551-.36-10.086-3.947-11.9-12.35l1.674 1.002Zm21.29 18.338c-5.763-2.369-9.236-9.395-7.408-14.925 3.07 1.45 5.954 7.201 7.408 14.925Zm11.303 
-    5.79c-6.055.133-11.128-5.085-10.805-11.07 3.273.106 7.465 
-    4.361 10.805 11.07Zm-16.043-.768c2.89 4.871 9.555 6.066 15.006 
-    2.142l-.589-.268c-4.784-2.179-9.412-4.286-14.417-1.874Z" 
-    fill="currentColor" fill-rule="evenodd">
-</path>
-</svg>
-<div class="sc-25996879-3 kYdRZj">
-    <div class="sc-25996879-4 hwqeb">
-        <svg fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" height="16" width="17" aria-hidden="true" class="sc-25996879-5 kHAsA-D">
-            <path d="m8.935.697 1.898 5.844h6.145l-4.971 3.612 1.898 5.843-4.97-3.611-4.971 3.611 1.898-5.843L.892 6.54h6.144L8.935.697Z" 
-            fill="currentColor">
-        </path>
-    </svg>
-    <svg fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" height="16" width="17" aria-hidden="true" class="sc-25996879-5 kHAsA-D">
-        <path d="m8.935.697 1.898 5.844h6.145l-4.971 3.612 1.898 5.843-4.97-3.611-4.971 3.611 1.898-5.843L.892 6.54h6.144L8.935.697Z" fill="currentColor">
-        </path>
-    </svg>
-    <svg fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" height="16" width="17" aria-hidden="true" class="sc-25996879-5 kHAsA-D">
-        <path d="m8.935.697 1.898 5.844h6.145l-4.971 3.612 1.898 5.843-4.97-3.611-4.971 3.611 1.898-5.843L.892 6.54h6.144L8.935.697Z" fill="currentColor">
-        </path>
-    </svg>
-    <svg fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" height="16" width="17" aria-hidden="true" class="sc-25996879-5 kHAsA-D">
-        <path d="m8.935.697 1.898 5.844h6.145l-4.971 3.612 1.898 5.843-4.97-3.611-4.971 3.611 1.898-5.843L.892 6.54h6.144L8.935.697Z" 
-        fill="currentColor">
-    </path>
-</svg>
-<svg fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" height="16" width="17" aria-hidden="true" class="sc-25996879-5 kHAsA-D">
-    <path d="m8.935.697 1.898 5.844h6.145l-4.971 3.612 1.898 5.843-4.97-3.611-4.971 3.611 1.898-5.843L.892 6.54h6.144L8.935.697Z" 
-    fill="currentColor">
-</path>
-</svg>
-</div>
-<p class="sc-25996879-6 lcwsVs">100,000+</p>
-<p class="sc-25996879-7 ixUCwY">5-star reviews</p>
-</div>
-<svg fill="none" viewBox="0 0 41 106" xmlns="http://www.w3.org/2000/svg" height="103.41" width="40" aria-hidden="true" class="sc-25996879-2 gsuZYk">
-    <path clip-rule="evenodd" d="M10.54.291c3.87-.956 7.04.49 9.722 3.66 1.884 2.228 3.628 4.7 3.321 8.463C18.255 11.577 11.62 5.509 10.54.29Zm11.6 22.027c7.606 
-    1.229 11 6.072 11.422 14.7a313.295 313.295 0 0 0-2.666-2.64c-2.173-2.135-4.303-4.228-6.294-6.515-.716-.82-1.153-2.038-1.648-3.416-.244-.68-.502-1.4-.814-2.13Zm12.548 
-    28.256c.968-9.382-1.989-15.593-8.242-17.465.317 1.063.596 2.118.869 3.154.607 2.3 1.186 4.5 2.103 6.44.922 1.95 2.178 3.642 3.492 5.412a80.94 80.94 0 0 1 1.778 
-    2.46Zm-2.368 13.44c-.319-1.043-.641-2.085-.963-3.127-.926-2.996-1.851-5.993-2.698-9.027-.289-1.03-.206-2.293-.12-3.43.167-2.18 1.16-2.777 2.38-1.298.931 1.128 1.772 2.55 2.274 
-    4.053 1.433 4.261 1.228 8.527-.22 12.658-.217.056-.433.111-.653.171Zm-2.167 13.277c1.466-6.572 3.697-12.538 9.174-15.306.78 6.692-4.318 15.024-9.174 15.306Zm-.703-57.045c-.752-1.33-1.494-2.642-2.343-3.825-1.66-2.314-2.104-5.082-2.566-7.962-.271-1.693-.55-3.424-1.084-5.126 5.199 
-    2.736 8.892 12.256 7.05 18.754a95.962 95.962 0 0 1-1.058-1.841ZM12.078 97.82c4.47-4.487 9.1-7.88 14.866-7.602-1.152 5.24-9.671 9.691-14.866 7.602Zm15.366-24.833c-.437-2.707-.861-5.335-.95-7.98-.05-1.437.434-2.902.931-4.405.229-.692.46-1.393.643-2.102 4.235 
-    3.873 4.126 14.452-.083 17.996-.166-1.19-.355-2.356-.54-3.509Zm-6.198 11.987c.034.858.068 1.718.081 2.577 2.942-3.328 5.376-7.053 5.14-12.419-.043-.997-.446-1.966-.848-2.935-.184-.445-.37-.891-.52-1.34-.257.322-.532.629-.808.936-.607.677-1.215 1.355-1.635 2.189-1.71 3.386-1.561 
-    7.165-1.41 10.992ZM16.53 13.832c3.53-2.505 11.502 1.945 12.245 8.854-.931-.395-1.891-.723-2.85-1.05-3.73-1.273-7.442-2.54-9.395-7.804Zm6.26 74.97c5.83-.466 10.234-4.062 12.043-12.394l-1.944 1.158-.001.001a599.092 599.092 0
-     0 0-5.65 3.393c-.257.157-.477.471-.643.776a790.74 790.74 0 0 0-2.666 4.945l-1.14 2.122Zm12.081-53.48c-2.447-6.169-4.104-12.537-2.516-19.585 3.863 3.568 5.278 14.72 2.517
-      19.586Zm.859 11.086c.13 1.193.264 2.417.363 3.68 3.945-6.313 4.707-15.648 1.624-19.983a58.77 58.77 0 0 1-.889 2.731c-.685 1.996-1.354 3.943-1.493 5.948-.17 2.456.104 
-      4.965.395 7.624Zm4.355-.53c2.267 5.435-1.577 16.841-5.696 18.32.094-.884.161-1.79.23-2.701.158-2.133.32-4.303.831-6.33.413-1.638 1.248-3.105 2.08-4.57.354-.622.708-1.243 
-      1.028-1.877.297-.583.608-1.153.94-1.76.189-.345.384-.703.587-1.082Zm-34.54 55.464c-1.268.602-2.536 1.205-3.848 1.529 
-      4.945 3.785 12.162 3.036 14.97-2.505-.315-.026-.633-.028-.947-.031-.678-.004-1.343-.009-1.944-.255-2.99-1.228-5.61.016-8.23 
-      1.262Zm13.643-20.806c1.685 6.456-1.697 12.677-7.51 15.279 1.365-6.04 2.975-11.67 7.51-15.28ZM8.345 87.414C10.032 93.87 6.65 
-      100.09.837 102.693c1.365-6.04 2.975-11.67 7.51-15.28Z" 
-      fill="currentColor" fill-rule="evenodd">
-    </path>
-</svg>
-</div>
-</div>
-</div>
-</section>
-<section class="sc-6a9b212f-0 hYiQTS">
-    <img alt="" loading="lazy" src="https://assets.wakingup.com/web/images/home/waves-desktop.png" class="sc-6a9b212f-1 sc-6a9b212f-2 cBTCEm dSuikA"/>
-    <img alt="" loading="lazy" src="https://assets.wakingup.com/web/images/home/waves-mobile.png" class="sc-6a9b212f-1 sc-6a9b212f-3 cBTCEm fFHYwP"/>
-    <img alt="" loading="lazy" src="https://assets.wakingup.com/web/images/home/hippo.png" class="sc-6a9b212f-4 krZEUd"/>
-    <div class="sc-7a505137-1 sc-6a9b212f-5 cljckw cXRpom"><div class="sc-6a9b212f-6 bKHMCZ">
-        <h1 class="sc-bb8f313f-3 lmQeTU">A new operating system for your mind.</h1>
-        <section class="sc-29e7dd64-0 gFkBQL"><div class="sc-29e7dd64-1 hQmGNC">
-            <button data-cy="subscriptionplancard-year-bottom" type="button" class="sc-18e17495-0 bVarxW">
-                <div class="sc-18e17495-1 keYuwA">Best value</div><div class="sc-18e17495-2 cGosuZ">
-                    <p class="sc-18e17495-3 kICAFq">14 Days Free</p><h2 class="sc-18e17495-4 eFqPEy">Annual</h2>
-                    <p class="sc-18e17495-5 bCkwvG">$129.99/year</p></div><style data-emotion="css 16pzss6">.css-16pzss6{color:rgba(0, 0, 0, 0.6);}.css-16pzss6.Mui-checked,.css-16pzss6.MuiCheckbox-indeterminate{color:#2f73d8;}.css-16pzss6.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                    <style data-emotion="css 1ia3vd3">
-                    .css-1ia3vd3{padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-1ia3vd3.Mui-checked,.css-1ia3vd3.MuiCheckbox-indeterminate{color:#2f73d8;}.css-1ia3vd3.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                    <style data-emotion="css 11kt1od">
-                    .css-11kt1od{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;
-                        -moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-11kt1od::-moz-focus-inner{border-style:none;}.css-11kt1od.Mui-disabled{pointer-events:none;cursor:default;}
-                        @media print{.css-11kt1od{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-11kt1od.Mui-checked,.css-11kt1od.MuiCheckbox-indeterminate{color:#2f73d8;}.css-11kt1od.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                        <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium Mui-checked MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium sc-18e17495-6 ifkduD css-11kt1od" 
-                        data-cy="subscriptionplancard-year-checkbox-bottom">
-                        <style data-emotion="css j8yymo">
-                            .css-j8yymo{cursor:inherit;position:absolute;opacity:0;width:100%;height:100%;top:0;left:0;margin:0;padding:0;z-index:1;}
-                        </style>
-                        <input tabindex="-1" type="checkbox" data-indeterminate="false" aria-label="Annual subscription plan" 
-                        class="PrivateSwitchBase-input css-j8yymo" checked=""/>
-                        <svg fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" height="38" width="38" font-size="medium" class="sc-18e17495-7 cLmGrC">
-                            <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 
-                            312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 
-                            9.997-26.207 9.997-36.204-.001z">
-                        </path>
-                    </svg>
-                </span>
-            </button>
-            <button data-cy="subscriptionplancard-month-bottom" type="button" class="sc-18e17495-0 hOhlrz">
-                <div class="sc-18e17495-2 cGosuZ"><p class="sc-18e17495-3 kICAFq">7 Days Free</p>
-                    <h2 class="sc-18e17495-4 eFqPEy">Monthly</h2><p class="sc-18e17495-5 bCkwvG">$19.99/month</p>
-                </div>
-                <style data-emotion="css 16pzss6">.css-16pzss6{color:rgba(0, 0, 0, 0.6);}.css-16pzss6.Mui-checked,.css-16pzss6.MuiCheckbox-indeterminate{color:#2f73d8;}.css-16pzss6.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                <style data-emotion="css 1ia3vd3">.css-1ia3vd3{padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-1ia3vd3.Mui-checked,.css-1ia3vd3.MuiCheckbox-indeterminate{color:#2f73d8;}.css-1ia3vd3.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style>
-                <style data-emotion="css 11kt1od">.css-11kt1od{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;
-                    -webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;padding:9px;border-radius:50%;color:rgba(0, 0, 0, 0.6);}.css-11kt1od::-moz-focus-inner{border-style:none;}.css-11kt1od.Mui-disabled{pointer-events:none;cursor:default;}
-                    @media print{.css-11kt1od{-webkit-print-color-adjust:exact;color-adjust:exact;}}
-                    .css-11kt1od.Mui-checked,.css-11kt1od.MuiCheckbox-indeterminate{color:#2f73d8;}
-                    .css-11kt1od.Mui-disabled{color:rgba(0, 0, 0, 0.26);}
-                </style>
-                
-                <span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium 
-                MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium sc-18e17495-6 ifkduD css-11kt1od" 
-                data-cy="subscriptionplancard-month-checkbox-bottom">
-                <style data-emotion="css j8yymo">
-                    .css-j8yymo{cursor:inherit;position:absolute;opacity:0;width:100%;height:100%;top:0;left:0;margin:0;padding:0;z-index:1;}</style>
-                    <input tabindex="-1" type="checkbox" data-indeterminate="false" aria-label="Monthly subscription plan" 
-                    class="PrivateSwitchBase-input css-j8yymo"/><svg fill="none" 
-                    viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" height="38" width="38" font-size="medium" class="sc-18e17495-8 fpqGkO">
-                    <g filter="url(#a)"><rect fill="#D9D9D9" rx="6" height="38" width="38">
 
-                    </rect>
-                </g>
-                <defs>
-                    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" id="a" x="0" y="0" height="38" width="38">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape">
+<!--Cards End-->
 
-                        </feBlend>
-                        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0">
+<section class="hYiQTS">
+    <img alt="" loading="lazy" src="assets/img/waves-desktop.png" class="sc-6a9b212f-1 sc-6a9b212f-2 cBTCEm dSuikA"/>
 
-                        </feColorMatrix>
-                        <feOffset>
+  
+    <img alt="caretta" loading="lazy" src="assets/img/caretta.png" class="sc-6a9b212f-4 krZEUd"  />
+    <img alt="" loading="lazy" src="assets/img/su_samuru.png" style="position: relative; top: -40px; right: -1089px; width: 270px; height: auto;"/>
 
-                        </feOffset>
-                        <feGaussianBlur stdDeviation="2">
-
-                        </feGaussianBlur>
-                        <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic">
-
-                        </feComposite><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0">
-
-                        </feColorMatrix><feBlend in2="shape" result="effect1_innerShadow_828_24555">
-
-                        </feBlend>
-                    </filter>
-                </defs>
-            </svg>
-        </span>
-    </button>
-</div>
-<p class="sc-29e7dd64-2 dxUwIo">After your free trial ends, you will be charged
-    <!-- --> 
-    <!-- -->
-    $129.99
-    <!-- --> 
-    and your subscription will automatically renew each 
-    <!-- -->
-    year
-    <!-- -->. 
-    Cancel anytime.
-</p>
-<!--$!-->
-<template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">
-
-</template>
-<div class="sc-c54e4a80-0 cHogbl">
-    <button class="sc-c54e4a80-1 bPEvBg">Try for free</button>
-</div>
-<!--/$-->
-<p class="sc-d63dd9b3-0 ihMKzi">Waking Up is free for anyone who can&#x27;t afford it.
-    <!-- -->
-     <a class="sc-e6c713f2-1 sc-d63dd9b3-1 fQQQlL" 
-     href="https://app.wakingup.com/scholarship" 
-     aria-label="Purchase scholarship membership (opens in a new tab)" 
-     data-cy="scholarship-link-bottom" 
-     target="_blank">Request a scholarship.
-    </a>
-</p>
-</section>
-</div>
-<div class="sc-177723c2-0 cKqrBY">
-    <div class="sc-b40bf2fd-0 jiIzHc sc-177723c2-1 sc-177723c2-2 jStGmr cSLfqi" 
-    style="transform:translateY(50px)">
-    <img alt="" src="https://assets.wakingup.com/web/images/home/app-screenshot-player-thekindheart-life-v3.jpg"/>
-</div>
-<div class="sc-b40bf2fd-0 jiIzHc sc-177723c2-4 kzHseh" 
-style="transform:translateY(85px)">
-<img alt="" src="https://assets.wakingup.com/web/images/home/cloud-1a.png"/>
-</div>
-<div class="sc-b40bf2fd-0 jiIzHc sc-177723c2-1 sc-177723c2-3 jStGmr loPrfM" 
-style="transform:translateY(60px)">
-<img alt="" src="https://assets.wakingup.com/web/images/home/app-screenshot-pack-mindandbrain-life-v3.jpg"/>
-</div>
-<img alt="" src="https://assets.wakingup.com/web/images/home/bird-3.png" class="sc-177723c2-5 hzRifr"/>
-</div>
-</div>
-</section>
-<section class="sc-9d6bab5e-0 dayqus">
-    <img alt="" src="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-top-1.png" 
-    class="sc-9d6bab5e-1 ieqTaf"/>
-    <img alt="" src="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-middle-1.jpg" 
-    class="sc-9d6bab5e-2 kLkNvY"/>
-    <img alt="" src="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-bottom-1.png" 
-    class="sc-9d6bab5e-3 bEpwKd"/>
-    <img alt="" src="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-mobile-top.png" 
-    class="sc-9d6bab5e-4 eovdwk"/><img alt="" 
-    src="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-mobile-middle.jpg" 
-    class="sc-9d6bab5e-5 gMAGZx"/><img alt="" 
-    src="https://assets.wakingup.com/web/images/home/thefineprint-bkg-cloud-mobile-bottom.png" 
-    class="sc-9d6bab5e-6 CZPQy"/>
-    <div class="sc-7a505137-1 sc-9d6bab5e-7 cljckw bINXZv">
-        <div class="sc-5d948b49-0 csvDoH" style="opacity:0">
-            <p class="sc-5d948b49-1 fxDyBP">As a company, Waking Up strives to help alleviate human suffering on many fronts. 
-                To that end, we donate a minimum of 10% of our profits to the most effective charities, under the guidance of
-                <!-- --> 
-                <a class="sc-e6c713f2-1 sc-5d948b49-2 iwVkDG" 
-                href="https://www.givingwhatwecan.org/" aria-label="Giving what we can site (opens in a new tab)" 
-                data-cy="fineprint-givingwhatwecan-link" 
-                target="_blank">Giving What We Can</a>,
-                <!-- -->  
-                <a class="sc-e6c713f2-1 sc-5d948b49-2 iwVkDG" 
-                href="https://www.givewell.org/" 
-                aria-label="Give well site (opens in a new tab)" 
-                data-cy="fineprint-givewell-link" 
-                target="_blank">Give Well</a>,
-                <!-- --> 
-                <a class="sc-e6c713f2-1 sc-5d948b49-2 iwVkDG" 
-                href="https://founderspledge.com/" 
-                aria-label="Founders pledge site (opens in a new tab)" 
-                data-cy="fineprint-founderspledge-link" 
-                target="_blank">Founder&#x27;s Pledge</a>,and
-                <!-- --> 
-                <a class="sc-e6c713f2-1 sc-5d948b49-2 iwVkDG" 
-                href="https://www.longview.org/" 
-                aria-label="Longview site (opens in a new tab)" 
-                data-cy="fineprint-longview-link" 
-                target="_blank">Longview Philanthropy</a>.
-            </p>
-            <p class="sc-5d948b49-1 fxDyBP">Also, if you would like to become a member but truly cannot afford it, 
-                click here to learn about our
-                <!-- --> 
-                <a class="sc-e6c713f2-1 sc-5d948b49-2 iwVkDG" 
-                href="https://app.wakingup.com/scholarship" 
-                aria-label="Purchase scholarship membership (opens in a new tab)" 
-                data-cy="fineprint-scholarship-link" 
-                target="_blank">scholarship program.</a> 
-            </p>
-        </div>
+ <div class="cljckw cXRpom"><div class="sc-6a9b212f-6 bKHMCZ">
+        <div class="sc-6a9b212f-6 bKHMCZ">
+      <h1 class="sc-bb8f313f-3 lmQeTU" style="font-size: 2.5rem; margin-bottom: 1rem;">
+        Her Damla, Bir Yaşam.
+      </h1>
+      <p style="font-size: 1.125rem; line-height: 1.6;">
+        Su, sadece bir kaynak değil, geleceğimizin ta kendisi.  
+        <strong>Su samurları</strong> ve diğer su canlıları, temiz suya muhtaç bir dünyanın sessiz tanıkları.  
+        <br><br>
+        Günlük hayatında küçük adımlarla büyük farklar yaratabilirsin. Musluğu kapatmak, damlayan bir vanayı tamir ettirmek ya da bilinçli tüketim alışkanlıkları edinmek...  
+        <br><br>
+        <em>Unutma, geleceğin sana da su gibi akması için bugün suya sahip çık.</em>
+      </p>
     </div>
+
+    <section class="sc-29e7dd64-0 gFkBQL">
+      <div class="hQmGNC">
+        <p style="opacity: 0.8; font-size: 0.95rem;">
+          #SuyaSaygı #BilinçliTüketim #HerDamlaKıymetli
+        </p>
+      </div>
+    </section>
+ </div>
+ 
 </section>
-<footer class="sc-6ea40c1-0 dggdHD sc-7a505137-2 gclZjE">
-    <div class="sc-6ea40c1-1 gUfDSA"><div class="sc-6ea40c1-2 hnLWkK">
-        <div class="sc-6ea40c1-3 hSHPsK"><a class="sc-e6c713f2-0 sc-ec527885-0 jbiYww" aria-label="Waking Up" 
-            href="/">
-            <svg fill="none" role="img" viewBox="0 0 438 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" 
-            class="sc-ec527885-1 dgWNCe">
-            <title>Waking Up</title>
-            <path d="M95.23 1.11l25.47 52.7h-9.17l-5.43-11.6H84.3l-5.43 11.6h-9.1l25.46-52.7zm-7.26
-             33.32h14.46l-7.19-15.41-7.27 15.41zM131.1 1.69h8.51v26.2l22.94-26.2h10.13l-23.24 26.5L174.9 
-             53.8h-10.71l-24.58-24.59V53.8h-8.51V1.69zm55.45 0h8.51V53.8h-8.51V1.69zm160.27 31.85V1.69h8.51v32.07c0 
-             8.07 5.06 12.55 12.48 12.55 7.41 0 12.4-4.48 12.4-12.55V1.69h8.51v31.85c0 
-             12.84-8.66 20.84-20.92 20.84-12.25.01-20.98-7.99-20.98-20.84zm57.24-31.85h15.56c10.79 0
-              18.2 6.75 18.2 16.59 0 9.69-7.41 16.59-18.2 16.59h-7.05V53.8h-8.51V1.69zm15.19 25.25c6.24
-               0 9.91-3.45 9.91-8.66s-3.67-8.66-9.91-8.66h-6.68v17.32h6.68zM.05 1.56h8.73l13.5 31.97L36.04.98l13.7
-                32.35L62.96 1.56h8.81l-21.7 52.7L36.05 20.5 22.03 54.26.05 1.56zm222.92 
-                19.29V53.8h-8.51V1.1l33.67 33.83V1.68h8.51v52.7l-33.67-33.53zm68.41 10.64h16.52v12.04c-2.94 
-                1.84-6.83 2.79-10.64 2.79-10.28 0-17.98-8.15-17.98-18.57s7.71-18.57 17.98-18.57c4.44 0 8.86 1.56 
-                12.06 4.21l5.82-5.82c-4.69-4.27-11.03-6.47-17.88-6.47-14.75 0-26.64 11.6-26.64 26.64 0 15.04 11.89 
-                26.64 26.64 26.64 7.34 0 14.31-2.5 19.15-6.68V23.26h-21.64l-3.39 8.23z" fill="currentColor">
-            </path>
-        </svg>
-        <p class="sc-ec527885-2 bjUDyX">©
-            <!-- -->
-            2025
-            <!-- -->
-             Waking Up, LLC
-            </p>
-        </a>
-        <button aria-label="Help"
-         class="sc-9d8f6351-0 gJSZGX">
-         <svg viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg" 
-         height="24" width="24" aria-hidden="true" class="sc-9d8f6351-1 jLURNM">
-         <g fill="none">
-            <circle fill="#F4F4F4" cx="52.074" cy="52.216" r="51.879">
 
-            </circle>
-            <path d="M52.283 28c-3.893 0-7.563.551-11.01 1.653-3.448
-             1.103-6.45 2.604-9.006 4.503-2.556 1.9-4.573 4.128-6.05
-              6.684C24.738 43.396 24 46.128 24 49.036c0 3.518 1.055
-               6.755 3.166 9.71 2.11 2.954 4.925 5.393 8.443 7.317l-.88
-                1.618a435.758 435.758 0 01-1.935 3.517l-1.934 3.483-.88
-                 1.583 2.674-1.02a868.08 868.08 0 015.875-2.216 344.115
-                  344.115 0 005.874-2.252c1.783-.703 2.697-1.055 2.744-1.055.797.14 1.63.235 2.498.281.867.047
-                   1.747.07 2.638.07 3.893 0 7.563-.55 11.01-1.653 3.448-1.102 6.45-2.603 9.006-4.502 2.557-1.9
-                    4.573-4.128 6.05-6.684 1.478-2.556 2.217-5.289 2.217-8.197
-                     0-2.908-.739-5.64-2.216-8.196-1.478-2.556-3.494-4.784-6.05-6.684-2.557-1.9-5.559-3.4-9.006-4.503C59.846
-                      28.551 56.176 28 52.284 28zM38.704 51.288c-.61 
-                      0-1.137-.223-1.583-.669-.445-.445-.668-.973-.668-1.583s.223-1.137.668-1.583c.446-.445.974-.668
-                       1.583-.668.61 0 1.138.223 1.583.668.446.446.669.974.669 1.583 0
-                        .61-.223 1.138-.669 1.583-.445.446-.973.669-1.583.669zm8.936.07a2.22
-                         2.22 0 01-1.583-.633c-.446-.422-.669-.962-.669-1.618 0-.61.223-1.138.669-1.583.445-.446.973-.669
-                          1.583-.669.656 0 1.196.223 1.618.669.422.445.633.973.633 1.583 0 .656-.211 1.196-.633 
-                          1.618-.422.422-.962.633-1.618.633zm9.146
-                           0c-.657 0-1.196-.21-1.618-.633-.422-.422-.634-.962-.634-1.618
-                            0-.61.212-1.138.634-1.583.422-.446.961-.669 1.618-.669.61 0
-                             1.137.223 1.583.669.445.445.668.973.668 1.583 0 .656-.223
-                              1.196-.668 1.618a2.224 2.224 0 01-1.583.633zm9.005 0c-.656
-                               0-1.196-.21-1.618-.633-.422-.422-.633-.962-.633-1.618
-                                0-.61.211-1.138.633-1.583.422-.446.962-.669 1.618-.669.61 
-                                0 1.138.223 1.583.669.446.445.669.973.669 1.583 0 .656-.223
-                                 1.196-.669 1.618a2.225 2.225 0 01-1.583.633z" 
-                                 fill="currentColor">
-                                </path>
-                            </g>
-                        </svg>
-                    </button>
-                </div>
-                <!--$!-->
-                <template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">
 
-                </template>
-                <!--/$-->
-                <div class="sc-6ea40c1-5 geVcsD">
-                    <a class="sc-e6c713f2-1 sc-6ea40c1-6 eUiOOe"
-                     href="https://www.facebook.com/WakingUpApp/"
-                      aria-label="Link to Facebook (opens in a new tab)" 
-                      target="_blank">
-                      <svg fill="none" viewBox="0 0 27 28" xmlns="http://www.w3.org/2000/svg"
-                       height="29.04" width="28" aria-hidden="true" class="sc-6ea40c1-4 iNTsAW">
-                       <path d="M26.1385 13.8202C26.1385 6.52597 20.4092 
-                       0.557983 13.4068 0.557983C6.40431 0.557983 0.675049 
-                       6.52597 0.675049 13.8202C0.675049 20.4513 5.29029 25.9219 
-                       11.3378 26.9166V17.6331H8.15492V13.8202H11.3378V10.8362C11.3378 
-                       7.52063 13.2476 5.69708 16.1122 5.69708C17.5446 5.69708 18.9769 
-                       6.02864 18.9769 6.02864V9.34418H17.3854C15.7939 9.34418 15.3165 
-                       10.3388 15.3165 11.3335V13.8202H18.8177L18.1811 17.6331H15.1574V27.0824C21.5232 
-                       26.0877 26.1385 20.4513 26.1385 13.8202Z" fill="currentColor">
-                    </path>
-                </svg>
-            </a>
-            <a class="sc-e6c713f2-1 sc-6ea40c1-6 eUiOOe" 
-            href="https://twitter.com/wakingup" 
-            aria-label="Link to Twitter (opens in a new tab)" 
-            target="_blank">
-            <svg fill="none"
-             viewBox="0 0 25 25" 
-             xmlns="http://www.w3.org/2000/svg" 
-             height="23" width="23" 
-             aria-hidden="true" 
-             class="sc-6ea40c1-4 iNTsAW">
-             <path d="M14.562 10.58 23.67 0h-2.159l-7.909 
-             9.187L7.286 0H0l9.553 13.892L0 24.987h2.159l8.352-9.701 
-             6.671 9.701h7.286L14.561 10.58Zm-2.957 3.434-.968-1.383-7.7-11.007h3.315l6.215 
-             8.883.968 1.383 8.078 11.547h-3.315l-6.593-9.422Z" 
-             fill="currentColor">
-            </path>
-        </svg>
+<div class="sc-b40bf2fd-0 jiIzHc sc-177723c2-4 kzHseh" style="transform:translateY(85px)">
+    <img alt="" src="assets/img/cloud-1a.png"/>
+</div>
+
+<img alt="" src="assets/img/bird-3.png" class="sc-177723c2-5 hzRifr"/>
+
+
+<section class="sc-9d6bab5e-0 dayqus" style="position: relative; text-align: center;">
+
+  <!-- Arka plan bulut görselleri -->
+  <img alt="" src="assets/img/thefineprint-bkg-cloud-top-1.png" class="sc-9d6bab5e-1 ieqTaf" />
+  <img alt="" src="assets/img/thefineprint-bkg-cloud-middle-1.jpg" class="sc-9d6bab5e-2 kLkNvY" />
+  <img alt="" src="assets/img/thefineprint-bkg-cloud-bottom-1.png" class="sc-9d6bab5e-3 bEpwKd" />
+
+  <!-- Etkileşimli alan -->
+  <div  id="degisim">
+    <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color:#4d89b8;">
+      Değişim ellerinde 
+    </h2>
+    <p style="font-size: 1rem; color: #080808; margin-bottom: 1.5rem;">
+      Sadece küçük bilgilerle ne gibi farklar olucağını bilmek ister misin?
+    </p>
+    <a href="degisim.html"  onmouseover="this.style.backgroundColor='#0066cc'" onmouseout="this.style.backgroundColor='#0e2277'">
+      Neler Yapabilirim? <i class="fa fa-hand"></i>
     </a>
-    <a class="sc-e6c713f2-1 sc-6ea40c1-6 eUiOOe" 
-    href="https://www.instagram.com/wakingupapp" 
-    aria-label="Link to Instagram (opens in a new tab)" target="_blank">
-    <svg fill="none" viewBox="0 0 28 28"
-     xmlns="http://www.w3.org/2000/svg" height="28" width="28" 
-     aria-hidden="true" 
-     class="sc-6ea40c1-4 iNTsAW">
-     <path d="M14.1933 2.95476C17.7086 2.95476 18.188 2.95476 19.626 
-     2.95476C20.9043 2.95476 21.5435 3.27434 22.0228 3.43412C22.662 
-     3.75369 23.1413 3.91348 23.6207 4.39283C24.1 4.87219 24.4196 
-     5.35155 24.5794 5.99069C24.7392 6.47005 24.899 7.10919 25.0588 
-     8.38747C25.0588 9.82554 25.0588 10.1451 25.0588 13.8202C25.0588 
-     17.4952 25.0588 17.8148 25.0588 19.2529C25.0588 20.5312 24.7392 
-     21.1703 24.5794 21.6497C24.2598 22.2888 24.1 22.7682 23.6207 
-     23.2475C23.1413 23.7269 22.662 24.0464 22.0228 24.2062C21.5435 
-     24.366 20.9043 24.5258 19.626 24.6856C18.188 24.6856 17.8684 
-     24.6856 14.1933 24.6856C10.5183 24.6856 10.1987 24.6856 8.76064 
-     24.6856C7.48236 24.6856 6.84321 24.366 6.36386 24.2062C5.72472 
-     23.8867 5.24536 23.7269 4.766 23.2475C4.28665 22.7682 3.96708 
-     22.2888 3.80729 21.6497C3.64751 21.1703 3.48772 20.5312 3.32793 
-     19.2529C3.32793 17.8148 3.32793 17.4952 3.32793 13.8202C3.32793 
-     10.1451 3.32793 9.82554 3.32793 8.38747C3.32793 7.10919 3.64751 
-     6.47005 3.80729 5.99069C4.12686 5.35155 4.28665 4.87219 4.766 
-     4.39283C5.24536 3.91348 5.72472 3.59391 6.36386 3.43412C6.84321 
-     3.27434 7.48236 3.11455 8.76064 2.95476C10.1987 2.95476 10.6781 
-     2.95476 14.1933 2.95476ZM14.1933 0.557983C10.5183 0.557983 10.1987
-    0.557983 8.76064 0.557983C7.32257 0.557983 6.36386 0.877555 5.56493 
-    1.19713C4.766 1.5167 3.96708 1.99605 3.16815 2.79498C2.36922 3.59391 
-    2.04965 4.23305 1.5703 5.19176C1.25072 5.99069 1.09094 6.9494 0.931152 
-    8.38747C0.931152 9.82554 0.931152 10.3049 0.931152 13.8202C0.931152 
-    17.4952 0.931152 17.8148 0.931152 19.2529C0.931152 20.6909 1.25072 
-    21.6497 1.5703 22.4486C1.88987 23.2475 2.36922 24.0464 3.16815 
-    24.8454C3.96708 25.6443 4.60622 25.9639 5.56493 26.4432C6.36386 
-    26.7628 7.32257 26.9226 8.76064 27.0824C10.1987 27.0824 10.6781 
-    27.0824 14.1933 27.0824C17.7086 27.0824 18.188 27.0824 19.626 
-    27.0824C21.0641 27.0824 22.0228 26.7628 22.8218 26.4432C23.6207 
-    26.1237 24.4196 25.6443 25.2185 24.8454C26.0175 24.0464 26.337 
-    23.4073 26.8164 22.4486C27.136 21.6497 27.2957 20.6909 27.4555 
-    19.2529C27.4555 17.8148 27.4555 17.3355 27.4555 13.8202C27.4555 
-    10.3049 27.4555 9.82554 27.4555 8.38747C27.4555 6.9494 27.136 
-    5.99069 26.8164 5.19176C26.4968 4.39283 26.0175 3.59391 25.2185 
-    2.79498C24.4196 1.99605 23.7805 1.67648 22.8218 1.19713C22.0228 
-    0.877555 21.0641 0.717769 19.626 0.557983C18.188 0.557983 17.8684 
-    0.557983 14.1933 0.557983Z" 
-    fill="currentColor">
-</path>
-<path d="M14.1933 6.9494C10.3585 6.9494 7.32257 9.98532 7.32257 13.8202C7.32257 
-17.655 10.3585 20.6909 14.1933 20.6909C18.0282 20.6909 21.0641 17.655 21.0641 
-13.8202C21.0641 9.98532 18.0282 6.9494 14.1933 6.9494ZM14.1933 18.2942C11.7966 
-18.2942 9.71935 16.3767 9.71935 13.8202C9.71935 11.4234 11.6368 9.34618 14.1933 
-9.34618C16.5901 9.34618 18.6673 11.2636 18.6673 13.8202C18.6673 16.217 16.5901 
-18.2942 14.1933 18.2942Z" 
-fill="currentColor">
-</path>
-<path d="M21.2239 8.38747C22.1064 8.38747
- 22.8218 7.67209 22.8218 6.78962C22.8218
-  5.90715 22.1064 5.19176 21.2239 5.19176C20.3414
-   5.19176 19.626 5.90715 19.626 6.78962C19.626 7.67209
-    20.3414 8.38747 21.2239 8.38747Z" 
-    fill="currentColor">
-</path>
-</svg>
-</a>
-</div>
-</div>
-<nav class="sc-6ea40c1-7 hAXSSz">
-    <ul class="sc-6ea40c1-8 eqfrAP">
-        <li class="sc-6ea40c1-9 dqshsj">
-            <a class="sc-e6c713f2-1 sc-6ea40c1-10 jnIXqI" 
-            href="https://app.wakingup.com/purchase-gift-card">Send a Gift</a>
-        </li>
-        <li class="sc-6ea40c1-9 dqshsj"><a class="sc-e6c713f2-1 sc-6ea40c1-10 jnIXqI" 
-            href="https://shop.wakingup.com">Shop</a></li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-1 sc-6ea40c1-10 jnIXqI" 
-                href="https://app.wakingup.com/promotions/redeem">Redeem Promo</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="/artists">Artists
-            </a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="/about">About</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-1 sc-6ea40c1-10 jnIXqI" 
-                href="https://app.wakingup.com/scholarship">Scholarship Program</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                aria-label="Foundation (opens in a new tab)" 
-                target="_blank" href="/foundation">Foundation</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="mailto:partnerships@wakingup.com">Partnerships</a>
-            </li>
+  </div>
+</section>
+
+
+<footer class="sc-6ea40c1-0 dggdHD sc-7a505137-2 gclZjE site-footer" style="background-image: url('assets/img/bkg-footer.jpg');">
+
+
+  <div class="container">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Hakkımızda</h3>
+        <p><i class="fa-regular fa-thumbs-up"></i>  Peki Töz Nedir?</p>
+      </div>
+
+      <div class="footer-column"id="footer">
+        <h3>Linkler</h3>
+        <ul>
+          <li><a href="#">Anasayfa</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">İletişim</a></li>
         </ul>
-        <ul class="sc-6ea40c1-8 eqfrAP">
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-1 sc-6ea40c1-10 jnIXqI" 
-                href="https://apply.workable.com/waking-up-1" target="_blank">Careers</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-1 sc-6ea40c1-10 jnIXqI" 
-                href="https://help.wakingup.com">FAQ + Contact Support</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="/privacy-policy">Privacy Policy</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="/ca-privacy">CA Privacy Notice</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj"><a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="/terms-of-service">Terms of Service</a>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj">
-                <button type="button" class="sc-20a79dcd-0 fipqjz sc-6ea40c1-11 FQRid">Cookies Preferences</button>
-            </li>
-            <li class="sc-6ea40c1-9 dqshsj"><a class="sc-e6c713f2-0 sc-6ea40c1-10 jnIXqI" 
-                href="/your-privacy-choices">Your Privacy Choices<svg viewBox="0 0 30 14" 
-                xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
-                height="16.33" width="35" aria-hidden="true" 
-                class="sc-6ea40c1-12 cZLdWs">
-                <path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 
-                1.6 7s2.6 5.8 5.8 5.8z" 
-                style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff">
-            </path>
-            <path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 
-            0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" 
-            style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f">
-        </path>
-        <path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0
-         .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 
-         7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" 
-         style="fill:#fff">
-        </path>
-        <path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 
-        7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" 
-        style="fill:#06f">
-    </path>
-</svg>
-</a>
-</li>
-</ul>
-</nav>
-<button aria-label="Help" 
-class="sc-9d8f6351-0 bkfvub">
-<svg viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg" 
-height="24" width="24" aria-hidden="true" class="sc-9d8f6351-1 jLURNM">
-<g fill="none">
-    <circle fill="#F4F4F4" cx="52.074" cy="52.216" r="51.879">
+      </div>
 
-    </circle>
-    <path d="M52.283 28c-3.893 0-7.563.551-11.01 1.653-3.448 1.103-6.45 
-    2.604-9.006 4.503-2.556 1.9-4.573 4.128-6.05 6.684C24.738 43.396 24
-     46.128 24 49.036c0 3.518 1.055 6.755 3.166 9.71 2.11 2.954 4.925 
-     5.393 8.443 7.317l-.88 1.618a435.758 435.758 0 01-1.935 3.517l-1.934 
-     3.483-.88 1.583 2.674-1.02a868.08 868.08 0 015.875-2.216 344.115 344.115 
-     0 005.874-2.252c1.783-.703 2.697-1.055 2.744-1.055.797.14 1.63.235 2.498.281.867.047
-      1.747.07 2.638.07 3.893 0 7.563-.55 11.01-1.653 3.448-1.102 6.45-2.603 9.006-4.502 
-      2.557-1.9 4.573-4.128 6.05-6.684 1.478-2.556 2.217-5.289 
-      2.217-8.197 0-2.908-.739-5.64-2.216-8.196-1.478-2.556-3.494-4.784-6.05-6.684-2.557-1.9-5.559-3.4-9.006-4.503C59.846
-       28.551 56.176 28 52.284 28zM38.704 51.288c-.61 
-       0-1.137-.223-1.583-.669-.445-.445-.668-.973-.668-1.583s.223-1.137.668-1.583c.446-.445.974-.668 1.583-.668.61
-        0 1.138.223 1.583.668.446.446.669.974.669 1.583 0 .61-.223
-         1.138-.669 1.583-.445.446-.973.669-1.583.669zm8.936.07a2.22
-          2.22 0 01-1.583-.633c-.446-.422-.669-.962-.669-1.618 0-.61.223-1.138.669-1.583.445-.446.973-.669
-           1.583-.669.656 0 1.196.223 1.618.669.422.445.633.973.633 1.583 0
-            .656-.211 1.196-.633 1.618-.422.422-.962.633-1.618.633zm9.146
-             0c-.657 0-1.196-.21-1.618-.633-.422-.422-.634-.962-.634-1.618
-              0-.61.212-1.138.634-1.583.422-.446.961-.669 1.618-.669.61 0
-               1.137.223 1.583.669.445.445.668.973.668 1.583 0 .656-.223
-                1.196-.668 1.618a2.224 2.224 0 01-1.583.633zm9.005 0c-.656
-                 0-1.196-.21-1.618-.633-.422-.422-.633-.962-.633-1.618
-                  0-.61.211-1.138.633-1.583.422-.446.962-.669 1.618-.669.61
-                   0 1.138.223 1.583.669.446.445.669.973.669 1.583 0 
-                   .656-.223 1.196-.669 1.618a2.225 2.225 0 01-1.583.633z" 
-                   fill="currentColor">
-                </path>
-                </g>
-                </svg>
-            </button>
-        </div>
-        </footer>
-        </div>
-        <!--$-->
-        <!--/$-->
-        <script src="/_next/static/chunks/webpack-26c7553fa96b2d35.js" 
-        id="_R_" async="">
-        </script>
-        <script>(self.__next_f=self.__next_f||[]).push([0])</script>
-        <script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n4:I[34186,[],\"OutletBoundary\"]\n6:I[45951,[],\"AsyncMetadataOutlet\"]\n8:I[34186,[],\"ViewportBoundary\"]\na:I[34186,[],\"MetadataBoundary\"]\nb:\"$Sreact.suspense\"\nd:I[7830,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"890\",\"static/chunks/890-694bbfac8fba86a4.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"2343\",\"static/chunks/2343-133cac874a26a2fd.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"6832\",\"static/chunks/6832-f3e9f8d7c2d56f70.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"5834\",\"static/chunks/5834-a6311511adbb61e1.js\",\"9807\",\"static/chunks/9807-dcccc2265646ed7a.js\",\"4219\",\"static/chunks/app/global-error-23a5e2e395502b0b.js\"],\"default\"]\n:HL[\"/_next/static/css/51d7b0b8bf6d8099.css\",\"style\"]\n:HL[\"/_next/static/css/9ee16885be10786a.css\",\"style\"]\n"])</script><script>
-        self.__next_f.push([1,"0:{\"P\":null,\"b\":\"vEwlC7TIA_VruaCxFWxOU\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/51d7b0b8bf6d8099.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],\"$L2\"]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L3\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/9ee16885be10786a.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"$L4\",null,{\"children\":[\"$L5\",[\"$\",\"$L6\",null,{\"promise\":\"$@7\"}]]}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],null],[\"$\",\"$La\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$b\",null,{\"fallback\":null,\"children\":\"$Lc\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/51d7b0b8bf6d8099.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"s\":false,\"S\":true}\n"])</script>
-        <script>self.__next_f.push([1,"e:I[26607,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"890\",\"static/chunks/890-694bbfac8fba86a4.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"2343\",\"static/chunks/2343-133cac874a26a2fd.js\",\"6012\",\"static/chunks/6012-9626678d9e1dffc7.js\",\"5421\",\"static/chunks/5421-01cd203dfc91300c.js\",\"7109\",\"static/chunks/7109-c218a86a6dca6697.js\",\"344\",\"static/chunks/344-75809e6700db0c1d.js\",\"570\",\"static/chunks/570-da6999484f2896f2.js\",\"3227\",\"static/chunks/3227-1f623370ae2731bc.js\",\"3084\",\"static/chunks/3084-c81833658272297d.js\",\"3720\",\"static/chunks/3720-88c3310cd1cff793.js\",\"4370\",\"static/chunks/4370-51bd5b735317e831.js\",\"1321\",\"static/chunks/1321-ce2624252d1c1485.js\",\"8886\",\"static/chunks/8886-b33e43a4cc61a9d9.js\",\"7519\",\"static/chunks/7519-849de8d0084312e0.js\",\"3298\",\"static/chunks/3298-ca72596ba0d59e94.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"6832\",\"static/chunks/6832-f3e9f8d7c2d56f70.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"5834\",\"static/chunks/5834-a6311511adbb61e1.js\",\"7027\",\"static/chunks/7027-4cce5b64744fa34d.js\",\"8858\",\"static/chunks/8858-6fabdcfa8d85d403.js\",\"8974\",\"static/chunks/app/page-66caf7b27a53b613.js\"],\"default\"]\n"])</script>
-        <script>self.__next_f.push([1,"3:[\"$\",\"$Le\",null,{\"campaign\":\"home-cta1\",\"source\":\"Home\",\"subscriptionPlans\":[{\"amount\":12999,\"id\":\"stripe_year_standard_12999\",\"interval\":\"year\",\"nickname\":\"Standard Pricing\",\"originalAmount\":12999,\"sku\":\"stripe_year_standard_12999\",\"type\":\"standard\"},{\"amount\":1999,\"id\":\"stripe_month_standard_1999\",\"interval\":\"month\",\"nickname\":\"Standard Pricing\",\"originalAmount\":1999,\"sku\":\"stripe_month_standard_1999\",\"type\":\"standard\"}]}]\n"])</script>
-        <script>self.__next_f.push([1,"f:I[59835,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"5421\",\"static/chunks/5421-01cd203dfc91300c.js\",\"7109\",\"static/chunks/7109-c218a86a6dca6697.js\",\"3227\",\"static/chunks/3227-1f623370ae2731bc.js\",\"4370\",\"static/chunks/4370-51bd5b735317e831.js\",\"9859\",\"static/chunks/9859-e8b4d863261e1062.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"7177\",\"static/chunks/app/layout-d87aeb36d8990317.js\"],\"\"]\n10:I[18776,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"5421\",\"static/chunks/5421-01cd203dfc91300c.js\",\"7109\",\"static/chunks/7109-c218a86a6dca6697.js\",\"3227\",\"static/chunks/3227-1f623370ae2731bc.js\",\"4370\",\"static/chunks/4370-51bd5b735317e831.js\",\"9859\",\"static/chunks/9859-e8b4d863261e1062.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"7177\",\"static/chunks/app/layout-d87aeb36d8990317.js\"],\"default\"]\n"])</script>
-        <script>self.__next_f.push([1,"2:[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[[[\"$\",\"$Lf\",null,{\"src\":\"https://cdn.cookielaw.org/consent/c8afa025-de60-4850-a9db-4962e99aa987/OtAutoBlock.js\",\"strategy\":\"beforeInteractive\"}],[\"$\",\"$Lf\",null,{\"data-domain-script\":\"c8afa025-de60-4850-a9db-4962e99aa987\",\"src\":\"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js\",\"strategy\":\"beforeInteractive\"}]],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"\"}],[\"$\",\"$Lf\",null,{\"className\":\"optanon-category-C0002-C0004\",\"dangerouslySetInnerHTML\":{\"__html\":\"\\n      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\n      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\n      j=d.createElement(s),dl=l!='dataLayer'?'\u0026l='+l:'';j.async=true;j.src=\\n      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n      })(window,document,'script','dataLayer','GTM-PCMK7D8');\\n      \"},\"strategy\":\"afterInteractive\",\"type\":\"text/plain\"}],[[\"$\",\"$Lf\",null,{\"className\":\"optanon-category-C0004\",\"dangerouslySetInnerHTML\":{\"__html\":\"\\n      !function(f,b,e,v,n,t,s)\\n      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?\\n      n.callMethod.apply(n,arguments):n.queue.push(arguments)};\\n      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\\n      n.queue=[];t=b.createElement(e);t.async=!0;\\n      t.src=v;s=b.getElementsByTagName(e)[0];\\n      s.parentNode.insertBefore(t,s)}(window, document,'script',\\n      'https://connect.facebook.net/en_US/fbevents.js');\\n      fbq('init', '1771586519554127');\\n      fbq('set','agent','tmgoogletagmanager', '1771586519554127');\\n      fbq('track', 'PageView');\\n      \"},\"strategy\":\"afterInteractive\",\"type\":\"text/plain\"}],[\"$\",\"noscript\",null,{\"children\":[\"$\",\"img\",null,{\"alt\":\"\",\"height\":\"1\",\"width\":\"1\",\"style\":{\"display\":\"none\"},\"src\":\"https://www.facebook.com/tr?id=1771586519554127\u0026ev=PageView\u0026noscript=1\"}]}]],[\"$\",\"$Lf\",null,{\"src\":\"https://cdn.levelaccess.net/accessjs/YW1wMTMxODk/access.js\",\"strategy\":\"afterInteractive\"}]]}],[\"$\",\"body\",null,{\"children\":[[\"$\",\"noscript\",null,{\"children\":[\"$\",\"iframe\",null,{\"src\":\"https://www.googletagmanager.com/ns.html?id=GTM-PCMK7D8\",\"height\":\"0\",\"width\":\"0\",\"style\":{\"display\":\"none\",\"visibility\":\"hidden\"},\"title\":\"google-tag-manager-noscript\"}]}],[\"$\",\"$L10\",null,{\"children\":\"$L11\"}],[\"$\",\"$Lf\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n      !function(e,t,n){function a(){var e=t.getElementsByTagName(\\\"script\\\")[0],n=t.createElement(\\\"script\\\");n.type=\\\"text/javascript\\\",n.async=!0,n.src=\\\"https://beacon-v2.helpscout.net\\\",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],\\\"complete\\\"===t.readyState)return a();e.attachEvent?e.attachEvent(\\\"onload\\\",a):e.addEventListener(\\\"load\\\",a,!1)}(window,document,window.Beacon||function(){});\\n      window.Beacon('init', '50a26bbd-5226-4ff1-a78c-a3fe0ba83203');\\n      window.Beacon('config', { display: { style: 'manual' } });\\n      \"},\"strategy\":\"lazyOnload\"}],[\"$\",\"$Lf\",null,{\"className\":\"optanon-category-C0002\",\"dangerouslySetInnerHTML\":{\"__html\":\"\\nfunction appsFlyerScript() {\\n!function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){\\n(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},\\nt.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,\\no.src=\\\"https://websdk.appsflyer.com?\\\"+(c.length\u003e0?\\\"st=\\\"+c.split(\\\",\\\").sort().join(\\\",\\\")+\\\"\u0026\\\":\\\"\\\")+(i.length\u003e0?\\\"af_id=\\\"+i:\\\"\\\"),\\np.parentNode.insertBefore(o,p)}(window,document,\\\"script\\\",0,\\\"AF\\\", \\\"pba,banners\\\",{pba: {webAppId: \\\"5c157356-ce1d-435c-97ed-aecec62158e0\\\"}, banners: {key: \\\"a3d72801-6c0d-45f7-99cd-fb95eba58c51\\\"}});\\n\\n}\\nappsFlyerScript();\\n\"},\"strategy\":\"afterInteractive\",\"type\":\"text/plain\"}],\"$L12\"]}]]}]\n"])</script>
-        <script>self.__next_f.push([1,"9:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no\"}]]\n"])</script>
-        <script>self.__next_f.push([1,"12:[\"$\",\"$Lf\",null,{\"src\":\"https://assets.wakingup.com/web/scripts/onelink-smart-script-v2.9.2.js\",\"strategy\":\"afterInteractive\"}]\n5:null\n"])</script>
-        <script>self.__next_f.push([1,"13:I[66432,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"5421\",\"static/chunks/5421-01cd203dfc91300c.js\",\"7109\",\"static/chunks/7109-c218a86a6dca6697.js\",\"3227\",\"static/chunks/3227-1f623370ae2731bc.js\",\"4370\",\"static/chunks/4370-51bd5b735317e831.js\",\"9859\",\"static/chunks/9859-e8b4d863261e1062.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"7177\",\"static/chunks/app/layout-d87aeb36d8990317.js\"],\"default\"]\n14:I[30624,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"5421\",\"static/chunks/5421-01cd203dfc91300c.js\",\"7109\",\"static/chunks/7109-c218a86a6dca6697.js\",\"3227\",\"static/chunks/3227-1f623370ae2731bc.js\",\"4370\",\"static/chunks/4370-51bd5b735317e831.js\",\"9859\",\"static/chunks/9859-e8b4d863261e1062.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"7177\",\"static/chunks/app/layout-d87aeb36d8990317.js\"],\"default\"]\n15:I[55171,[],\"\"]\n16:I[19615,[],\"\"]\n17:I[95076,[\"9698\",\"static/chunks/9698-24f21c99608dfd1d.js\",\"890\",\"static/chunks/890-694bbfac8fba86a4.js\",\"9245\",\"static/chunks/9245-30d70fbbef57c861.js\",\"8286\",\"static/chunks/8286-64dc07c2b7b84e93.js\",\"4478\",\"static/chunks/4478-9d81cfae7315a7cd.js\",\"2343\",\"static/chunks/2343-133cac874a26a2fd.js\",\"2040\",\"static/chunks/2040-66fa414d9be92800.js\",\"6832\",\"static/chunks/6832-f3e9f8d7c2d56f70.js\",\"4138\",\"static/chunks/4138-1e7097541919c130.js\",\"5834\",\"static/chunks/5834-a6311511adbb61e1.js\",\"9807\",\"static/chunks/9807-dcccc2265646ed7a.js\",\"4345\",\"static/chunks/app/not-found-1537839dc4dd8bf7.js\"],\"default\"]\n"])</script>
-        <script>self.__next_f.push([1,"11:[\"$\",\"$L13\",null,{\"formats\":\"$undefined\",\"locale\":\"en\",\"messages\":{\"components\":{\"footers\":{\"landing\":{\"aria\":{\"facebook\":\"Link to Facebook (opens in a new tab)\",\"twitter\":\"Link to Twitter (opens in a new tab)\",\"instagram\":\"Link to Instagram (opens in a new tab)\",\"foundation\":\"Foundation (opens in a new tab)\"},\"menu\":{\"gift\":\"Send a Gift\",\"shop\":\"Shop\",\"redeem\":\"Redeem Promo\",\"artists\":\"Artists\",\"about\":\"About\",\"scholarship\":\"Scholarship Program\",\"foundation\":\"Foundation\",\"partnerships\":\"Partnerships\",\"careers\":\"Careers\",\"faq\":\"FAQ + Contact Support\",\"privacy\":\"Privacy Policy\",\"caPrivacy\":\"CA Privacy Notice\",\"terms\":\"Terms of Service\",\"ossDisclosure\":\"Open Source Disclosures\",\"yourPrivacyChoices\":\"Your Privacy Choices\",\"cookiesPreferences\":\"Cookies Preferences\"}}},\"hamburgerMenu\":{\"sidebar\":{\"aria\":{\"close\":\"Close menu\"},\"menu\":{\"home\":\"Home\",\"gift\":\"Send a Gift\",\"shop\":\"Shop\",\"redeem\":\"Redeem Promo\",\"foundation\":\"Foundation\",\"faq\":\"FAQ + Support\",\"privacy\":\"Privacy Policy\",\"terms\":\"Terms of Service\"}}},\"headers\":{\"landing\":{\"aria\":{\"homeLink\":\"Waking Up\"},\"buttons\":{\"login\":\"LOG IN\",\"tryForFree\":\"Try for Free\"}}}},\"pages\":{}},\"now\":\"$undefined\",\"timeZone\":\"UTC\",\"children\":[\"$\",\"$L14\",null,{\"children\":[\"$\",\"$L15\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L16\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"$L17\",null,{\"buttonText\":\"Go to home\",\"errorCode\":404}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]\n"])</script>
-        <script>self.__next_f.push([1,"18:I[89439,[],\"IconMark\"]\n"])</script>
-        <script>self.__next_f.push([1,"7:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Waking Up - A New Operating System for Your Mind\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Open the door to a deeper understanding of yourself—with guided meditations and insights for living a more examined life.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"manifest\",\"href\":\"/manifest.json\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"meta\",\"3\",{\"name\":\"mobile-web-app-capable\",\"content\":\"yes\"}],[\"$\",\"meta\",\"4\",{\"name\":\"apple-mobile-web-app-title\",\"content\":\"Waking Up\"}],[\"$\",\"meta\",\"5\",{\"name\":\"apple-mobile-web-app-status-bar-style\",\"content\":\"black\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"Waking Up - A New Operating System for Your Mind\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"Open the door to a deeper understanding of yourself—with guided meditations and insights for living a more examined life.\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"wakingup.com\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image:secure_url\",\"content\":\"https://assets.wakingup.com/web/images/metadata/og-default-2.jpg\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image\",\"content\":\"https://assets.wakingup.com/web/images/metadata/og-default-2.jpg\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:site\",\"content\":\"@wakingup\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:creator\",\"content\":\"@wakingup\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:title\",\"content\":\"Waking Up - A New Operating System for Your Mind\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:description\",\"content\":\"Open the door to a deeper understanding of yourself—with guided meditations and insights for living a more examined life.\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:image:secure_url\",\"content\":\"https://assets.wakingup.com/web/images/metadata/og-default-2.jpg\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image\",\"content\":\"https://assets.wakingup.com/web/images/metadata/og-default-2.jpg\"}],[\"$\",\"link\",\"19\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"20\",{\"rel\":\"icon\",\"href\":\"/icon1.png?782893592b1f5658\",\"type\":\"image/png\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"21\",{\"rel\":\"icon\",\"href\":\"/icon2.png?63180dab48abc6e0\",\"type\":\"image/png\",\"sizes\":\"32x32\"}],[\"$\",\"link\",\"22\",{\"rel\":\"icon\",\"href\":\"/icon3.png?2d0ef33fc0870977\",\"type\":\"image/png\",\"sizes\":\"48x48\"}],[\"$\",\"link\",\"23\",{\"rel\":\"icon\",\"href\":\"/icon4.png?fde7c6d30421bfb1\",\"type\":\"image/png\",\"sizes\":\"96x96\"}],[\"$\",\"link\",\"24\",{\"rel\":\"icon\",\"href\":\"/icon5.png?4940afb01cdbea98\",\"type\":\"image/png\",\"sizes\":\"192x192\"}],[\"$\",\"link\",\"25\",{\"rel\":\"apple-touch-icon\",\"href\":\"/apple-icon.png?4a7b0b72e1eee4ed\",\"type\":\"image/png\",\"sizes\":\"192x192\"}],[\"$\",\"$L18\",\"26\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script>
-        <script>self.__next_f.push([1,"c:\"$7:metadata\"\n"])
-        </script>
-        </body>
-        </html>
+      <div class="footer-column">
+        <h3>İletişim</h3>
+        <p>info@toz.com</p>
+        <p> <i class="fa fa-phone"></i> +90 555 555 55 55</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 TÖZ Tüm hakları saklıdır.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+<!--Javascript added-->    
+<script src="js/script.js"></script>
+</body>
+</html>
