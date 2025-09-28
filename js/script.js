@@ -115,9 +115,9 @@ const slides = document.querySelectorAll('.testimonial-slide');
 
     ///count sayılarda
 
-      document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.stat-number');
-    const speed = 200; // Hızı ayarlayabilirsin (daha düşük = daha hızlı)
+    const speed = 100; // Hızı ayarlayabilirsin (daha düşük = daha hızlı)
 
     counters.forEach(counter => {
       const updateCount = () => {
@@ -128,7 +128,7 @@ const slides = document.querySelectorAll('.testimonial-slide');
 
         if (count < target) {
           counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 20);
+          setTimeout(updateCount, 50);
         } else {
           counter.innerText = target.toLocaleString(); // 2,200,000,000 gibi
         }

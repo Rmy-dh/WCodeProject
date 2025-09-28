@@ -8,6 +8,7 @@
 @media (max-width: 575.98px){.dggdHD{padding:1.5625rem 0 4rem 0;}}
 
 
+
 .fkSMzd{overflow-x:hidden;position:relative;}
 
 .cljckw{margin:0 auto;max-width:79rem;padding:0 2.5rem;}
@@ -87,7 +88,7 @@
 @media (max-width: 767.98px){.hOcnkK{top:5.4rem;right:-14.125rem;}}
 
 
-.jsyjBu{left:-21.25rem;position:absolute;top:28.0625rem;-webkit-transform:matrix(-1,0,0,1,0,0);-moz-transform:matrix(-1,0,0,1,0,0);-ms-transform:matrix(-1,0,0,1,0,0);transform:matrix(-1,0,0,1,0,0);width:28.75rem;z-index:10;}
+.jsyjBu{left:-25.25rem;position:absolute;top:28.0625rem;-webkit-transform:matrix(-1,0,0,1,0,0);-moz-transform:matrix(-1,0,0,1,0,0);-ms-transform:matrix(-1,0,0,1,0,0);transform:matrix(-1,0,0,1,0,0);width:28.75rem;z-index:10;}
 @media (max-width: 991.98px){.jsyjBu{left:-23.875rem;top:32.0625rem;}}
 @media (max-width: 767.98px){.jsyjBu{top:21.875rem;left:-24.2rem;}}
 
@@ -1316,3 +1317,24 @@ marquee-wrapper {
 
 
 */
+
+
+
+.playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 180;
+  font-style: normal;
+}
+.playfair h3{
+    color: #233566;
+}
+.playfair strong {
+  color: #004080;
+  font-weight: 700;
+}
+
+.playfair em {
+  color: #004080;
+  font-style: italic;
+}
