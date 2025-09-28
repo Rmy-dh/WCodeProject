@@ -132,4 +132,84 @@
       margin-right: 0.5rem;
     }
 
-  
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+ background: linear-gradient(
+                354.34deg, rgba(14,34,119,0.43) -82.02%, rgba(14,34,119,0) 42.34%
+            ), linear-gradient(
+                247.08deg, rgba(14,34,119,0.43) 5.94%, rgba(14,34,119,0) 92.57%
+            ), #208fe4;
+  color: white;
+  height: 40px;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  display: none; /* Küçük ekranlarda açmak için media query ile göster */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(
+                354.34deg, rgba(14,34,119,0.43) -82.02%, rgba(14,34,119,0) 42.34%
+            ), linear-gradient(
+                247.08deg, rgba(14,34,119,0.43) 5.94%, rgba(14,34,119,0) 92.57%
+            ), #208fe4;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 10px;
+    padding: 1rem;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+
+.playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 180;
+  font-style: normal;
+}
+.playfair h3{
+    color: #233566;
+}
+.playfair strong {
+  color: #004080;
+  font-weight: 700;
+}
+
+.playfair em {
+  color: #004080;
+  font-style: italic;
+}
