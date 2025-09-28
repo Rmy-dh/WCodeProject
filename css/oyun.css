@@ -27,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/gokyuzu.jpg');
+    background-image: url('../assets/img/images/gokyuzu.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -46,7 +46,7 @@ body {
 .bulut1 {
     width: 250px;
     height: 150px;
-    background-image: url('assests/img/images/bulut1.png');
+    background-image: url('../assets/img/images/bulut1.png');
     top: 15%;
     animation: hareketBulut1 25s linear infinite;
 }
@@ -54,7 +54,7 @@ body {
 .bulut2 {
     width: 300px;
     height: 120px;
-    background-image: url('assests/img/images/bulut2.png');
+    background-image: url('../assets/img/images/bulut2.png');
     top: 45%;
     animation: hareketBulut2 30s linear infinite;
 }
@@ -62,7 +62,7 @@ body {
 .bulut3 {
     width: 200px;
     height: 100px;
-    background-image: url('assests/img/images/bulut3.png');
+    background-image: url('../assets/img/images/bulut3.png');
     top: 75%;
     animation: hareketBulut3 35s linear infinite;
 }
@@ -101,7 +101,7 @@ body {
 .balon {
     width: 600px;
     height: 200px;
-    background-image: url('assests/img/images/balon.png');
+    background-image: url('../assets/img/images/balon.png');
     background-size: contain;
     background-repeat: no-repeat;
     margin:   100 auto -10px;
@@ -127,7 +127,7 @@ body {
     top: 25%;
     width: 150px;
     height: 80px;
-    background-image: url('assests/img/images/ucak.png');
+    background-image: url('../assets/img/images/ucak.png');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 3;
@@ -212,7 +212,7 @@ body {
     top: -50px;
     width: 20px;
     height: 30px;
-    background-image: url('assests/img/images/damla.png');
+    background-image: url('../assets/img/images/damla.png');
     background-size: contain !important;
     background-repeat: no-repeat !important;
     animation: yagmurAnimasyon 2s linear forwards !important;
@@ -278,7 +278,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assests/img/images/orman.png'); /* AYNI RESİM ama transparan */
+    background-image: url('../assets/img/images/orman.png'); /* AYNI RESİM ama transparan */
     background-size: cover;
     background-position: center;
     z-index: 2; /* Gökyüzünün üstünde ama diğer elementlerin altında */
@@ -339,7 +339,7 @@ body {
     height: 100vh; /* çatı yüksekliği */
     margin-top: -10vh; /*ormanın üzerine çıkmasın */
     overflow: hidden;
-    background-image: url('assests/img/images/çati.png');
+    background-image: url('../assets/img/images/çati.png');
     background-size: cover;
     background-position: center;
 }
@@ -350,7 +350,7 @@ body {
     left: 0;
     width: -50%;
     height: 100%;
-    background-image: url('assests/img/images/çimen.png');
+    background-image: url('../assets/img/images/çimen.png');
     background-size: cover;
     background-position: center;
     z-index: 6; /* Çatı görselinin altında */
@@ -364,7 +364,8 @@ body {
     position: absolute;
     top:0;
     left: -75%;
-    transform: translateX(100%); scale(1.0);
+    transform: translateX(100%); 
+    scale(1.0);
     z-index: 4;
    
     
@@ -425,7 +426,7 @@ body {
 .agac {
     width: 1200px;
     height: 800px;
-    background-image: url('assests/img/images/agac.png');
+    background-image: url('../assets/img/images/agac.png');
     left: 20%;
     bottom: 0;
 }
@@ -433,7 +434,7 @@ body {
 .cicek {
     width: 1200px;
     height: 800px;
-    background-image: url('assests/img/images/cicek.png');
+    background-image: url('../assets/img/images/cicek.png');
     left: 55%;
     bottom: 0;
 }
@@ -441,7 +442,7 @@ body {
 .ot {
     width: 600px;
     height: 300px;
-    background-image: url('assests/img/images/ot.png');
+    background-image: url('../assets/img/images/ot.png');
     left: -5%;
     bottom: 0;
 }
@@ -464,7 +465,7 @@ body {
 .ugur-bocegi {
     width: 40px;
     height: 40px;
-    background-image: url('assests/img/images/ugur-bocegi.png');
+    background-image: url('../assets/img/images/ugur-bocegi.png');
 }
 
 .ugur1 {
@@ -480,7 +481,7 @@ body {
 .kus {
     width: 60px;
     height: 40px;
-    background-image: url('assests/img/images/kus.png');
+    background-image: url('../assets/img/images/kus.png');
 }
 
 .kus1 {
@@ -529,7 +530,7 @@ body {
 }
 
 .ev .bg-arkaplan {
-    background-image: url('assets/img/images/ev.jpg');
+    background-image: url('../assets/img/images/ev.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -592,7 +593,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/img/images/baraj-arkaplan.jpg');
+    background-image: url('../assets/img/images/baraj-arkaplan.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -605,7 +606,7 @@ body {
     right: -300px;
     width: 130%;
     height: 100%;
-    background-image: url('assets/img/images/baraj-onplan.png');
+    background-image: url('../assets/img/images/baraj-onplan.png');
     background-size: cover;
     background-position: center;
     z-index: 2;
@@ -629,7 +630,7 @@ body {
     top: 60%;
     width: 500px;
     height: 750px;
-    background-image: url('assets/img/images/lamba.png');
+    background-image: url('../assets/img/images/lamba.png');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 4;
@@ -693,7 +694,7 @@ body {
     transform: translateX(-50%);
     width: 1000px;
     height: 1000px;
-    background-image: url('assets/img/images/degirmen-cark.png');
+    background-image: url('../assets/img/images/degirmen-cark.png');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 3;
@@ -724,7 +725,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/img/images/deniz-arkaplan.jpg');
+    background-image: url('../assets/img/images/deniz-arkaplan.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -738,7 +739,7 @@ body {
     transform: translateX(-50%);
     width: 1500px;
     height: 750px;
-    background-image: url('assets/img/images/kopuk.png');
+    background-image: url('../assets/img/images/kopuk.png');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 4;
@@ -771,7 +772,7 @@ body {
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('assets/img/images/yunus.png');
+    background-image: url('../assets/img/images/yunus.png');
     width: 80px;
     height: 40px;
     z-index: 4;
@@ -832,7 +833,7 @@ body {
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('assets/img/images/balina.png');
+    background-image: url('../assets/img/images/balina.png');
     width: 150px;
     height: 80px;
     z-index: 3;
@@ -874,7 +875,7 @@ body {
 }
 
 .gemi-2 .gemi {
-    background-image: url('assets/img/images/gemi2.png'); /* Farklı gemi görseli */
+    background-image: url('../assets/img/images/gemi2.png'); /* Farklı gemi görseli */
     width: 180üpx;
     height: 90px;
 
@@ -902,7 +903,7 @@ body {
 
 /* DALGA KATMANLARI - ÜST ÜSTE LEGO DÜZENİ */
 .dalga-1 {
-    background-image: url('assets/img/images/dalga-1.png');
+    background-image: url('../assets/img/images/dalga-1.png');
     animation: dalgaHareket1 25s linear infinite;
     z-index: 1;
     bottom: 0;
@@ -911,7 +912,7 @@ body {
 }
 
 .dalga-2 {
-    background-image: url('assets/img/images/dalga-2.png');
+    background-image: url('../assets/img/images/dalga-2.png');
     animation: dalgaHareket2 20s linear infinite;
     z-index: 2;
     bottom: 0;
@@ -920,7 +921,7 @@ body {
 }
 
 .dalga-3 {
-    background-image: url('assets/img/images/dalga-3.png');
+    background-image: url('../assets/img/images/dalga-3.png');
     animation: dalgaHareket3 30s linear infinite;
     z-index: 3;
     bottom: 0;
@@ -929,7 +930,7 @@ body {
 }
 
 .dalga-4 {
-    background-image: url('assets/img/images/dalga-4.png');
+    background-image: url('../assets/img/images/dalga-4.png');
     animation: dalgaHareket4 35s linear infinite;
     z-index: 4;
     bottom: 0;
@@ -938,7 +939,7 @@ body {
 }
 
 .dalga-5 {
-    background-image: url('assets/img/images/dalga-5.png');
+    background-image: url('../assets/img/images/dalga-5.png');
     animation: dalgaHareket5 40s linear infinite;
     z-index: 5;
     bottom: 0;
@@ -947,7 +948,7 @@ body {
 }
 
 .dalga-6 {
-    background-image: url('assets/img/images/dalga-6.png');
+    background-image: url('../assets/img/images/dalga-6.png');
     animation: dalgaHareket6 45s linear infinite;
     z-index: 6;
     bottom: 0;
@@ -956,7 +957,7 @@ body {
 }
 
 .dalga-7 {
-    background-image: url('assets/img/images/dalga-7.png');
+    background-image: url('../assets/img/images/dalga-7.png');
     animation: dalgaHareket7 50s linear infinite;
     z-index: 7;
     bottom: 0;
@@ -965,7 +966,7 @@ body {
 }
 
 .dalga-8 {
-    background-image: url('assets/img/images/dalga-8.png');
+    background-image: url('../assets/img/images/dalga-8.png');
     animation: dalgaHareket8 55s linear infinite;
     z-index: 8;
     bottom: 0;
@@ -1036,7 +1037,7 @@ body {
     position: relative;
     width: 400px;
     height: 200px;
-    background-image: url('assets/img/images/gemi.png');
+    background-image: url('../assets/img/images/gemi.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
