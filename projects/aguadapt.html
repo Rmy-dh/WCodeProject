@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aguadapt – Uganda</title>
+
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+
+ 
+  <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+
+  <div class="detail-container">
+    <h1>Aguadapt – Uganda'nın İklim Dirençli Tarımı</h1>
+    <img src="../assets/img/ugandan-farmers-using-an-irrigation-system-made-fr.jpg" alt="Aguadapt Uganda tarımı">
+
+    <p>
+      <strong>Aguadapt</strong>, Uganda’da su kıtlığı ve iklim değişikliğine karşı geliştirilen yenilikçi bir tarım çözümüdür...
+    </p>
+
+    <p>
+      <strong>Daha fazla bilgi için:</strong>
+      <a href="https://www.youtube.com/@CaminosdeAgua/" target="_blank">Aguadapt Resmi Sayfası</a>
+    </p>
+
+    <a class="back-btn" href="../index.html">← Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>
