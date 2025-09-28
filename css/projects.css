@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  background-color: #f0f4f8;
+  color: #222;
+}
+
+.detail-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  line-height: 1.7;
+}
+
+.detail-container h1 {
+  font-size: 2.5rem;
+  color: #0e2277;
+  margin-bottom: 1rem;
+}
+
+.detail-container img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0e2277;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #062267;
+}
+
+a {
+  color: #0e2277;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(to right, hsl(161, 12%, 64%), #abb8eb); /* Açık mavi - beyaz */
+  color: white;
+  position: relative;
+  height: 1px;
+}
+
+.navbar-logo {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #7bb4e0;
+    padding: 1rem;
+    border-radius: 0 0 0 8px;
+    z-index: 1000;
+    width: 180px;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+    
+.playfair {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 180;
+  font-style: normal;
+}
+.playfair h3{
+    color: #233566;
+}
+.playfair strong {
+  color: #004080;
+  font-weight: 700;
+}
+
+.playfair em {
+  color: #004080;
+  font-style: italic;
+}
+

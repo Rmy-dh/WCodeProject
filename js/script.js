@@ -108,16 +108,32 @@ const slides = document.querySelectorAll('.testimonial-slide');
 /*Yorum script end*/
 
 
-    const marquee = document.getElementById('marquee-track');
+    // Marquee animasyonunun durup devam etmesi
+const marquee = document.querySelector('.marquee');  // .marquee class'ını kullandım, id değil
+const cards = document.querySelectorAll('.carousel-card');
 
-    marquee.innerHTML += marquee.innerHTML; 
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    marquee.style.animationPlayState = 'paused';
+  });
 
+  card.addEventListener('mouseleave', () => {
+    marquee.style.animationPlayState = 'running';
+  });
+});
 
-    ///count sayılarda
+/*Navbar hamburger menu */ 
+const toggleButton = document.querySelector('.navbar-toggle');
+const navLinks = document.querySelector('.navbar-links');
 
-    document.addEventListener("DOMContentLoaded", () => {
+toggleButton.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+/*Artan sayılar bölümü*/ 
+  document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.stat-number');
-    const speed = 100; // Hızı ayarlayabilirsin (daha düşük = daha hızlı)
+    const speed = 200; // Daha küçük = daha hızlı artar
 
     counters.forEach(counter => {
       const updateCount = () => {
@@ -128,19 +144,12 @@ const slides = document.querySelectorAll('.testimonial-slide');
 
         if (count < target) {
           counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 50);
+          setTimeout(updateCount, 30);
         } else {
-          counter.innerText = target.toLocaleString(); // 2,200,000,000 gibi
+          counter.innerText = target.toLocaleString(); // 2,200,000,000 gibi göster
         }
       };
 
       updateCount();
     });
   });
-/*Navbar hamburger menu */ 
-const toggleButton = document.querySelector('.navbar-toggle');
-const navLinks = document.querySelector('.navbar-links');
-
-toggleButton.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});

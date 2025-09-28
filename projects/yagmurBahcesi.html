@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yağmur Bahçeleri Projesi</title>
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+  <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="detail-container">
+    <h1>Yağmur Bahçeleri Projesi</h1>
+    <img src="https://images.unsplash.com/photo-1600508774237-232f2e11f703" alt="Yağmur Bahçeleri - doğa tabanlı çözümler">
+
+    <p>
+      <strong>Yağmur Bahçeleri</strong>, kentleşmenin neden olduğu yüzey suyu akışını yönetmek ve suyu doğal yollarla toprağa geri kazandırmak için tasarlanmış, çevre dostu bahçelerdir.
+      Bu bahçeler, özel olarak yerleştirilmiş bitki ve toprak karışımlarıyla donatılır ve yağmur suyunu emerek yüzey akışını azaltır.
+    </p>
+
+    <p>
+      Yağmur bahçeleri sadece <strong>sel riskini azaltmak</strong>la kalmaz, aynı zamanda <strong>yeraltı su kaynaklarının beslenmesini</strong> sağlar ve <strong>kentsel alanlarda doğal bir ekosistem</strong> yaratır.
+    </p>
+
+    <p>
+      Proje, özellikle şehirlerde yaşayan bireylere suyun döngüsünü öğretmek, yeşil altyapı bilincini artırmak ve sürdürülebilir çevre düzenlemesi konusunda farkındalık yaratmak için uygulanmaktadır.
+    </p>
+
+    <p>
+      Türkiye'de bazı belediyeler ve sivil toplum kuruluşları bu uygulamaları teşvik etmekte, yağmur bahçelerinin okul bahçelerine, parklara ve sitelere entegrasyonunu desteklemektedir.
+    </p>
+
+    <p>
+      <strong>Yağmur bahçeleri</strong>, bireysel olarak da uygulanabilir. Evlerin önüne, balkonlara veya apartman çevresine yapılan küçük düzenlemelerle bile yağmur suyunun %30’a kadarı geri kazanılabilir.
+    </p>
+
+    <p>
+      🌱 Doğaya suyu geri vermenin en güzel yollarından biri, <strong>yağmur bahçesi</strong> kurmaktır.
+    </p>
+
+    <a class="back-btn" href="../index.html">← Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>

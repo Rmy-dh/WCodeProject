@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SU-ÇEK Projesi</title>
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+  <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="detail-container">
+    <h1>SU-ÇEK Projesi</h1>
+    <img src="../assets/img/water-su-cek.jpg" alt="Suçek Projesi - su kaynakları">
+
+    <p>
+      <strong>SU-ÇEK</strong>, "Su Kullanımında Çevreye Duyarlı Eğitim ve Katılım" ifadesinin kısaltmasıdır. Türkiye merkezli bir bilinçlendirme projesi olan SU-ÇEK, hem bireysel hem de kurumsal su kullanım alışkanlıklarını daha sürdürülebilir hale getirmeyi amaçlamaktadır.
+    </p>
+
+    <p>
+      Projenin temel hedefi, su kaynaklarının hızla tükenmesine karşı toplumun tüm kesimlerini bilinçlendirmek ve aktif katılım sağlamaktır. Eğitimler, atölyeler, kampanyalar ve dijital araçlarla desteklenen SU-ÇEK, çocuklardan yetişkinlere kadar herkese ulaşmayı hedefler.
+    </p>
+
+    <p>
+      SU-ÇEK kapsamında yapılan çalışmalarda; okullarda interaktif eğitimler verilir, belediyelerle iş birliği yapılarak altyapı iyileştirmeleri desteklenir, işletmelere su verimliliği danışmanlığı sunulur.
+    </p>
+
+    <p>
+      Aynı zamanda su ayak izi hesaplama araçları, ev kullanıcılarının kendi tüketim alışkanlıklarını analiz etmelerini sağlar. Böylece, farkındalık sadece teorik değil, davranışsal dönüşümle desteklenmiş olur.
+    </p>
+
+    <p>
+      <strong>SU-ÇEK, bireyin küçük bir adımıyla başlayıp toplum çapında etkiler yaratan bir değişim modelidir.</strong>
+    </p>
+
+    <p>
+      <strong>Daha fazla bilgi için:</strong>  
+      <a href="https://www.kadikoy.bel.tr/tr/haber-detay/kadikoyde-hasat-zamani-yagmur-topla-bizim-icin-5604" target="_blank">SU-ÇEK Projesi Sayfası</a>  
+    </p>
+
+    <a class="back-btn" href="../index.html"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>

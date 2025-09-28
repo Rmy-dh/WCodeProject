@@ -1,11 +1,38 @@
 .jiIzHc >div{border-radius:inherit;}
 
 
-.dggdHD{background-color:#0e2277;margin-top:auto;padding:6.25rem 0 6rem 0;background-image:url('asserts/bkg-footer.jpg');background-position:center bottom;background-repeat:no-repeat;background-size:cover;}
+.dggdHD{background-color:#0e2277;margin-top:auto;padding:6.25rem 0 6rem 0;background-image:url('assets/img/bkg-footer.jpg');background-position:center bottom;background-repeat:no-repeat;background-size:cover;}
 @media (max-width: 1199.98px){.dggdHD{padding:5rem 0;}}
 @media (max-width: 991.98px){.dggdHD{padding:4rem 0;}}
 @media (max-width: 767.98px){.dggdHD{background-color:#edeeef;color:#0e152966;padding:3rem 0;}}
 @media (max-width: 575.98px){.dggdHD{padding:1.5625rem 0 4rem 0;}}
+/* Mobil uyumlu footer düzeni */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .footer-column ul {
+    padding-left: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 4px;
+  }
+}
 
 
 
@@ -569,7 +596,7 @@
             left: 0;
             right: 0;
             height: 100%;
-            background-image: url('asserts/waves-desktop.png');
+            background-image: url('assets/waves-desktop.png');
             background-position: center bottom;
             background-repeat: no-repeat;
             background-size: cover;
@@ -966,7 +993,7 @@ marquee-wrapper {
 
       100% {
 
-        transform: translateX(-40%);
+        transform: translateX(-55%);
 
       }
 

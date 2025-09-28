@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FogCatchers – Detaylı Bilgi</title>
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+     <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="detail-container">
+    <h1>FogCatchers – Şili</h1>
+    <img src="../assets/img/large-fog-nets-stretched-across-a-chilean-mountain.jpg" alt="FogCatchers Şili">
+
+    <p>
+      <strong>FogCatchers</strong>, Şili ve Peru gibi kurak bölgelerde yaşayan topluluklara içilebilir su sağlamak için kullanılan yenilikçi bir projedir.
+    </p>
+
+    <p>
+      Bu sistem, sisin yoğun olduğu yüksek rakımlı bölgelerde ince örgü ağlar kurarak havadaki su damlacıklarını yakalar ve bunları içme suyuna dönüştürür. Bu yöntem enerji tüketmez ve sürdürülebilirdir.
+    </p>
+
+    <p>
+      Günlük olarak yüzlerce litre su elde edilebilen bu sistem, özellikle iklim değişikliği nedeniyle su sıkıntısı çeken topluluklar için umut verici bir çözüm sunmaktadır.
+    </p>
+
+    <p>
+      Sis tuzakları (Fog Nets), düşük maliyetli, dayanıklı ve çevre dostu malzemelerden yapılır. Proje, doğayla uyumlu, yerel halkın katılımına dayalı bir model sunar.
+    </p>
+
+    <p>
+      <strong>Daha fazla bilgi için:</strong>  
+      <a href="https://www.youtube.com/watch?v=683iTtlxwOs&t=2s" target="_blank">Fog Catchers Hakkında</a>
+    </p>
+
+    <a class="back-btn" href="../index.html"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>

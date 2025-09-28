@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Su Kaşifi Projesi</title>
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+  <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="detail-container">
+    <h1>Su Kaşifi Projesi</h1>
+    <img src="../assets/img/a-group-of-diverse-children-wearing-explorer-outfi (1).jpg" alt="Su Kaşifi Projesi - öğrenciler ve su bilinci">
+
+    <p>
+      <strong>Su Kaşifi</strong>, gençlerin suyun değerini öğrenmelerini, su kaynaklarını koruma bilinci geliştirmelerini ve toplumsal farkındalık yaratmalarını amaçlayan uluslararası bir eğitim programıdır. Türkiye'de özellikle okullarda yaygın olarak uygulanan proje, çocuklara hem bilimsel hem de sosyal sorumluluk açısından zengin bir içerik sunar.
+    </p>
+
+    <p>
+      Proje kapsamında öğrenciler; yaşadıkları bölgedeki su kaynaklarını inceler, tüketim alışkanlıklarını analiz eder, anketler yapar ve sonuçlara göre eylem planları geliştirir. Aynı zamanda öğrendiklerini çevreleriyle paylaşarak su koruma konusunda aktif rol üstlenirler.
+    </p>
+
+    <p>
+      Su Kaşifi, sadece teorik bilgi vermekle kalmaz, öğrencileri sahaya çıkarır ve onları birer “su elçisi” haline getirir. Projenin sonunda katılımcılar, hem çevreyi tanıma hem de çözüm üretme becerileri kazanırlar.
+    </p>
+
+    <p>
+      Türkiye'de <strong>Doğa Derneği</strong> ve <strong>Global Action Plan (GAP)</strong> iş birliğiyle yürütülen Su Kaşifi, eğitim-çevre-toplum üçgeninde fark yaratan projelerden biridir.
+    </p>
+
+    <p>
+      <strong>Daha fazla bilgi için:</strong>
+      <a href="https://sukasifi.org" target="_blank">sukasifi.org</a>
+    </p>
+
+    <a class="back-btn" href="../index.html"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drinkable</title>
+
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+  <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+
+  <div class="detail-container">
+    <h1>Drinkable Book</h1>
+    <img src="../assets/img/drinkable-book.jpg" alt="Drinkable Book Görseli">
+
+    <p>
+      <strong>Drinkable Book</strong>, içme suyu sıkıntısı çeken bölgelerde hem eğitim hem de filtreleme sağlayan yenilikçi bir projedir.
+    </p>
+
+    <p>
+      Her sayfası antibakteriyel özel filtre kâğıdından yapılmış olan bu kitap, zararlı mikropları %99.9 oranında filtreleyerek suyu güvenli hâle getirir. 
+    </p>
+
+    <p>
+      Kitap aynı zamanda su hijyeni hakkında bilgi verirken, sayfaları yırtılıp filtre olarak kullanılabilir. Her kitap, bir kişinin 4 yıl boyunca temiz su ihtiyacını karşılayabilir.
+    </p>
+
+    <p>
+      Proje, bilginin hayat kurtarıcı bir araca dönüşebileceğini gösteren harika bir örnektir. Özellikle Afrika ve Güney Asya’daki kırsal bölgelerde uygulanmaktadır.
+    </p>
+
+    <p>
+      <strong>Daha fazla bilgi için:</strong>  
+      <a href="https://www.youtube.com/watch?v=HmMkvGjk004" target="_blank">Water Is Life – The Drinkable Book</a>
+    </p>
+
+    <a class="back-btn" href="../index.html"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>

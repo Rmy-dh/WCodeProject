@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Water Project</title>
+ <link rel="stylesheet" href="../css/projects.css" />
+  <!-- CSS dosyan -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="playfair">
+  <header class="navbar">
+    <div class="navbar-logo">TÖZ</div>
+    <nav class="navbar-links" id="navbarLinks">
+      <a href="../index.html">Anasayfa</a>
+      <a href="../hakkimizda.html">Hakkımızda</a>
+      <a href="../index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="detail-container">
+    <h1>The Water Project</h1>
+    <img src="../assets/img/a-group-of-african-children-joyfuly-filling-contai.jpg" alt="The Water Project">
+
+    <p>
+      The Water Project, Afrika'da temiz ve güvenli içme suyuna erişimi olmayan topluluklara yardım etmeyi amaçlayan bir sivil toplum kuruluşudur.
+      Kuruluş, özellikle kırsal alanlarda kuyular, yağmur suyu toplama sistemleri ve el yıkama istasyonları inşa ederek uzun vadeli çözümler sunar.
+    </p>
+
+    <p>
+      Sürdürülebilirlik, yerel halkın eğitimi ve bakım konularına da odaklanan proje, insanların kendi altyapılarına sahip çıkmasını sağlar.
+    </p>
+
+    <p><strong>Web Sitesi:</strong> <a href="https://thewaterproject.org" target="_blank">thewaterproject.org</a></p>
+
+    <a class="back-btn" href="../index.html"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+  </div>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById("navbarToggle");
+      const navLinks = document.getElementById("navbarLinks");
+
+      toggleBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</html>
