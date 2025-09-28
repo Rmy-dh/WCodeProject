@@ -1,1 +1,174 @@
-<!--Oyun html--->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊Suyun Yolculuğu</title>
+    <link rel="stylesheet" href="css/oyun.css">
+</head>
+<body>
+    <!-- BÖLÜM 1: GÖKYÜZÜ -->
+    <section id="gokyuzu" class="paralax">
+        <div class="gokyuzu-arkaplan paralaks-hareket"></div>
+        <div class="bg-arkaplan"></div>
+
+        <div class="bulut bulut1 paralaks-hareket"></div>
+        <div class="bulut bulut2 paralaks-hareket"></div>
+        <div class="bulut bulut3 paralaks-hareket"></div>
+
+        <div class="balon-uyari">
+            <div class="balon"></div>
+            <div class="uyari-levha">
+                <span>Suyun yolculuğu yaşamımızın temel döngüsünü oluşturur.
+                    Gökyüzünden başlayan bu yolculuk, yağmur damlalarıyla dünyaya iner, 
+                    ormanlar ve bitkilerle hayat bulur, evlerimizde kullanılır, 
+                    enerji üretiminde rol oynar ve nihayetinde geniş denizlerde toplanır.   
+                </span> 
+            </div>
+        </div>
+
+        <div class="ucak"></div>
+        <div id="yagmur-alani"></div>
+        <div class="asagi-ok">↓</div>
+    </section>
+
+    <!-- BÖLÜM 2: DOĞA -->
+    <section id="doga" class="paralax">
+        <div class="orman-on-plan"></div>
+
+        <div class="doga-uyari-kutusu">
+            <div class="doga-uyari-metin">
+               Ormanlar, yağışların yaklaşık %60-80’ini tutarak toprağa su sağlamada önemli rol oynar. 
+               Bu su tutma kapasitesi, yüzey akışını düzenler ve erozyonu önler. Orman yapısı ve bitki örtüsü, 
+               suyun kalitesini artırarak temiz suyun yeraltı kaynaklarına karışmasını sağlar. <br>
+            </div>
+        </div>
+        
+        <div class="buyuyen-elementler">
+            <div class="agac" data-buyume-hizi="0.3"></div>
+            <div class="cicek" data-buyume-hizi="0.5"></div>
+            <div class="ot" data-buyume-hizi="0.7"></div>
+        </div>
+        
+        <div class="hareketli-hayvanlar">
+            <div class="ugur-bocegi ugur1"></div>
+            <div class="ugur-bocegi ugur2"></div>
+            <div class="kus kus1"></div>
+            <div class="kus kus2"></div>
+        </div>
+    </section>
+
+    <!-- BÖLÜM 2.5: ÇATI -->
+    <section id="cati" class="paralax cati">
+         <div class="çati-arkaplan"></div>
+    </section>
+
+
+    <!-- BÖLÜM 3: AİLE -->
+    <section id="ev" class="paralax ev">
+    <div class="bg-arkaplan"></div>
+    
+    <!-- Aile üyeleri -->
+    <img src="assets/img/images/adam.png" alt="Baba" class="aile-üyesi baba">
+    <img src="assets/img/images/erkek.png" alt="Erkek Çocuk" class="aile-üyesi erkek">
+    <img src="assets/img/images/kız.png" alt="Kız Çocuk" class="aile-üyesi kız">
+    <img src="assets/img/images/anne.png" alt="Anne" class="aile-üyesi anne">
+
+    <!-- AİLE UYARI LEVHASI -->
+    <div class="aile-uyari-kutusu">
+        <div class="aile-uyari-metin">
+            Bir evde günlük su tüketimi kişi başı ortalama 150 ila 250 litre arasında değişir, 
+            bu da dört kişilik bir aile için günde yaklaşık 600 ila 1000 litre su demektir. 
+            Evde kullanılan suyun %30’u tuvaletlerde, %25’i banyoda, %22’si çamaşır ve bulaşık makinelerinde, 
+            geri kalan kısmı ise musluk, 
+            temizlik ve diğer ihtiyaçlarda kullanılır.<br>
+            
+        </div>
+    </div>
+    
+    <!-- SU ELEMENTLERİ -->
+    <div class="ev-su-akisi ev-banyo-suyu"></div>
+    <div class="ev-su-akisi ev-bitki-suyu"></div>
+    <div class="ev-su-akisi ev-mutfak-suyu"></div>
+    </section>
+
+    <!--Bölüm 4 hidroeklektriksantrali -->
+    <!-- 4. KISIM: BARAJ -->
+    <section id="baraj" class="paralax">
+    <div class="baraj-arkaplan"></div>
+    <div class="baraj-onplan"></div>
+    
+    
+    <!-- Lambalar -->
+    <div class="lamba-container">
+        <div class="lamba lamba-sol">
+            <div class="lamba-ışık"></div>
+        </div>
+        <div class="lamba lamba-sag">
+            <div class="lamba-ışık"></div>
+        </div>
+    </div>
+</section>
+    <!-- 4.5 KISIM: SU DEĞİRMENİ -->
+    <section id="degirmen" class="paralax">
+    <!-- DEĞİRMEN DALGALARI -->
+    <div class="dalga-katmanlari degirmen-dalgalari">
+        <div class="dalga dalga-1"></div>
+        <div class="dalga dalga-2"></div>
+        <div class="dalga dalga-3"></div>
+        <div class="dalga dalga-4"></div>
+    </div>
+     <!--Deniz köpüğü çark ayağı-->
+    <div class="deniz-kopugu"></div>
+    
+    
+    <div class="degirmen-cark"></div>
+    <div class="su-kanali"></div>
+    <div class="su-akisi-degirmen"></div>
+
+    <!-- DEĞİRMEN UYARI LEVHASI -->
+    <div class="doga-uyari-kutusu degirmen-uyari">
+    <div class="degirmen-uyari-metin">
+    Hidroelektrik barajlar, nehir veya akarsuların önünü keserek bir su rezervuarı oluşturur ve suya potansiyel enerji kazandırır. 
+    Barajdaki su, yüksekten türbinlere bırakıldığında potansiyel enerji kinetik enerjiye dönüşür ve türbinlerin dönmesiyle elektrik üretimi sağlanır. 
+    Dünya elektrik enerjisinin yaklaşık %20’si hidroelektrik santrallerden elde edilir ve bu enerji kaynağı yenilenebilir, düşük karbon salınımlı bir alternatiftir. Ancak barajlar, suyun doğal akışını değiştirerek ekosistemlerde habitat kaybına ve biyolojik çeşitlilikte azalmaya yol açabilir. 
+    Ayrıca, baraj göllerinden sızan metan gazı gibi sera gazları da küresel ısınmaya katkıda bulunabilir.
+        </div>
+    </div>
+</section>
+
+    <!-- 5. KISIM: DENİZ -->
+     <section id="deniz" class="paralax">
+   
+    
+     
+    <!--  Son 4 Dalga -->
+        <div class="dalga-katmanlari deniz-dalgalari">
+        <div class="dalga dalga-5 dalga-paralaks"></div>
+        <div class="dalga dalga-6 dalga-paralaks"></div>
+        <div class="dalga dalga-7 dalga-paralaks"></div>
+        <div class="dalga dalga-8 dalga-paralaks"></div>
+    </div>
+
+     <!-- DENİZ CANLILARI -->
+        <div class="deniz-canlilari">
+        <div class="yunus yunus-1"></div>
+        <div class="yunus yunus-2"></div>
+        <div class="balina balina-1"></div>
+    </div>
+      <!-- GEMİ 1 -->
+    <div class="gemi-container">
+        <div class="gemi">
+            <!-- GEMİ UYARI LEVHASI -->
+            <div class="doga-uyari-metin gemi-uyari-metin">
+                <span>Dünya su miktarı yaklaşık %97'si tuzlu sudan oluşan denizlerde bulunur, 
+                    sadece %3'ü tatlı sudur ve bu suyun büyük kısmı buzullar ve yeraltı sularında depolanır. </span>
+            </div>
+        </div>
+    </div>
+    <div class="gemi-container gemi-2">
+        <div class="gemi-2">
+</section>
+    <script src="js/oyun.js"></scripts>
+</body>
+</html>
