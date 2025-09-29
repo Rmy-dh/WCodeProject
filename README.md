@@ -34,7 +34,6 @@ Bu projede aşağıdaki frontend teknolojileri kullanılmıştır:
 |--------------------------|----------------------------------------|-------------------------------------|
 |   Rumeysa Küçüktaşdemir  | [Github](https://github.com/Rmy-dh)    | [Linkedin](https://www.linkedin.com/in/rümeysa-küçüktaşdemir) |
 |    Humanur Koyuncu       | [Github](https://github.com/Humanur-k) | [Linkedin](https://www.linkedin.com/in/humanur-koyuncu-a3b1a0279/) |
- |
 
 - **Grup Adı:** Viva  
 - **Proje Adı:** Töz
