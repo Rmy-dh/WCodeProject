@@ -1,31 +1,20 @@
-body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   body {
+      margin: 0;
+      padding: 0;
       background: linear-gradient(to bottom, #e6f2ff, #ffffff);
       color: #222;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 1rem 2rem;
-      background-color: #f9fbff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
     h1 {
-      color: #0e2277;
+      color: #83b8ec;
       font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    h2 {
-      color: #208fe4;
-      margin-top: 2rem;
       margin-bottom: 1rem;
     }
 
@@ -34,23 +23,12 @@ body {
       margin-bottom: 1.5rem;
     }
 
-    .team-member {
-      margin-bottom: 1.5rem;
-    }
-
-    .team-member strong {
-      color: #0e2277;
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-
-    /* Geri dönüş butonu */
+    
     .back-btn {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.75rem 1.5rem;
-      background-color: #0e2277;
+      background-color: #58af6b;
       color: #fff;
       text-decoration: none;
       border-radius: 8px;
@@ -58,10 +36,102 @@ body {
     }
 
     .back-btn:hover {
-      background-color: #08306b;
+      background-color: #24462e;
     }
-    /*Navbar*/
-     .navbar {
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      p, .tip-box { font-size: 1rem; }
+    }
+
+    /**/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+    /* Üst video kısmı */
+    .video-header {
+      position: relative;
+      height: 60vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .video-header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); /* opsiyonel karartma */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .video-overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .video-overlay p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+
+    /* Alt içerik kısmı */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 1rem 2rem;
+    }
+
+    .container h1 {
+      font-size: 2rem;
+      color: #6c7391;
+      margin-bottom: 1rem;
+    }
+
+    .container p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tip-box {
+      background-color: #f2f7ff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #83b8ec;
+      border-radius: 4px;
+    }
+
+    .tip-box i {
+      color: #83b8ec;
+      margin-right: 0.5rem;
+    }
+
+ .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,7 +192,8 @@ body {
     display: block;
   }
 }
-/*Font*/
+
+
 .playfair {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -141,5 +212,3 @@ body {
   color: #004080;
   font-style: italic;
 }
-
-
