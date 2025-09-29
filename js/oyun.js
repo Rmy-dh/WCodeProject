@@ -52,17 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
-    function ucakHareketDongusu() {
-        // İlk uçuşu 3 saniye sonra başlat
-        setTimeout(() => {
-            ucakHareketBaslat();
-        }, 3000);
-        
-        // Her 15 saniyede bir tekrarla
-        ucakInterval = setInterval(() => {
-            ucakHareketBaslat();
-        }, 15000);
-    }
+  function ucakHareketDongusu() {
+    // Uçağı başlangıç pozisyonuna yerleştir ve hemen hareket ettir
+    ucak.style.left = '-200px';
+    ucak.style.transform = 'translateY(0px) rotate(2deg)';
+    ucak.style.opacity = '1';
+    ucakYonu = 'sagdansola';
+    
+    // Hemen harekete başla
+    ucakHareketBaslat();
+    
+    // Her 15 saniyede bir tekrarla
+    ucakInterval = setInterval(() => {
+        ucakHareketBaslat();
+    }, 15000);
+}
 
     // PARALAKS EFEKTİ
     window.addEventListener('scroll', function() {
@@ -257,11 +261,18 @@ window.addEventListener('scroll', function() {
             const ilerleme = Math.min(Math.max((viewportHeight * 0.7 - rect.top) / (viewportHeight * 0.7), 0), 1);
             
             const cark = document.querySelector('.degirmen-cark');
-            if (cark && ilerleme > 0.4) {
-                cark.classList.add('donuyor');
-                cark.style.animationDuration = `${3 - (ilerleme * 2)}s`;
+            if (cark) {
+                // Scroll ilerlemesine göre dönme hızını ayarla
+                const donmeHizi = 3 - (ilerleme * 2);
+                cark.style.animation = `donme ${donmeHizi}s linear infinite`;
             }
             
+        } else {
+            // Görünür alandan çıktığında animasyonu durdur
+            const cark = document.querySelector('.degirmen-cark');
+            if (cark) {
+                cark.style.animation = 'none';
+            }
         }
     }
 });
@@ -352,3 +363,53 @@ document.addEventListener('DOMContentLoaded', function() {
     initDalgaSistemi();
 });
 
+// 6. KISIM: ROKET BUTONU
+document.addEventListener('DOMContentLoaded', function() {
+    const roketBtn = document.getElementById('roket-btn');
+    
+    // Scroll takibi
+    window.addEventListener('scroll', function() {
+        const sayfaYuksekligi = document.documentElement.scrollHeight;
+        const gorunenAlan = window.innerHeight;
+        const mevcutScroll = window.scrollY;
+        
+        // Sayfanın son %20'sinde miyiz?
+        const sayfaSonu = sayfaYuksekligi - gorunenAlan;
+        const altKisim = sayfaSonu * 0.8;
+        
+        // Sayfa üstünde miyiz?
+        const sayfaBasi = mevcutScroll < 100;
+        
+        if (sayfaBasi) {
+            // Sayfa başı - gizle
+            roketBtn.classList.add('gizli');
+        } else if (mevcutScroll >= altKisim) {
+            // Sayfa sonu - göster
+            roketBtn.classList.remove('gizli');
+            roketBtn.classList.remove('ucus');
+        } else {
+            // Sayfa ortası - gizle
+            roketBtn.classList.add('gizli');
+        }
+    });
+    
+    // Roket tıklama
+    roketBtn.addEventListener('click', function() {
+        // Uçuş animasyonu başlat
+        roketBtn.classList.add('ucus');
+        
+        // 1 saniye sonra sayfa başına git
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 2500);
+        
+        // Animasyon bitince gizle
+        setTimeout(() => {
+            roketBtn.classList.add('gizli');
+            roketBtn.classList.remove('ucus');
+        }, 4000);
+    });
+});

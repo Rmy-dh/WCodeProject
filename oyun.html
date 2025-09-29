@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌊Suyun Yolculuğu</title>
     <link rel="stylesheet" href="css/oyun.css">
+    <link rel="icon" href="assets/img/toz.png" type="image/x-icon">
 </head>
 <body>
     <!-- BÖLÜM 1: GÖKYÜZÜ -->
@@ -59,9 +60,9 @@
     </section>
 
     <!-- BÖLÜM 2.5: ÇATI -->
-    <section id="cati" class="paralax cati">
-         <div class="çati-arkaplan"></div>
-    </section>
+    <section style=" z-index: 1";  id="cati" class="linear-arkaplan çati-arkaplan">
+         <div  class="cati"></div>
+    </section> 
 
 
     <!-- BÖLÜM 3: AİLE -->
@@ -117,6 +118,7 @@
         <div class="dalga dalga-2"></div>
         <div class="dalga dalga-3"></div>
         <div class="dalga dalga-4"></div>
+  
     </div>
      <!--Deniz köpüğü çark ayağı-->
     <div class="deniz-kopugu"></div>
@@ -142,12 +144,14 @@
    
     
      
-    <!--  Son 4 Dalga -->
+    <!--Son 4 Dalga--->
         <div class="dalga-katmanlari deniz-dalgalari">
-        <div class="dalga dalga-5 dalga-paralaks"></div>
-        <div class="dalga dalga-6 dalga-paralaks"></div>
+    
         <div class="dalga dalga-7 dalga-paralaks"></div>
+        
         <div class="dalga dalga-8 dalga-paralaks"></div>
+        <div class="dalga dalga-6 dalga-paralaks"></div>
+        <div class="dalga dalga-5 dalga-paralaks"></div>
     </div>
 
      <!-- DENİZ CANLILARI -->
@@ -158,16 +162,29 @@
     </div>
       <!-- GEMİ 1 -->
     <div class="gemi-container">
-        <div class="gemi">
+        <div class="gemi gemi-container">
             <!-- GEMİ UYARI LEVHASI -->
-            <div class="doga-uyari-metin gemi-uyari-metin">
-                <span>Dünya su miktarı yaklaşık %97'si tuzlu sudan oluşan denizlerde bulunur, 
-                    sadece %3'ü tatlı sudur ve bu suyun büyük kısmı buzullar ve yeraltı sularında depolanır. </span>
-            </div>
+            
         </div>
+        
     </div>
-    <div class="gemi-container gemi-2">
-        <div class="gemi-2">
+    <div class="gemi-uyari-metin">
+                <span>Dünya su miktarı yaklaşık %97'si tuzlu sudan oluşan denizlerde bulunur, 
+                    sadece %3'ü tatlı sudur ve bu suyun büyük kısmı buzullar ve yeraltı sularında depolanır. 
+                    Denizler, dünya oksijeninin yaklaşık yarısını fitoplankton ve deniz bitkileri aracılığıyla üretir. 
+                    Aynı zamanda, zengin biyolojik çeşitlilikle besin zincirlerinin temelini oluşturur. Okyanus akıntıları ve gelgitler, 
+                    karbon döngüsünde önemli rol oynar. 
+                    Bu süreçler, küresel iklim dengesinin korunmasına katkı sağlar. </span>
+            </div>
+     <div class=" gemi-2">
+            <img src="assets/img/images/gemi2.png "width="500px" alt=" ">
+        </div>
+   
+       
+            <!-- Sayfanın en altına ekle -->
+<div id="roket-btn" class="roket-btn">
+    <img src="assets/img/images/roket.png" alt="Yukarı Çık" class="roket-img">
+</div>
 </section>
     <script src="js/oyun.js"></scripts>
 </body>
