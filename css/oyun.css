@@ -342,7 +342,19 @@ body {
     background-image: url('../assets/img/images/çati.png');
     background-size: cover;
     background-position: center;
+
 }
+.linear-arkaplan{background: linear-gradient(
+ to right,
+  #005116 0%,   /* koyu yeşil - sol */
+  #78c584 25%,  /* standart yeşil */
+  #78c584 50%,  /* açık yeşil */
+  #55905a 75%,  /* çok açık yeşil */
+  #55905a /* neredeyse beyaz - sağ */
+);}
+
+
+
 
 .cati-arkaplan {
     position: relative;
@@ -553,10 +565,10 @@ body {
 
 
 /* aile üyelerinin pozisyonları */
-.baba { top: 58%; left: 15%; transform: translate(-50%, -50%); }
+.baba { top: 61%; left: 15%; transform: translate(-50%, -50%); }
 .erkek { top:55%; left: 35%; transform: translate(-50%, -50%); }
 .kız { top:70%; left: 55%; transform: translate(-50%, -50%); }
-.anne { top:50%; left: 80%; transform: translate(-40%, -50%); }
+.anne { top:55%; left: 80%; transform: translate(-40%, -50%); }
 
 
 .aile-uyari-metin {
@@ -638,12 +650,12 @@ body {
 
 .lamba-sol {
     left: 10%;
-    top:13%;
+    top:23%;
 }
 
 .lamba-sag {
     right: 5%;
-    top: 7%;
+    top: 15%;
 }
 
 .lamba-ışık {
@@ -654,8 +666,8 @@ body {
     width: 200px;
     height: 200px;
     background: radial-gradient(circle, 
-        rgb(244, 244, 4) 0%,
-        rgba(248, 248, 0, 0.997) 40%,
+        rgb(255, 255, 1) 0%,
+        rgba(248, 248, 0, 0.695) 40%,
         transparent 70%);
     border-radius: 50%;
     opacity: 0;
@@ -686,10 +698,9 @@ body {
     margin-right: 750px;
 }
 
-
 .degirmen-cark {
     position: absolute;
-    bottom: -10%;
+    bottom: -20%;
     left: 100%;
     transform: translateX(-50%);
     width: 1000px;
@@ -698,11 +709,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 3;
-    transition: transform 0.1s linear;
-}
-
-.degirmen-cark.donuyor {
-    animation: donme 3s linear infinite;
+    /* transition ve animation özelliklerini kaldırdık */
 }
 
 @keyframes donme {
@@ -734,7 +741,7 @@ body {
 /* DENİZ KÖPÜĞÜ - ÇARK AYAĞI */
 .deniz-kopugu {
     position: absolute;
-    bottom: -5%;
+    bottom: -20%;
     left: 120%;
     transform: translateX(-50%);
     width: 1500px;
@@ -868,16 +875,16 @@ body {
 }
 
 /* İKİNCİ GEMİ */
-.gemi-2 {
+.gemi {
     bottom: 40%;
-    z-index: 5;
+    z-index: 50;
     animation-delay: 5s;
+    position: relative;
+    background-image: url('../assets/img/images/gemi.png'); /* Gemi görseli */
 }
 
-.gemi-2 .gemi {
-    background-image: url('../assets/img/images/gemi2.png'); /* Farklı gemi görseli */
-    width: 180üpx;
-    height: 90px;
+.gemi-2 {
+   
 
 }
 /* DALGA DÜZENİ - ÜST ÜSTE LEGO GİBİ */
@@ -904,74 +911,85 @@ body {
 /* DALGA KATMANLARI - ÜST ÜSTE LEGO DÜZENİ */
 .dalga-1 {
     background-image: url('../assets/img/images/dalga-1.png');
-    animation: dalgaHareket1 25s linear infinite;
+    animation: dalgaHareket1 5s linear infinite;
     z-index: 1;
-    bottom: 0;
     opacity: 1;
-    height: 190%;
+    height: 220%;
+    position: absolute;
+    bottom: 0;
 }
 
 .dalga-2 {
     background-image: url('../assets/img/images/dalga-2.png');
-    animation: dalgaHareket2 20s linear infinite;
+    animation: dalgaHareket2 5s linear infinite;
     z-index: 2;
     bottom: 0;
     opacity: 0.9;
-    height: 180%;
+    height: 210%;
+    position: absolute;
 }
 
 .dalga-3 {
     background-image: url('../assets/img/images/dalga-3.png');
-    animation: dalgaHareket3 30s linear infinite;
+    animation: dalgaHareket3 5s linear infinite;
     z-index: 3;
     bottom: 0;
     opacity: 0.8;
-    height: 170%;
+    height: 200%;
+    
+    position: absolute;
 }
 
 .dalga-4 {
     background-image: url('../assets/img/images/dalga-4.png');
-    animation: dalgaHareket4 35s linear infinite;
+    animation: dalgaHareket4 5s linear infinite;
     z-index: 4;
     bottom: 0;
     opacity: 0.7;
-    height: 160%;
+    height: 190%;
+    position: absolute;
 }
 
 .dalga-5 {
     background-image: url('../assets/img/images/dalga-5.png');
-    animation: dalgaHareket5 40s linear infinite;
-    z-index: 5;
+    animation: dalgaHareket5 5s linear infinite;
+    z-index: 5; 
     bottom: 0;
-    opacity: 0.6;
-    height: 150%;
+    opacity: 1;
+    height: 245%;
+     position: absolute;
 }
 
 .dalga-6 {
     background-image: url('../assets/img/images/dalga-6.png');
-    animation: dalgaHareket6 45s linear infinite;
+    animation: dalgaHareket6 5s linear infinite;
     z-index: 6;
     bottom: 0;
-    opacity: 0.5;
-    height: 150%;
+    opacity: 0.8;
+    height: 170%;
+    position: absolute;
 }
 
 .dalga-7 {
     background-image: url('../assets/img/images/dalga-7.png');
-    animation: dalgaHareket7 50s linear infinite;
+    animation: dalgaHareket7 5s linear infinite;
     z-index: 7;
     bottom: 0;
-    opacity: 0.4;
-    height: 100%;
+    opacity: 0.6;
+    height: 160%;
+    position: absolute; 
+
+
 }
 
 .dalga-8 {
     background-image: url('../assets/img/images/dalga-8.png');
-    animation: dalgaHareket8 55s linear infinite;
+    animation: dalgaHareket8 5s linear infinite;
     z-index: 8;
     bottom: 0;
-    opacity: 0.3;
-    height: 50%;
+    opacity: 0.8;
+    height: 150%;
+    position: absolute;
 }
 
 /* DALGA ANİMASYONLARI - YAN YANA KAYMAYACAK ŞEKİLDE */
@@ -982,37 +1000,37 @@ body {
 
 @keyframes dalgaHareket2 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-8px) scale(1.015); }
+    50% { transform: translateY(-10px) scale(1.015); }
 }
 
 @keyframes dalgaHareket3 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-6px) scale(1.01); }
+    50% { transform: translateY(-10px) scale(1.01); }
 }
 
 @keyframes dalgaHareket4 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-4px) scale(1.005); }
+    50% { transform: translateY(-5px) scale(1.005); }
 }
 
 @keyframes dalgaHareket5 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-3px) scale(1.002); }
+    50% { transform: translateY(-10px) scale(1.002); }
 }
 
 @keyframes dalgaHareket6 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-2px) scale(1.001); }
+    50% { transform: translateY(-10px) scale(1.001); }
 }
 
 @keyframes dalgaHareket7 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-1px) scale(1); }
+    50% { transform: translateY(-10px) scale(1); }
 }
 
 @keyframes dalgaHareket8 {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-0.5px) scale(1); }
+    50% { transform: translateY(-10px) scale(1); }
 }
 
 /* FLOAT ANİMASYONU (EĞER YOKSA EKLE) */
@@ -1031,32 +1049,105 @@ body {
     color: #e72dbf;
     border: 3px solid #f02bcc;
     font-size: 1.1em;
-    max-width: 1000px;
+    max-width: 650px;
+    bottom: 100px;
+    top: -8%;
+    left: 60%;
+    z-index: 50;
+    position: relative;
+    animation: levhaSallanma 3s ease-in-out infinite;
+    
 }
 .gemi {
     position: relative;
-    width: 400px;
+    width: 800px;
     height: 200px;
     background-image: url('../assets/img/images/gemi.png');
     background-size: contain;
     background-repeat: no-repeat;
+    left: 1500px;
+   top: 500%;
+    z-index: 50;
 }
 
 .gemi-2 {
-   bottom: 40%;
-   right: -500px;
-    animation-delay: 10s;
+    animation:  3s ease-in-out infinite;
+    position:relative;
+    z-index: 50;
+    width: 400px;
+    height: 100px;
+    background-size: contain;
+    animation: levhaSallanma 3s ease-in-out infinite;
+    left: 1600px;
+    bottom: 150px;
 }
 
 .gemi-container {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+  
     z-index: 4;
     animation: levhaSallanma 3s ease-in-out infinite;
-
+    
 }
 @keyframes levhaSallanma {
     0%, 100% { transform: translateX(-50%) rotate(1deg); }
-    50% { transform: translateX(-50%) rotate(-1deg); }
+    50% { transform: translateX(-50%) rotate(-1deg); } 
+}
+/* ROKET BUTONU - ALT ORTA */
+.roket-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+/* Roket görseli */
+.roket-img {
+    width: 100px;
+    height: 150px;
+    filter: drop-shadow(0 0 10px rgba(255, 100, 0, 0.7));
+    transition: all 0.5s ease;
+}
+
+/* Hover efekti */
+.roket-btn:hover .roket-img {
+    transform: translateY(-10px); scale(1.1)
+    filter: drop-shadow(0 0 15px rgba(255, 50, 0, 0.9));
+}
+
+/* ÇOK YAVAŞ UÇUŞ */
+.roket-btn.ucus .roket-img {
+    animation: roketUcus 4s ease-in-out forwards; /* 3s → 4s */
+}
+
+@keyframes roketUcus {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-50px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-150px) scale(1.1);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateY(-350px) scale(1.15);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* SAYFA ÜSTÜNDE GİZLE */
+.roket-btn.gizli {
+    opacity: 0;
+    pointer-events: none;
+}
