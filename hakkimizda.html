@@ -4,33 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hakkımızda - Değişim Ellerinde | TÖZ Projesi</title>
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="css/degisim.css" rel="stylesheet">
-      <!--Favicon-->
-    <link rel="icon" href="assets/img/toz.png" type="image/x-icon">
-    <!--Style css--->
-    <link href="css/hakkimizda.css" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/toz.png" type="image/x-icon">
+  
+  <!-- Ana CSS -->
+  <link rel="stylesheet" href="css/hakkimizda.css" />
 </head>
+
 <body>
-   <header class="navbar playfair">
-        <div class="navbar-logo playfair"> TÖZ</div>
-        <nav class="navbar-links playfair">
-            <a href="index.html"></i>Anasayfa</a>
-            <a href="#">Hakkımızda</a>
-            <a href="index.html#footer">İletişim</a>
-        </nav>
-        <button class="navbar-toggle" aria-label="Menüyü Aç/Kapat">
-        <i class="fa fa-bars"></i>
-        </button>
-    </header>
-    
+  <!-- Navbar -->
+  <header class="navbar playfair">
+    <div class="navbar-logo playfair">TÖZ</div>
+    <nav class="navbar-links playfair">
+      <a href="index.html">Anasayfa</a>
+      <a href="#">Hakkımızda</a>
+      <a href="index.html#footer">İletişim</a>
+    </nav>
+    <button class="navbar-toggle" aria-label="Menüyü Aç/Kapat">
+      <i class="fa fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Video Banner -->
+  <section class="video-header">
+    <video autoplay muted loop>
+      <source src="../WCodeProject/assets/hakkimizda.mp4" type="video/mp4">
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+    <div class="video-overlay">
+      <h1>Her şeyin değil, her canlının özü..</h1>
+      <p>VIVA grubu tarafından geliştirilen TÖZ projesiyle suyun bilinçli kullanımı konusunda farkındalık yaratmayı hedefliyoruz.</p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
   <div class="container playfair">
     <h1>Hakkımızda</h1>
-    
+
     <p><strong>TÖZ Projesi</strong>, suyun değerini anlamak ve bilinçli su kullanımıyla gelecek nesillere yaşanabilir bir dünya bırakmak amacıyla <strong>VIVA</strong> grubu tarafından geliştirilmiştir. Suyun kıymetini kavrayarak küçük değişimlerin büyük fark yaratabileceğine inanıyoruz.</p>
-    
+
     <h2>Projenin Önemi</h2>
     <p>Su, hayatın temel kaynağıdır ve her canlının varoluşu için vazgeçilmezdir. Ancak günümüzde su kaynakları hızla azalmakta, kirlilik ve bilinçsiz kullanım ciddi sorunlara yol açmaktadır. <strong>TÖZ</strong> projesi, suyun korunması ve tasarrufunun önemini vurgulayarak bireylerde farkındalık yaratmayı hedeflemektedir.</p>
+
+    <div class="tip-box">
+      <i class="fas fa-tint"></i> Her damla kıymetlidir. Suyu boşa harcamayalım.
+    </div>
+
+    <div class="tip-box">
+      <i class="fas fa-leaf"></i> Bilinçli kullanım, geleceğe yatırımdır.
+    </div>
 
     <h2>Grup Hakkında - VIVA</h2>
     <p><strong>VIVA</strong>, çevre bilinci yüksek, genç ve dinamik bir grup olarak suyun korunması konusunda farkındalık oluşturmak amacıyla bir araya gelmiştir. Birlikte çalışarak etkili ve kalıcı çözümler üretmeyi amaçlıyoruz.</p>
@@ -38,15 +64,21 @@
     <h2>Grup Üyeleri</h2>
     <div class="team-member">
       <strong>Rumeysa Küçüktaşdemir</strong>
-      <p>Lorem</p>
     </div>
     <div class="team-member">
       <strong>Humanur Koyuncu</strong>
-      <p>Lorem</p>
     </div>
-  
+
     <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Ana Sayfaya Dön</a>
   </div>
 
+  <!-- JS for Navbar Toggle -->
+  <script>
+    const toggleBtn = document.querySelector(".navbar-toggle");
+    const navLinks = document.querySelector(".navbar-links");
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
