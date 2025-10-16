@@ -1,5 +1,25 @@
+// DEBUG - JavaScript çalışıyor mu?
+console.log('🔧 JavaScript yüklendi!');
+
+// KESİN PROTOCOL TESPİTİ
+function detectProtocol() {
+    const protocol = window.location.protocol;
+    console.log('🌐 Protocol:', protocol);
+    
+    if (protocol === 'file:') {
+        document.documentElement.classList.add('file-protocol');
+        console.log('✅ File protocol class eklendi');
+    } else {
+        document.documentElement.classList.add('http-protocol');
+        console.log('✅ HTTP protocol class eklendi');
+    }
+}
+
+// Hemen çalıştır
+detectProtocol();
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ Script yüklendi');
+    console.log('✅ DOM yüklendi');
 
     // Elementleri seç
     const gokyuzuBolumu = document.getElementById('gokyuzu');
@@ -10,12 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let yagmurAktif = false;
     let yagmurInterval;
-    
-    // UÇAK DEĞİŞKENLERİ - TEK BİR YERDE TANIMLA
     let ucakYonu = 'soldansaga';
     let ucakInterval;
 
-    // AŞAĞI OK TIKLANINCA
+    // AŞAĞI OK
     if (asagiOk) {
         asagiOk.addEventListener('click', function() {
             window.scrollTo({
@@ -25,16 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // UÇAK FONKSİYONLARI - DÜZENLİ
+    // UÇAK FONKSİYONLARI
     function ucakHareketBaslat() {
         if (!ucak) return;
         
-        // Önceki animasyonu temizle
         ucak.classList.remove('hareketli');
         ucak.style.opacity = '0';
         
         setTimeout(() => {
-            // Yönü değiştir
             if (ucakYonu === 'soldansaga') {
                 ucak.style.left = '-200px';
                 ucak.style.transform = 'translateY(0px) rotate(2deg)';
@@ -47,32 +63,28 @@ document.addEventListener('DOMContentLoaded', function() {
             
             ucak.classList.add('hareketli');
             ucak.style.opacity = '1';
-            
-            console.log(`✈️ Uçak ${ucakYonu === 'soldansaga' ? 'sağdan sola' : 'soldan sağa'} uçuyor`);
         }, 1000);
     }
 
-  function ucakHareketDongusu() {
-    // Uçağı başlangıç pozisyonuna yerleştir ve hemen hareket ettir
-    ucak.style.left = '-200px';
-    ucak.style.transform = 'translateY(0px) rotate(2deg)';
-    ucak.style.opacity = '1';
-    ucakYonu = 'sagdansola';
-    
-    // Hemen harekete başla
-    ucakHareketBaslat();
-    
-    // Her 15 saniyede bir tekrarla
-    ucakInterval = setInterval(() => {
+    function ucakHareketDongusu() {
+        if (!ucak) return;
+        
+        ucak.style.left = '-200px';
+        ucak.style.transform = 'translateY(0px) rotate(2deg)';
+        ucak.style.opacity = '1';
+        ucakYonu = 'sagdansola';
+        
         ucakHareketBaslat();
-    }, 15000);
-}
+        
+        ucakInterval = setInterval(() => {
+            ucakHareketBaslat();
+        }, 15000);
+    }
 
     // PARALAKS EFEKTİ
     window.addEventListener('scroll', function() {
         const kaydirmaMiktari = window.scrollY;
         
-        // Paralaks efekti
         paralaksElementler.forEach((element) => {
             let hiz = 0.3;
             
@@ -90,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.transform = `translateY(${yeniPozisyon}px)`;
         });
 
-        // Yağmur animasyonu
         if (kaydirmaMiktari > 50 && !yagmurAktif) {
             yagmurAktif = true;
             baslatYagmur();
@@ -123,31 +134,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // BÜYÜME PARALAKSI - TEK BİR YERDE
+    // BÜYÜME PARALAKSI
     const dogaSection = document.getElementById('doga');
     let currentProgress = 0;
     let targetProgress = 0;
     
     function smoothGrowth() {
-        // Yumuşak geçiş
         currentProgress += (targetProgress - currentProgress) * 0.1;
         
         const scale = 0.3 + currentProgress * 0.7;
-        
-        // Tüm bitkileri güncelle
         const plants = document.querySelectorAll('.agac, .cicek, .ot');
+        
         plants.forEach(plant => {
             plant.style.transform = `scaleY(${scale})`;
         });
         
-        // Çimeni güncelle
         const catiSection = document.getElementById('cati');
         if (catiSection) {
             const catiScale = 0.9 + currentProgress * 0.2;
             catiSection.style.transform = `scaleY(${catiScale})`;
         }
         
-        // Devam et
         requestAnimationFrame(smoothGrowth);
     }
     
@@ -161,8 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (scrollY > dogaTop - windowHeight * 0.5) {
                 targetProgress = Math.min(
-                    (scrollY - (dogaTop - windowHeight * 0.5)) / 
-                    (dogaHeight * 0.8), 
+                    (scrollY - (dogaTop - windowHeight * 0.5)) / (dogaHeight * 0.8), 
                     1
                 );
             } else {
@@ -171,38 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // TÜM SİSTEMLERİ BAŞLAT
-    function initAllSystems() {
-        console.log('🚀 Tüm sistemler başlatılıyor...');
-        
-        // Uçak döngüsünü başlat
-        ucakHareketDongusu();
-        
-        // Büyüme paralaksını başlat
-        smoothGrowth();
-        window.addEventListener('scroll', updateTargetProgress);
-        window.addEventListener('wheel', updateTargetProgress);
-        updateTargetProgress();
-        
-        // ESC ile yağmuru durdur
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && yagmurInterval) {
-                clearInterval(yagmurInterval);
-                yagmurAktif = false;
-                yagmurInterval = null;
-                console.log('🛑 Yağmur durduruldu');
-            }
-        });
-    }
-
-    // SAYFA YÜKLENDİĞİNDE HER ŞEYİ BAŞLAT
-
-    
-    initAllSystems();
-});
-
-
-    // Çatı için özel paralaks - daha yavaş hareket
+    // ÇATI PARALAKS
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const catiSection = document.getElementById('cati');
@@ -219,197 +194,138 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-; // BURASI KAPATILMIŞTI - DÜZELTİLDİ
 
-
-// 4. KISIM: BARAJ ANİMASYONLARI
-window.addEventListener('scroll', function() {
-    const kaydirma = window.scrollY;
-    const barajSection = document.getElementById('baraj');
-    
-    if (barajSection) {
-        const rect = barajSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
+    // BARAJ ANİMASYONLARI
+    window.addEventListener('scroll', function() {
+        const kaydirma = window.scrollY;
+        const barajSection = document.getElementById('baraj');
         
-        if (rect.top <= viewportHeight * 0.8 && rect.bottom >= 0) {
-            const ilerleme = Math.min(Math.max((viewportHeight * 0.8 - rect.top) / (viewportHeight * 0.8), 0), 1);
+        if (barajSection) {
+            const rect = barajSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
             
-        
-            
-            const lambalar = document.querySelectorAll('.lamba');
-            if (ilerleme > 0.6) {
-                lambalar.forEach(lamba => lamba.classList.add('yanik'));
-            } else {
-                lambalar.forEach(lamba => lamba.classList.remove('yanik'));
-            }
-            
-           
-        }
-    }
-});
-
-// 4.5 KISIM: SU DEĞİRMENİ ANİMASYONU
-window.addEventListener('scroll', function() {
-    const kaydirma = window.scrollY;
-    const degirmenSection = document.getElementById('degirmen');
-    
-    if (degirmenSection) {
-        const rect = degirmenSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        if (rect.top <= viewportHeight * 0.7 && rect.bottom >= 0) {
-            const ilerleme = Math.min(Math.max((viewportHeight * 0.7 - rect.top) / (viewportHeight * 0.7), 0), 1);
-            
-            const cark = document.querySelector('.degirmen-cark');
-            if (cark) {
-                // Scroll ilerlemesine göre dönme hızını ayarla
-                const donmeHizi = 3 - (ilerleme * 2);
-                cark.style.animation = `donme ${donmeHizi}s linear infinite`;
-            }
-            
-        } else {
-            // Görünür alandan çıktığında animasyonu durdur
-            const cark = document.querySelector('.degirmen-cark');
-            if (cark) {
-                cark.style.animation = 'none';
-            }
-        }
-    }
-});
-
-// 5. KISIM: DENİZ ANİMASYONLARI
-let sonScrollY = window.scrollY;
-
-window.addEventListener('scroll', function() {
-    const kaydirma = window.scrollY;
-    const denizSection = document.getElementById('deniz');
-    const gemi = document.querySelector('.gemi-container');
-
-    if (denizSection) {
-        const rect = denizSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        if (rect.top <= viewportHeight && rect.bottom >= 0) {
-            const gunes = document.querySelector('.gunes');
-            if (gunes) {
-                if (kaydirma > sonScrollY) {
-                    gunes.classList.add('doguyor');
-                    gunes.classList.remove('batiyor');
+            if (rect.top <= viewportHeight * 0.8 && rect.bottom >= 0) {
+                const ilerleme = Math.min(Math.max((viewportHeight * 0.8 - rect.top) / (viewportHeight * 0.8), 0), 1);
+                
+                const lambalar = document.querySelectorAll('.lamba');
+                if (ilerleme > 0.6) {
+                    lambalar.forEach(lamba => lamba.classList.add('yanik'));
                 } else {
-                    gunes.classList.add('batiyor');
-                    gunes.classList.remove('doguyor');
+                    lambalar.forEach(lamba => lamba.classList.remove('yanik'));
                 }
             }
-            
-            const gemi = document.querySelector('.gemi-container');
-            if (gemi && rect.top <= viewportHeight * 0.5) {
-                gemi.classList.add('hareketli');
-            }
-
-
-            
-            const dalgalar = document.querySelectorAll('.dalga');
-            const scrollHizi = Math.abs(kaydirma - sonScrollY);
-            const dalgaHizi = Math.min(scrollHizi * 0.1, 2);
-            
-            dalgalar.forEach((dalga, index) => {
-                dalga.style.animationDuration = `${3 + index - dalgaHizi}s`;
-            });
         }
-    }
-    
-    sonScrollY = kaydirma;
-}); // DALGA PARALAKS VE INTERAKTİVITE
-function initDalgaSistemi() {
-    const dalgalar = document.querySelectorAll('.dalga');
-    
-    // Scroll paralaks efekti
+    });
+
+    // SU DEĞİRMENİ ANİMASYONU
     window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const denizSection = document.getElementById('deniz');
+        const kaydirma = window.scrollY;
+        const degirmenSection = document.getElementById('degirmen');
         
+        if (degirmenSection) {
+            const rect = degirmenSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            if (rect.top <= viewportHeight * 0.7 && rect.bottom >= 0) {
+                const ilerleme = Math.min(Math.max((viewportHeight * 0.7 - rect.top) / (viewportHeight * 0.7), 0), 1);
+                
+                const cark = document.querySelector('.degirmen-cark');
+                if (cark) {
+                    const donmeHizi = 3 - (ilerleme * 2);
+                    cark.style.animation = `donme ${donmeHizi}s linear infinite`;
+                }
+            } else {
+                const cark = document.querySelector('.degirmen-cark');
+                if (cark) {
+                    cark.style.animation = 'none';
+                }
+            }
+        }
+    });
+
+    // DENİZ ANİMASYONLARI
+    let sonScrollY = window.scrollY;
+
+    window.addEventListener('scroll', function() {
+        const kaydirma = window.scrollY;
+        const denizSection = document.getElementById('deniz');
+
         if (denizSection) {
             const rect = denizSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
             
-            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                // Her dalga için farklı hız
+            if (rect.top <= viewportHeight && rect.bottom >= 0) {
+                const gemi = document.querySelector('.gemi-container');
+                if (gemi && rect.top <= viewportHeight * 0.5) {
+                    gemi.classList.add('hareketli');
+                }
+
+                const dalgalar = document.querySelectorAll('.dalga');
+                const scrollHizi = Math.abs(kaydirma - sonScrollY);
+                const dalgaHizi = Math.min(scrollHizi * 0.1, 2);
+                
                 dalgalar.forEach((dalga, index) => {
-                    const hiz = 0.3 + (index * 0.1);
-                    const yMove = scrolled * hiz;
-                    dalga.style.transform = `translateX(${dalga.style.transform.includes('translateX') ? dalga.style.transform.split('translateX(')[1].split(')')[0] : '0px'}) translateY(${yMove}px)`;
+                    dalga.style.animationDuration = `${3 + index - dalgaHizi}s`;
                 });
             }
         }
-    });
-    
-    // Fare hareketi ile dalga etkileşimi
-    document.addEventListener('mousemove', function(e) {
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
         
-        dalgalar.forEach((dalga, index) => {
-            const moveX = (mouseX - 0.5) * 20 * (index + 1);
-            const moveY = (mouseY - 0.5) * 10 * (index + 1);
+        sonScrollY = kaydirma;
+    });
+
+    // ROKET BUTONU
+    function initRoketSistemi() {
+        const roketBtn = document.getElementById('roket-btn');
+        if (!roketBtn) return;
+        
+        window.addEventListener('scroll', function() {
+            const sayfaYuksekligi = document.documentElement.scrollHeight;
+            const gorunenAlan = window.innerHeight;
+            const mevcutScroll = window.scrollY;
             
-            dalga.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
+            const sayfaSonu = sayfaYuksekligi - gorunenAlan;
+            const altKisim = sayfaSonu * 0.8;
+            const sayfaBasi = mevcutScroll < 100;
+            
+            if (sayfaBasi) {
+                roketBtn.classList.add('gizli');
+            } else if (mevcutScroll >= altKisim) {
+                roketBtn.classList.remove('gizli');
+                roketBtn.classList.remove('ucus');
+            } else {
+                roketBtn.classList.add('gizli');
+            }
         });
-    });
-}
+        
+        roketBtn.addEventListener('click', function() {
+            roketBtn.classList.add('ucus');
+            
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 2500);
+            
+            setTimeout(() => {
+                roketBtn.classList.add('gizli');
+                roketBtn.classList.remove('ucus');
+            }, 4000);
+        });
+    }
 
+    // TÜM SİSTEMLERİ BAŞLAT
+    function initAllSystems() {
+        console.log('🚀 Sistemler başlatılıyor...');
+        
+        ucakHareketDongusu();
+        smoothGrowth();
+        window.addEventListener('scroll', updateTargetProgress);
+        initRoketSistemi();
+        
+        console.log('✅ Tüm sistemler çalışıyor');
+    }
 
-
-// SAYFA YÜKLENDİĞİNDE ÇALIŞTIR
-document.addEventListener('DOMContentLoaded', function() {
-    initDalgaSistemi();
-});
-
-// 6. KISIM: ROKET BUTONU
-document.addEventListener('DOMContentLoaded', function() {
-    const roketBtn = document.getElementById('roket-btn');
-    
-    // Scroll takibi
-    window.addEventListener('scroll', function() {
-        const sayfaYuksekligi = document.documentElement.scrollHeight;
-        const gorunenAlan = window.innerHeight;
-        const mevcutScroll = window.scrollY;
-        
-        // Sayfanın son %20'sinde miyiz?
-        const sayfaSonu = sayfaYuksekligi - gorunenAlan;
-        const altKisim = sayfaSonu * 0.8;
-        
-        // Sayfa üstünde miyiz?
-        const sayfaBasi = mevcutScroll < 100;
-        
-        if (sayfaBasi) {
-            // Sayfa başı - gizle
-            roketBtn.classList.add('gizli');
-        } else if (mevcutScroll >= altKisim) {
-            // Sayfa sonu - göster
-            roketBtn.classList.remove('gizli');
-            roketBtn.classList.remove('ucus');
-        } else {
-            // Sayfa ortası - gizle
-            roketBtn.classList.add('gizli');
-        }
-    });
-    
-    // Roket tıklama
-    roketBtn.addEventListener('click', function() {
-        // Uçuş animasyonu başlat
-        roketBtn.classList.add('ucus');
-        
-        // 1 saniye sonra sayfa başına git
-        setTimeout(() => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }, 2500);
-        
-        // Animasyon bitince gizle
-        setTimeout(() => {
-            roketBtn.classList.add('gizli');
-            roketBtn.classList.remove('ucus');
-        }, 4000);
-    });
+    // BAŞLAT
+    initAllSystems();
 });

@@ -413,7 +413,7 @@ body {
 
 
 
-/* BÜYÜYEN BİTKİLER - DÜZELTİLMİŞ */
+/* BÜYÜYEN BİTKİLER  */
 .buyuyen-elementler {
     position: absolute;
     bottom: 0;
@@ -1150,4 +1150,112 @@ body {
 .roket-btn.gizli {
     opacity: 0;
     pointer-events: none;
+}
+/* KESİN ÇÖZÜM - File Protocol Düzeltmeleri */
+
+/* 1. LEVHALAR - KÜÇÜLT */
+.file-protocol .balon {
+    width: 350px !important;
+    height: 140px !important;
+}
+
+.file-protocol .uyari-levha,
+.file-protocol .doga-uyari-metin,
+.file-protocol .aile-uyari-metin,
+.file-protocol .degirmen-uyari-metin,
+.file-protocol .gemi-uyari-metin {
+    max-width: 400px !important;
+    font-size: 0.9em !important;
+    padding: 15px !important;
+}
+
+/* DEĞİRMEN LEVHASI - SOL ÜST KÖŞE */
+.file-protocol .degirmen-uyari {
+    right: auto !important;
+    left: 10% !important;
+    top: 10% !important;
+    margin-right: 0 !important;
+}
+
+.file-protocol .degirmen-uyari-metin {
+    max-width: 300px !important;
+    margin-right: 0 !important;
+    font-size: 0.85em !important;
+}
+
+/* 2. EV ARKA PLAN - ZOOM DÜZELT */
+.file-protocol .ev .bg-arkaplan {
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+/* BABA RESMİ - YUKARI ÇIKART */
+.file-protocol .baba { 
+    top: 57% !important; 
+}
+
+/* 3. BARAJ ÖN PLAN - KÜÇÜLT */
+.file-protocol .baraj-onplan {
+    right: -100px !important;
+    width: 115% !important;
+}
+
+/* 4. LAMBALAR - KÜÇÜLT VE POZİSYON */
+.file-protocol .lamba {
+    width: 550px !important;
+    height: 700px !important;
+}
+
+.file-protocol .lamba-sol {
+    left: 9% !important;
+    top: 1% !important;
+}
+
+.file-protocol .lamba-sag {
+    right: 3% !important;
+    top: -5% !important;
+}
+
+/* LAMBA IŞIĞI - MERKEZE AL */
+.file-protocol .lamba-ışık {
+    width: 150px !important;
+    height: 150px !important;
+    top: 115px !important;
+    left: 42% !important;
+}
+
+/* 5. DEĞİRMEN ÇARK - BÜYÜT */
+.file-protocol .degirmen-cark {
+    width: 850px !important;
+    height: 850px !important;
+    bottom: -20% !important;
+}
+
+/* DENİZ KÖPÜĞÜ - KÜÇÜLT */
+.file-protocol .deniz-kopugu {
+    width: 895px !important;
+    height: 595px !important;
+    bottom: -20% !important;
+    left: 110% !important;
+}
+
+/* 6. GEMİ - KÜÇÜLT VE POZİSYON */
+.file-protocol .gemi {
+    width: 500px !important;
+    height: 150px !important;
+    left: 1250px !important;
+}
+
+.file-protocol .gemi-2 {
+    width: 300px !important;
+    height: 75px !important;
+    left: 1100px !important;
+}
+.file-protocol .gemi-uyari-metin {
+    top: -100px !important;
+} 
+
+/* 7. GENEL TAŞMA ÖNLEME */
+.file-protocol body {
+    overflow-x: hidden !important;
 }
