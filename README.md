@@ -37,7 +37,7 @@ Bu projede aşağıdaki frontend teknolojileri kullanılmıştır:
 
 - **Grup Adı:** Viva  
 - **Proje Adı:** Töz
-- **Proje linki:** https://w-code-project.vercel.app/oyun.html
+- **Proje linki:** https://w-code-project.vercel.app/index.html
   
 ---
 
